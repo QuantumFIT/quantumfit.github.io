@@ -1,0 +1,7 @@
+# One entry per group member. This first entry is a placeholder showing the
+# expected shape -- replace it with real people, and add more entries below.
+- name: "Full Name"
+  role: "Principal Investigator"
+  email: "placeholder@fit.vutbr.cz"
+  website:
+  bio: "Placeholder entry. Replace with a real bio, or remove the bio field."
