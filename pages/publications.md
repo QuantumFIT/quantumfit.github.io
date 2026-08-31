@@ -110,7 +110,7 @@ ACM.
   * 📝 [technical report](https://arxiv.org/abs/2410.18540)
   * 📦 [artifact](https://doi.org/10.5281/zenodo.13957472)
   * 🛠️ [AutoQ](https://github.com/alan23273850/AutoQ/)
-  * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/vqc25-automata-quantum.pdf) (from a [VQC'25](https://verifiedqc.github.io/2025/))
+  * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/vqc25-automata-quantum.pdf) (from [VQC'25](https://verifiedqc.github.io/2025/))
   * 🖼️ [poster](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/vqc25-poster-autoq.pdf)
 
 ## 2024
