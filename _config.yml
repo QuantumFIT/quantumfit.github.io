@@ -1,5 +1,5 @@
 title:            QuantumFIT
-description:      "QuantumFIT is a research group at the Faculty of Information Technology, Brno University of Technology, focused on quantum computing and quantum software engineering."
+description:      "QuantumFIT is the Quantum Computing Systems research group at the Faculty of Information Technology, Brno University of Technology, focused on quantum computing and quantum software engineering."
 url:              "https://quantumfit.github.io"
 baseurl:          ""
 
@@ -22,7 +22,7 @@ author: quantumfit
 owner:
   name:           QuantumFIT
   avatar:
-  bio:            "QuantumFIT is a research group at the Faculty of Information Technology, Brno University of Technology."
+  bio:            "QuantumFIT is the Quantum Computing Systems research group at the Faculty of Information Technology, Brno University of Technology."
   email:
   twitter:
   facebook:
