@@ -1,0 +1,17 @@
+# Group members, shown on the Group page. These are placeholder entries
+# showing the expected shape -- replace with real people.
+
+principle_investigator:
+  - name: "Full Name"
+    image:
+    bio: "Placeholder PI bio. Replace with a real bio."
+    bio_link: "/about/"
+
+graduate_students:
+  - name: "Full Name"
+    period: "since 2026"
+    description: "Placeholder entry. Replace with a real description."
+
+undergraduate_students: []
+
+alumni: []

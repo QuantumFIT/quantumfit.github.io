@@ -3,15 +3,19 @@ Web page of the QuantumFIT research group at Faculty of Information Technology, 
 
 ## Structure
 
-Built with Jekyll, using the [academicpages](https://github.com/academicpages/academicpages.github.io) theme
-pulled in at build time via `remote_theme:` in `_config.yml` (GitHub Pages fetches it automatically -- the
-theme is not cloned/forked into this repo).
+Built with Jekyll, using the theme from [liuyxpp/liuyxpp.github.io](https://github.com/liuyxpp/liuyxpp.github.io)
+pulled in at build time via `remote_theme:` in `_config.yml`, pinned to a fixed commit. GitHub Pages fetches
+it automatically -- the theme is not cloned/forked into this repo.
 
-- `_pages/` -- site pages (About/home, People, Publications, News, Contact)
-- `_data/team.yml` -- group members, shown on the People page
-- `_publications/` -- one Markdown file per publication (see the
-  [academicpages publication format](https://academicpages.github.io/markdown/) for front matter fields)
-- `_posts/` -- one Markdown file per news item (`YYYY-MM-DD-title.md`), shown on the News page
+`_layouts/home.html` is a local override of the theme's homepage layout: upstream hardcodes its own group's
+branding and links directly in that layout file (not in config/data), so it had to be copied and adapted here
+rather than left untouched. Every other theme file (includes, sass, assets) is pulled unmodified.
+
+- `pages/` -- site pages (Group, Publications, News, About), plus `index.html` for the home page
+- `_data/group.yml` -- group members, shown on the Group page (placeholder entries)
+- `_data/news.yml` -- news items, shown on the home page and the News page
+- `_data/positions.yml` -- contact/affiliation info, shown on the About page
+- `_data/navigation.yml`, `authors.yml`, `language.yml`, `share.yml`, `tags.yml` -- theme configuration data
 - `_config.yml` -- site settings and theme configuration
 
 ## Enabling GitHub Pages

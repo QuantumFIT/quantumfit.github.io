@@ -1,13 +1,16 @@
-# Order of links in the site header.
-main:
-  - title: "People"
-    url: /people/
+# Menu navigation links
 
-  - title: "Publications"
-    url: /publications/
+- title:    Home
+  url:      /
 
-  - title: "News"
-    url: /news/
+- title:    Group
+  url:      /group/
 
-  - title: "Contact"
-    url: /contact/
+- title:    Publications
+  url:      /publications/
+
+- title:    News
+  url:      /news/
+
+- title:    About
+  url:      /about/

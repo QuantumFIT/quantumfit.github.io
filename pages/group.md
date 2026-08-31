@@ -1,0 +1,75 @@
+---
+permalink: /group/
+layout: page
+title: Group Members
+description: "Group members: a list of current group members and alumni."
+comments: false
+modified: 2026-08-28
+breadcrumbs: true
+---
+
+<div class="group-section">
+  <h2 class="group-section-title">Principal Investigator</h2>
+
+  {% for member in site.data.group.principle_investigator %}
+  <div class="pi-card">
+    {% if member.image %}
+    <div class="pi-photo">
+      <img src="{{ site.url }}/{{ member.image }}" alt="{{ member.name }}">
+    </div>
+    {% endif %}
+    <div class="pi-info">
+      <h3>{{ member.name }}</h3>
+      <div class="member-bio">{{ member.bio | markdownify }}</div>
+      {% if member.bio_link %}
+      <a href="{{ site.url }}{{ member.bio_link }}" class="member-link">View Biography</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="group-section">
+  <h2 class="group-section-title">Graduate Students</h2>
+  <div class="member-grid">
+  {% for member in site.data.group.graduate_students %}
+    <div class="member-card">
+      <div class="member-info">
+        <h4>{{ member.name }}</h4>
+        {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
+        <div class="member-description">{{ member.description | markdownify }}</div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<div class="group-section">
+  <h2 class="group-section-title">Undergraduate Students</h2>
+  <div class="member-grid">
+  {% for member in site.data.group.undergraduate_students %}
+    <div class="member-card">
+      <div class="member-info">
+        <h4>{{ member.name }}</h4>
+        {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
+        <div class="member-description">{{ member.description | markdownify }}</div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<div class="group-section">
+  <h2 class="group-section-title">Alumni</h2>
+  <div class="member-grid">
+  {% for member in site.data.group.alumni %}
+    <div class="member-card">
+      <div class="member-info">
+        <h4>{{ member.name }}</h4>
+        {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
+        <div class="member-description">{{ member.description | markdownify }}</div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>

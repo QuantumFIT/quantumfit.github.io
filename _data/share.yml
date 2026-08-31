@@ -1,0 +1,17 @@
+# Each link may contain one or more <title> and <link> placeholders.
+
+twitter:
+  name: "Twitter"
+  color: '#00aced'
+  title: "Tweet on Twitter"
+  link: 'https://twitter.com/intent/tweet?text=<title>&url=<link>'
+email:
+  name: "E-mail"
+  color: '#777777'
+  title: "Send via E-mail"
+  link: 'mailto:?subject=<title>&body=<link>'
+facebook:
+  name: "Facebook"
+  color: '#3B5998'
+  title: "Share on Facebook"
+  link: 'https://www.facebook.com/sharer/sharer.php?u=<link>'

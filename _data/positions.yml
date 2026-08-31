@@ -1,0 +1,14 @@
+# Contact / affiliation details shown on the About page.
+- title: Brno University of Technology
+  roles:
+    - title: Research Group
+      dates:
+  department: Faculty of Information Technology
+  address: Bozetechova 2
+  location: 612 66 Brno, Czech Republic
+  phone:
+  mobile:
+  email:
+  profiles:
+    - lang: English
+      url: "https://www.fit.vut.cz/"

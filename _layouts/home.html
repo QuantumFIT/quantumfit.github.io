@@ -1,0 +1,104 @@
+<!--
+  Local override of the remote theme's _layouts/home.html.
+  Upstream (liuyxpp/liuyxpp.github.io) hardcodes "Polyorder Lab @Fudan"
+  branding and links to /research/ and /software/ directly in this layout,
+  not in _data -- so those had to be swapped here rather than in config.
+-->
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  {% include head.html %}
+</head>
+
+<body id="home">
+
+  {% include browser-upgrade.html %}
+
+  {% include nav_cleanblog.html %}
+
+  <div id="main" role="main">
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Welcome to QuantumFIT</h1>
+        <p class="hero-subtitle">Quantum Computing and Quantum Software Engineering Research Group</p>
+        <div class="hero-cta">
+          <a href="/group/" class="button primary">Our Group</a>
+          <a href="/publications/" class="button secondary">Publications</a>
+        </div>
+      </div>
+      <a href="#featured" class="scroll-indicator">
+        <i class="fa fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <section id="featured" class="featured-section">
+      <div class="grid-container">
+        <div class="featured-card">
+          <i class="fa fa-users card-icon"></i>
+          <h2>Group</h2>
+          <p>Meet the people working on quantum computing and quantum software engineering.</p>
+          <a href="/group/" class="button">Explore</a>
+        </div>
+
+        <div class="featured-card">
+          <i class="fa fa-book card-icon"></i>
+          <h2>Publications</h2>
+          <p>Our journal articles, conference papers, and other publications.</p>
+          <a href="/publications/" class="button">Explore</a>
+        </div>
+
+        <div class="featured-card">
+          <i class="fa fa-newspaper-o card-icon"></i>
+          <h2>News</h2>
+          <p>Recent updates and announcements from the group.</p>
+          <a href="/news/" class="button">Explore</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section">
+      <h2 class="section-title">Latest News</h2>
+      <div class="news-grid">
+        {% assign sorted_news = site.data.news | sort: 'date' | reverse %}
+        {% for item in sorted_news limit:3 %}
+        <article class="news-card">
+          <div class="news-content">
+            <h3>{{ item.title }}</h3>
+            <p class="news-meta">
+              {{ item.date | date: "%Y.%m.%d" }}
+              <span class="category-badge">{{ item.category }}</span>
+            </p>
+            <p>{{ item.description | strip_html }}</p>
+            {% if item.url and item.url != "" %}
+            <a href="{{ item.url }}" class="read-more">Read more</a>
+            {% endif %}
+          </div>
+        </article>
+        {% endfor %}
+
+        <article class="news-card more-news">
+          <div class="news-content">
+            <i class="fa fa-newspaper-o more-news-icon"></i>
+            <p class="more-news-text">Stay up to date with our latest publications and announcements.</p>
+            <a href="/news/" class="read-more">View All News</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="row">
+      {{ content }}
+    </div>
+
+  </div><!-- /#main -->
+
+  <div class="footer-wrapper">
+    {% include footer.html %}
+  </div><!-- /.footer-wrapper -->
+
+  {% include scripts.html %}
+
+</body>
+
+</html>

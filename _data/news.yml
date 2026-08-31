@@ -1,0 +1,8 @@
+# News items, newest first (shown on Home and News pages).
+# Add entries in this shape; delete this placeholder once real news exists.
+- title: "Welcome to the QuantumFIT website"
+  date: 2026-08-28
+  description: "This site is under construction."
+  url:
+  image:
+  category: announcement
