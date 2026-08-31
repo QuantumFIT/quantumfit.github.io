@@ -8,6 +8,53 @@ modified: 2026-08-31
 breadcrumbs: true
 ---
 
+<!--
+  Render each entry's sub-list (preliminary version, technical report, slides,
+  tool, artifact, video, ...) as a row of pill-shaped tags instead of a vertical
+  bullet list, matching https://ondrik.github.io/publications/ . The markdown
+  below keeps the plain nested lists; only the CSS changes how they look.
+
+  The CSS is inline here rather than in a local _sass/ file for the same reason
+  as the hero background in _layouts/home.html: the theme is pulled in via
+  remote_theme, and its own sass files @import each other by bare name, so a
+  local _sass/ copy is not reliably picked up. A <style> block in the page body
+  is page-local, needs no theme internals, and cannot be shadowed.
+
+  Selectors target `.entry-content li ul`, the structure the theme actually
+  emits for a nested markdown list (verified against the rendered page).
+-->
+<style>
+  .entry-content li ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 0.6em;
+    list-style: none;
+    margin: 0.6em 0 1.1em;
+    padding-left: 0;
+  }
+
+  .entry-content li ul li {
+    margin-bottom: 0;
+    padding: 0.15em 0.8em;
+    border: 1px solid rgba(44, 129, 186, 0.4);
+    border-radius: 999px;
+    font-size: 0.85em;
+    line-height: 1.7;
+  }
+
+  /* The theme gives every link inside an <li> a dotted bottom border that
+     turns solid on hover; inside a pill that reads as a stray underline. */
+  .entry-content li ul li a,
+  .entry-content li ul li a:hover {
+    border-bottom: none;
+  }
+
+  .entry-content li ul li:hover {
+    border-color: #2c81ba;
+    background-color: #f1f8ff;
+  }
+</style>
+
 ## 2026
 
 * W. Tsai, Y. Chen, and O. Lengal.
