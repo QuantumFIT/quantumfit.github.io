@@ -3,12 +3,24 @@
   Upstream (liuyxpp/liuyxpp.github.io) hardcodes "Polyorder Lab @Fudan"
   branding and links to /research/ and /software/ directly in this layout,
   not in _data -- so those had to be swapped here rather than in config.
+
+  The <style> block below overrides the hero background image. It can't
+  be done via a local _sass/_home.scss like the navbar color override,
+  because _home.scss is @import-ed from inside the theme's own _site.scss
+  (not from main.scss directly) -- Sass resolves that bare @import
+  relative to _site.scss's own directory first, so it always finds the
+  theme's copy of _home.scss before ever consulting our local _sass/.
 -->
 <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
   {% include head.html %}
+  <style>
+    .hero-section {
+      background-image: linear-gradient(160deg, rgba(20, 40, 60, 0.55) 0%, rgba(30, 60, 90, 0.35) 40%, rgba(20, 50, 80, 0.45) 100%), url('/images/background2.png');
+    }
+  </style>
 </head>
 
 <body id="home">
