@@ -30,11 +30,11 @@ Introduced in
 
 ## Medusa
 
-A quantum circuit simulator that uses symbolic execution together with loop
-summarization, so that a repeated block of gates is analysed once rather than
-unrolled.
+An MTBDD-based quantum circuit simulator. It uses symbolic execution together
+with loop summarization, so that a repeated block of gates is analysed once
+rather than unrolled.
 
-[github.com/s-jobra/MEDUSA](https://github.com/s-jobra/MEDUSA/)
+[github.com/VeriFIT/MEDUSA](https://github.com/VeriFIT/MEDUSA)
 
 Introduced in
 [Accelerating Quantum Circuit Simulation with Symbolic Execution and Loop Summarization](https://doi.org/10.1145/3676536.3676711)

@@ -1,14 +1,21 @@
+{% comment %}
+  Each share link appears only when the corresponding site.owner.* key is set in
+  _config.yml, matching how _includes/footer.html gates its social icons. The
+  share URLs do not themselves need an account, but a site that lists no
+  presence on a network should not be pushing readers to it either.
+
+  The whole block is wrapped as well, so that with neither key set nothing is
+  emitted at all rather than an empty <div><ul></ul></div>.
+{% endcomment %}
+{% if site.owner.facebook or site.owner.twitter %}
 <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
-    {% comment %}
-      Shown only when site.owner.facebook is set in _config.yml, matching how
-      _includes/footer.html gates its Facebook icon. The share URL itself does
-      not need an account, but a site that does not list a Facebook presence
-      should not be pushing readers to Facebook either.
-    {% endcomment %}
     {% if site.owner.facebook %}
     <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
     {% endif %}
+    {% if site.owner.twitter %}
     <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    {% endif %}
   </ul>
 </div><!-- /.social-share -->
+{% endif %}
