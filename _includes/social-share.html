@@ -1,6 +1,14 @@
 <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
+    {% comment %}
+      Shown only when site.owner.facebook is set in _config.yml, matching how
+      _includes/footer.html gates its Facebook icon. The share URL itself does
+      not need an account, but a site that does not list a Facebook presence
+      should not be pushing readers to Facebook either.
+    {% endcomment %}
+    {% if site.owner.facebook %}
     <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    {% endif %}
     <li class="twitter"><a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
   </ul>
 </div><!-- /.social-share -->
