@@ -1,0 +1,51 @@
+---
+layout: page
+permalink: /404.html
+title: Page not found
+description: "That page does not exist on the QuantumFIT website."
+comments: false
+share: false
+noindex: true
+sitemap: false
+---
+
+{% comment %}
+  GitHub Pages serves /404.html for any path it cannot match, so this one page
+  answers every bad URL on the site. Two things it therefore must not do:
+
+    - use a relative asset path. The page can be served from any depth, and
+      _includes/head.html builds every URL from site.url, so this is already
+      true -- but it breaks the moment something here hardcodes a relative one.
+    - claim to be a real page. `noindex` (handled in head.html) and
+      `sitemap: false` (read by jekyll-sitemap) keep it out of search results.
+
+  The links come from _data/navigation.yml rather than being spelled out, so a
+  future page added to the menu shows up here too.
+{% endcomment %}
+
+<p>
+There is no page at <code class="missing-path">that address</code>. The link
+that brought you here may be out of date, or the page may have been renamed.
+</p>
+
+<p>These are all the pages on this site:</p>
+
+<ul>
+{% for item in site.data.navigation %}
+  <li><a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}
+</ul>
+
+<script>
+  // The address bar still holds the path the reader actually asked for --
+  // GitHub Pages serves this page without redirecting -- but Jekyll builds
+  // this file once, at deploy time, and cannot know what that path will be.
+  // So the placeholder above is filled in here, and stays a sensible sentence
+  // if scripting is off.
+  (function () {
+    var el = document.querySelector('.missing-path');
+    if (el && window.location.pathname) {
+      el.textContent = window.location.pathname;
+    }
+  })();
+</script>

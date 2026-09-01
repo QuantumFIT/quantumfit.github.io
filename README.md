@@ -23,6 +23,11 @@ and links in that layout rather than in config/data.
 - `_data/positions.yml` -- contact/affiliation info, shown on the About page
 - `_data/navigation.yml`, `authors.yml`, `language.yml`, `share.yml`, `tags.yml` -- theme configuration data
 - `_config.yml` -- site settings and theme configuration
+- `404.html` -- served by GitHub Pages for any unmatched path
+- `favicon.svg` -- the site mark, and the source for the other icon files;
+  `_tools/make-icons.py` rasterises it into `favicon.ico`, `favicon.png` and
+  `images/apple-touch-icon.png`. Those are committed, because GitHub Pages runs
+  Jekyll and nothing else. The script needs `librsvg2-bin` and `python3-pil`.
 
 ## Enabling GitHub Pages
 
