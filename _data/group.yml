@@ -32,9 +32,16 @@ principle_investigator:
 # a card is otherwise just a name, with no way to tell. Use exactly
 # "PhD Student" or "Postdoc". Ordered by surname.
 #
-# The `web` URLs were verified to resolve and to name the right person; FIT
-# logins are not derivable from the surname (Havlena is `ihavlena`, not
-# `havlena`), so check a new one rather than pattern-match it.
+# Every `web` URL below was verified to resolve and to name the right person.
+# Do the same for a new one rather than pattern-matching it: the FIT login is
+# not derivable from the surname (Havlena is `ihavlena`, not `havlena`), and
+# some people have no login alias at all, only the numeric id the faculty's
+# staff listing links to. Guessing is actively risky here -- `inovak` resolves,
+# but to a different Novák.
+#
+# `web` is optional. Not everyone has a FIT page: the faculty publishes one for
+# staff, so a student who is not also employed has none, and pages/team.md
+# renders those names as plain text.
 phd_and_postdocs:
   - name: "Vojtěch Havlena"
     role: "Postdoc"
@@ -44,6 +51,17 @@ phd_and_postdocs:
     role: "PhD Student"
     web: "https://www.fit.vut.cz/person/ihecko/"
 
-undergraduate_students: []
+# Ordered by surname, as above.
+undergraduate_students:
+  - name: "Jakub Havlík"
+    web: "https://www.fit.vut.cz/person/260286/"
+
+  # No `web`: she has no FIT person page -- the faculty publishes those for
+  # staff, and the unit staff listings do not carry her. Her name renders as
+  # plain text until there is somewhere to point it.
+  - name: "Sára Jobranová"
+
+  - name: "Filip Novák"
+    web: "https://www.fit.vut.cz/person/259543/"
 
 alumni: []
