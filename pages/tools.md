@@ -36,14 +36,12 @@ breadcrumbs: true
 <div class="member-grid">
 <div class="member-card">
 <div class="member-info">
-<h4>AutoQ</h4>
+<h4><a href="https://github.com/fmlab-iis/AutoQ">AutoQ</a></h4>
 <div class="member-description" markdown="1">
 An automata-based verifier for quantum circuits and programs. Sets of quantum
 states are represented as tree automata, which lets a circuit be checked against
 a pre-/post-condition specification --- or searched for bugs --- without
 enumerating individual states.
-
-[github.com/fmlab-iis/AutoQ](https://github.com/fmlab-iis/AutoQ)
 
 Introduced in
 [AutoQ: An Automata-based Quantum Circuit Verifier](https://doi.org/10.1007/978-3-031-37709-9_7)
@@ -60,13 +58,11 @@ Introduced in
 </div>
 <div class="member-card">
 <div class="member-info">
-<h4>Medusa</h4>
+<h4><a href="https://github.com/VeriFIT/MEDUSA">Medusa</a></h4>
 <div class="member-description" markdown="1">
 An MTBDD-based quantum circuit simulator. It uses symbolic execution together
 with loop summarization, so that a repeated block of gates is analysed once
 rather than unrolled.
-
-[github.com/VeriFIT/MEDUSA](https://github.com/VeriFIT/MEDUSA)
 
 Introduced in
 [Accelerating Quantum Circuit Simulation with Symbolic Execution and Loop Summarization](https://doi.org/10.1145/3676536.3676711)

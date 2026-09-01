@@ -63,6 +63,13 @@
     color: var(--qf-heading);
   }
 
+  // The theme paints <strong> inside a member description with
+  // darken($primary, 10%) -- a dark blue that is nearly invisible on a dark
+  // card. Selector depth matches the theme's so this wins without !important.
+  .member-card .member-info .member-description strong {
+    color: var(--qf-heading);
+  }
+
   .pi-card .pi-info .member-link,
   .member-card .member-info .member-description a {
     color: var(--qf-link);
