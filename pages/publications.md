@@ -45,10 +45,13 @@ breadcrumbs: true
     line-height: 1.7;
   }
 
-  /* The theme gives every link inside an <li> a dotted bottom border that
-     turns solid on hover; inside a pill that reads as a stray underline. */
-  .entry-content li ul li a,
-  .entry-content li ul li a:hover {
+  /* The theme underlines content links with a dotted bottom border, which
+     inside a pill reads as a stray underline. Two rules draw it, and the one
+     that matters is `#page p a, #page article a` -- an ID selector, so it
+     outweighs any selector here that does not also start from #page. Hence the
+     #page prefix; without it these declarations are silently ignored. */
+  #page .entry-content li ul li a,
+  #page .entry-content li ul li a:hover {
     border-bottom: none;
   }
 
