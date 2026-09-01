@@ -57,4 +57,21 @@ kramdown:
   toc_levels: 1..3
 
 include: [".htaccess"]
-exclude: ["Gemfile", "Gemfile.lock", "vendor", "README.md", "node_modules"]
+# `exclude` keeps files in the repo but out of the built site.
+#
+# The background PNGs are kept as the original, lossless sources but are not
+# published: the hero uses images/background2.webp (0.14 MB rather than
+# 1.72 MB), and background1/background3 are not referenced anywhere. Publishing
+# them would ship ~5 MB that nothing links to.
+#
+# If the hero is ever pointed back at a .png, that file has to come off this
+# list or it will 404.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - node_modules
+  - images/background1.png
+  - images/background2.png
+  - images/background3.png

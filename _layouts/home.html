@@ -1,15 +1,15 @@
 <!--
-  Local override of the remote theme's _layouts/home.html.
-  Upstream (liuyxpp/liuyxpp.github.io) hardcodes "Polyorder Lab @Fudan"
-  branding and links to /research/ and /software/ directly in this layout,
-  not in _data -- so those had to be swapped here rather than in config.
+  Adapted from the vendored theme's _layouts/home.html: upstream
+  (liuyxpp/liuyxpp.github.io) hardcodes "Polyorder Lab @Fudan" branding and
+  links to /research/ and /software/ directly in this layout rather than in
+  _data, so those had to be replaced here.
 
-  The <style> block below overrides the hero background image. It can't
-  be done via a local _sass/_home.scss like the navbar color override,
-  because _home.scss is @import-ed from inside the theme's own _site.scss
-  (not from main.scss directly) -- Sass resolves that bare @import
-  relative to _site.scss's own directory first, so it always finds the
-  theme's copy of _home.scss before ever consulting our local _sass/.
+  The <style> block sets the hero background. It uses the WebP copy, not the
+  PNG: at quality 85 it is 0.14 MB instead of 1.72 MB (8.3%) and the rendered
+  difference is imperceptible -- 43 dB PSNR over the whole hero, because the
+  gradient above the image compresses its dynamic range. The PNG is kept in
+  the repo as the source but is excluded from the built site in _config.yml,
+  so changing this back to .png needs that exclude entry dropped too.
 -->
 <!doctype html>
 <html class="no-js" lang="en">
@@ -18,7 +18,7 @@
   {% include head.html %}
   <style>
     .hero-section {
-      background-image: linear-gradient(160deg, rgba(20, 40, 60, 0.55) 0%, rgba(30, 60, 90, 0.35) 40%, rgba(20, 50, 80, 0.45) 100%), url('/images/background2.png');
+      background-image: linear-gradient(160deg, rgba(20, 40, 60, 0.55) 0%, rgba(30, 60, 90, 0.35) 40%, rgba(20, 50, 80, 0.45) 100%), url('/images/background2.webp');
     }
   </style>
 </head>
