@@ -33,7 +33,7 @@ breadcrumbs: true
 <div class="member-info">
 <h4>Contact person</h4>
 <div class="member-description">
-<a href="mailto:{{ c.email }}"><strong>{{ c.name }}</strong></a><br>
+<strong>{{ c.name }}</strong><br>
 <a href="mailto:{{ c.email }}">{{ c.email }}</a>{% if c.web %}<br>
 <a href="{{ c.web }}">{{ c.web_label | default: c.web }}</a>{% endif %}
 </div>
