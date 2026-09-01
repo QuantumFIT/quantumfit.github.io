@@ -112,7 +112,7 @@
     }
 
     .member-bio {
-      color: $text-color;
+      color: var(--qf-text);
       line-height: 1.65;
       margin-bottom: 1rem;
     }
@@ -239,7 +239,7 @@
     }
 
     .member-description {
-      color: $text-color;
+      color: var(--qf-text);
       line-height: 1.6;
       font-size: 0.9rem;
 
@@ -485,7 +485,7 @@
 }
 
 .semester-detail {
-  color: $text-color;
+  color: var(--qf-text);
   font-size: 0.88rem;
   line-height: 1.4;
 }
@@ -533,7 +533,7 @@
 
   p {
     margin: 0 0 0.6rem;
-    color: $text-color;
+    color: var(--qf-text);
     font-size: 0.92rem;
     line-height: 1.7;
 
@@ -649,7 +649,7 @@
   >ul {
     font-size: 0.92rem;
     line-height: 1.7;
-    color: $text-color;
+    color: var(--qf-text);
   }
 
   >ul {
@@ -852,7 +852,7 @@ input {
   .bio-content {
     font-size: 0.92rem;
     line-height: 1.75;
-    color: $text-color;
+    color: var(--qf-text);
   }
 }
 

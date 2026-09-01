@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding-top: $navbar-actual-height;
     width: 100%;
-    background-color: $body-color;
+    background-color: var(--qf-bg);
 }
 
 .breadcrumbs {
@@ -72,7 +72,7 @@ body {
 .entry-title {
     a {
         &:visited {
-            color: $link-color;
+            color: var(--qf-link);
         }
     }
 }
@@ -236,7 +236,7 @@ body {
         border-bottom: none;
 
         &:hover {
-            color: $link-color-hover;
+            color: var(--qf-link-hover);
             border-bottom: none;
         }
     }
@@ -319,7 +319,7 @@ header .entry-meta {
         border-bottom: none;
 
         &:hover {
-            color: $link-color-hover;
+            color: var(--qf-link-hover);
         }
     }
 
@@ -349,7 +349,7 @@ header .entry-meta {
             &:hover {
                 border-bottom: none;
                 text-decoration: none;
-                color: $link-color-hover;
+                color: var(--qf-link-hover);
             }
         }
     }
@@ -419,7 +419,7 @@ header .entry-meta {
 
             &:hover {
                 border-bottom: none;
-                color: $link-color-hover;
+                color: var(--qf-link-hover);
             }
         }
     }
@@ -456,7 +456,7 @@ header .entry-meta {
         border-bottom: none;
 
         &:hover {
-            color: $link-color-hover;
+            color: var(--qf-link-hover);
         }
     }
 
@@ -591,7 +591,7 @@ header .entry-meta {
         @include font-rem(28);
 
         a {
-            color: $text-color;
+            color: var(--qf-text);
         }
 
         @media #{$medium} {
@@ -678,7 +678,7 @@ header .entry-meta {
             text-decoration: none;
 
             &:hover {
-                color: $link-color-hover;
+                color: var(--qf-link-hover);
             }
         }
     }
@@ -706,7 +706,7 @@ header .entry-meta {
         text-decoration: none;
 
         &:hover {
-            color: $link-color-hover;
+            color: var(--qf-link-hover);
         }
     }
 }
@@ -730,7 +730,7 @@ header .entry-meta {
         border-bottom: none;
 
         &:hover {
-            color: $link-color-hover;
+            color: var(--qf-link-hover);
             border-bottom: none;
             text-decoration: none;
         }
@@ -793,7 +793,7 @@ header .entry-meta {
             border-bottom: none;
 
             &:hover {
-                color: $link-color-hover;
+                color: var(--qf-link-hover);
                 border-bottom: none;
             }
         }
@@ -872,7 +872,7 @@ header .entry-meta {
         padding: 0;
         font-size: 0.95rem;
         line-height: 1.7;
-        color: $text-color;
+        color: var(--qf-text);
     }
 
     .intro-image {
@@ -903,7 +903,7 @@ header .entry-meta {
 
 .software-subtitle {
     text-align: center;
-    color: $text-color-light;
+    color: var(--qf-text-light);
     font-size: 0.92rem;
     margin-bottom: 0.5rem;
 
@@ -1099,7 +1099,7 @@ header .entry-meta {
 }
 
 .card-header {
-    background: $body-color;
+    background: var(--qf-bg);
     padding: 1rem 1.2rem;
     border-bottom: 1px solid rgba($primary, 0.08);
     display: flex;
@@ -1158,7 +1158,7 @@ header .entry-meta {
 }
 
 .description {
-    color: $text-color;
+    color: var(--qf-text);
     margin-bottom: 1rem;
     font-size: 0.92rem;
     line-height: 1.6;
@@ -1179,7 +1179,7 @@ header .entry-meta {
         padding-left: 1.5rem;
         margin-bottom: 0.4rem;
         font-size: 0.88rem;
-        color: $text-color;
+        color: var(--qf-text);
         line-height: 1.5;
 
         &::before {

@@ -2,7 +2,7 @@
 // --------------------------------------------------
 body {
 	font-family: $base-font;
-	color: $text-color;
+	color: var(--qf-text);
 }
 
 // Headings
@@ -51,14 +51,14 @@ h5 {
 // --------------------------------------------------
 a {
 	text-decoration: none;
-	color: $link-color;
+	color: var(--qf-link);
 	&:visited {
 		// color: lighten($link-color, 10);
         // border-bottom: $gray-dark;
 	}
 	&:hover {
 		// color: lighten($link-color, 10);
-        color: $link-color;
+        color: var(--qf-link);
 	}
 	&:focus {
 		outline: thin dotted;
@@ -97,7 +97,7 @@ figcaption {
 	padding: .5em 1em;
 	text-indent: 0;
 	@include font-rem(14);
-	background-color: $body-color;
+	background-color: var(--qf-bg);
 	border: 1px solid darken($body-color,20);
 	@include rounded(3px);
 }

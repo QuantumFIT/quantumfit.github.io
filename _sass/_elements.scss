@@ -418,7 +418,7 @@ button, .button {
 .side-nav li a:not(.button) {
     border-bottom: 0;
     padding: 0.4375rem 0rem;
-    color: $link-color;
+    color: var(--qf-link);
     &:hover,
     &:focus {
         background: none;
@@ -468,7 +468,7 @@ button, .button {
   margin-top: rem-calc(($tag-size-height-max - $tag-size-base) / 2);
   margin-bottom: rem-calc(($tag-size-height-max - $tag-size-base) / 2);
   background-color: #fff;
-  color: $text-color;
+  color: var(--qf-text);
   border: 2px solid $grey-11;
   &:visited {
       border: 2px solid $grey-11;

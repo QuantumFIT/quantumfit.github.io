@@ -173,7 +173,7 @@
 // ================================
 .featured-section {
   padding: 3.5rem 2rem;
-  background: $body-color;
+  background: var(--qf-bg);
   margin-bottom: 0;
 
   .section-title {
@@ -254,7 +254,7 @@
     }
 
     p {
-      color: $text-color;
+      color: var(--qf-text);
       margin-bottom: 1.5rem;
       flex-grow: 1;
       line-height: 1.6;
@@ -334,7 +334,7 @@
   }
 
   .news-card {
-    background: $body-color;
+    background: var(--qf-bg);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -363,7 +363,7 @@
       }
 
       .news-meta {
-        color: $text-color-light;
+        color: var(--qf-text-light);
         font-size: 0.8rem;
         margin-bottom: 0.75rem;
         display: flex;
@@ -383,7 +383,7 @@
       }
 
       p {
-        color: $text-color;
+        color: var(--qf-text);
         margin-bottom: 1rem;
         font-size: 0.9rem;
         line-height: 1.55;
@@ -447,7 +447,7 @@
         }
 
         .more-news-text {
-          color: $text-color;
+          color: var(--qf-text);
           font-size: 0.95rem;
           margin-bottom: 1.2rem;
         }
@@ -506,13 +506,13 @@
       }
 
       .news-meta {
-        color: $text-color-light;
+        color: var(--qf-text-light);
         font-size: 0.9rem;
         margin-bottom: 1rem;
       }
 
       p {
-        color: $text-color;
+        color: var(--qf-text);
         line-height: 1.6;
         margin-bottom: 1.5rem;
       }

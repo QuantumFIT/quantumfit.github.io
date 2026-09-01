@@ -1,0 +1,137 @@
+// Dark-mode overrides. Imported last so these win on source order.
+//
+// Why an overlay instead of tokenising every declaration in place: the theme
+// paints most accents with tonal variants of one colour -- color: $primary,
+// darken($primary, 5%), darken($primary, 10%), darken($primary, 15%). Those are
+// compile-time and each shade is visibly different, so collapsing them all onto
+// a single var() would change light mode, which has to stay pixel-identical.
+// Surfaces the theme paints with a plain palette variable ARE tokenised in place
+// (see _theme-tokens.scss); what is left here is the tonal and literal cases.
+//
+// Selectors are emitted inside :root[...] so everything below is a descendant of
+// <html>, where data-theme lives. That also buys one attribute selector of
+// specificity, enough to beat the theme's own rules without !important -- except
+// where the theme itself used !important, which is matched below.
+
+@mixin qf-dark-overrides {
+  // ---- page furniture ----------------------------------------------------
+  #page .entry-content,
+  .read-more {
+    background-color: var(--qf-surface);
+    box-shadow: 0 6px 12px var(--qf-shadow);
+  }
+
+  .entry-meta,
+  .entry-meta a {
+    color: var(--qf-text-light);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--qf-heading);
+  }
+
+  .breadcrumbs {
+    background-color: var(--qf-surface-alt);
+
+    > * { color: var(--qf-link); }
+    > *.current { color: var(--qf-text-light); }
+    > *:not(:last-child)::after { color: var(--qf-text-light); }
+  }
+
+  // ---- group page cards --------------------------------------------------
+  .pi-card,
+  .member-card,
+  .course-card,
+  .course-toc {
+    background: var(--qf-surface-alt);
+    border-color: var(--qf-border);
+    box-shadow: 0 2px 12px var(--qf-shadow);
+  }
+
+  .group-section-title {
+    color: var(--qf-heading);
+    border-bottom-color: var(--qf-border);
+  }
+
+  .pi-card .pi-info h3,
+  .member-card .member-info h4 {
+    color: var(--qf-heading);
+  }
+
+  .member-card .member-info .member-period {
+    background: var(--qf-border-soft);
+    color: var(--qf-heading);
+  }
+
+  .pi-card .pi-info .member-link,
+  .member-card .member-info .member-description a {
+    color: var(--qf-link);
+
+    &:hover { color: var(--qf-secondary); }
+  }
+
+  // ---- home page ---------------------------------------------------------
+  .featured-section .featured-card {
+    background: var(--qf-surface);
+    border-color: var(--qf-border);
+  }
+
+  .news-section {
+    background: var(--qf-surface);
+  }
+
+  .news-section .news-card {
+    background: var(--qf-surface-alt);
+    border-color: var(--qf-border);
+  }
+
+  // ---- chrome ------------------------------------------------------------
+  // Both are darken($primary, 10-15%) by default, which in dark mode reads as a
+  // bright band across the top and bottom of an otherwise dark page.
+  .navbar-custom,
+  .footer-wrapper footer {
+    background: var(--qf-nav-bg);
+  }
+
+  .featured-section .section-title,
+  .news-section .section-title,
+  .news-section .news-card .news-content h3,
+  .featured-section .featured-card .card-icon,
+  .news-section .news-card .news-content .read-more,
+  .news-list .news-item .news-content h3,
+  .news-list .news-item .news-content .read-more {
+    color: var(--qf-heading);
+  }
+
+  .news-section .news-card .news-content .news-meta .category-badge {
+    background: var(--qf-border-soft);
+    color: var(--qf-heading);
+  }
+
+  .news-list .news-item {
+    border-bottom-color: var(--qf-border);
+  }
+
+  .news-section .news-card .news-content .read-more,
+  .news-list .news-item .news-content .read-more {
+    border-color: var(--qf-heading);
+
+    &:hover {
+      background: var(--qf-heading);
+      color: var(--qf-bg);
+    }
+  }
+
+  // The theme sets these with !important, so match it rather than fight it.
+  .section-title,
+  .member-info h4,
+  .pi-info h3 {
+    color: var(--qf-heading) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include qf-dark-overrides; }
+}
+
+:root[data-theme="dark"] { @include qf-dark-overrides; }

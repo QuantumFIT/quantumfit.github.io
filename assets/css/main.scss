@@ -40,6 +40,7 @@ $environment: '{{ jekyll.environment }}';
 
 // Partials
 @import "variables";
+@import "theme-tokens";
 @import "mixins";
 @import "reset";
 @import "vendor/font-awesome/font-awesome";
@@ -53,3 +54,6 @@ $environment: '{{ jekyll.environment }}';
 @import "page";
 @import "nav_cleanblog";
 @import "intro-header_cleanblog";
+
+// Dark-mode overlay: must stay last so its rules win on source order.
+@import "dark";

@@ -14,14 +14,17 @@ breadcrumbs: true
   bullet list, matching https://ondrik.github.io/publications/ . The markdown
   below keeps the plain nested lists; only the CSS changes how they look.
 
-  The CSS is inline here rather than in a local _sass/ file for the same reason
-  as the hero background in _layouts/home.html: the theme is pulled in via
-  remote_theme, and its own sass files @import each other by bare name, so a
-  local _sass/ copy is not reliably picked up. A <style> block in the page body
-  is page-local, needs no theme internals, and cannot be shadowed.
+  The CSS is inline here because it is specific to this one page: a nested
+  markdown list means "link tags" here, but nothing of the sort elsewhere.
+  (It originally had to be inline because the theme was remote; the theme is
+  vendored now, so this is a choice rather than a constraint.)
 
   Selectors target `.entry-content li ul`, the structure the theme actually
   emits for a nested markdown list (verified against the rendered page).
+
+  Colours come from the --qf-pill-* tokens in _sass/_theme-tokens.scss so the
+  pills follow light/dark mode. The literals in the var() fallbacks are the
+  original light-mode values, used only if the tokens ever go missing.
 -->
 <style>
   .entry-content li ul {
@@ -36,7 +39,7 @@ breadcrumbs: true
   .entry-content li ul li {
     margin-bottom: 0;
     padding: 0.15em 0.8em;
-    border: 1px solid rgba(44, 129, 186, 0.4);
+    border: 1px solid var(--qf-pill-border, rgba(44, 129, 186, 0.4));
     border-radius: 999px;
     font-size: 0.85em;
     line-height: 1.7;
@@ -50,8 +53,8 @@ breadcrumbs: true
   }
 
   .entry-content li ul li:hover {
-    border-color: #2c81ba;
-    background-color: #f1f8ff;
+    border-color: var(--qf-pill-hover-border, #2c81ba);
+    background-color: var(--qf-pill-hover-bg, #f1f8ff);
   }
 </style>
 
