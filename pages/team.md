@@ -45,9 +45,11 @@ breadcrumbs: true
   {% for member in site.data.group.phd_and_postdocs %}
     <div class="member-card">
       <div class="member-info">
-        <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
-        {% if member.role %}<span class="member-role">{{ member.role }}</span>{% endif %}
-        {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
+        <div class="member-heading">
+          <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
+          {% if member.role %}<span class="member-role">{{ member.role }}</span>{% endif %}
+          {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
+        </div>
       </div>
     </div>
   {% endfor %}
@@ -62,8 +64,10 @@ breadcrumbs: true
   {% for member in site.data.group.undergraduate_students %}
     <div class="member-card">
       <div class="member-info">
-        <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
-        {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
+        <div class="member-heading">
+          <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
+          {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
+        </div>
       </div>
     </div>
   {% endfor %}
@@ -78,8 +82,10 @@ breadcrumbs: true
   {% for member in site.data.group.alumni %}
     <div class="member-card">
       <div class="member-info">
-        <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
-        {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
+        <div class="member-heading">
+          <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
+          {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
+        </div>
       </div>
     </div>
   {% endfor %}

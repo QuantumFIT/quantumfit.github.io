@@ -232,6 +232,22 @@
     flex: 1;
     min-width: 0;
 
+    // Name and pills sit on one line: a pill labels the name, so it belongs
+    // beside it rather than on a line of its own. Baseline-aligned so the
+    // small pill text lines up with the name rather than floating; wrapping so
+    // a long name in a narrow column pushes the pills down instead of
+    // overflowing the card.
+    .member-heading {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+
+      h4 {
+        margin-bottom: 0;
+      }
+    }
+
     h4 {
       margin: 0 0 0.3rem;
       color: darken($primary, 15%);
@@ -253,19 +269,17 @@
     }
 
     // One pill style, two uses: the role tag ("Postdoc", "PhD Student") and
-    // the optional period ("since 2026"). They can appear together, hence the
-    // right margin.
+    // the optional period ("since 2026"). Both live in .member-heading, so
+    // their spacing is that row's gap -- no margins of their own.
     .member-period,
     .member-role {
       display: inline-block;
-      margin-right: 0.35rem;
       padding: 0.1rem 0.55rem;
       background: rgba($primary, 0.07);
       color: $primary;
       border-radius: 20px;
       font-size: 0.75rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
     }
 
     .member-description {
