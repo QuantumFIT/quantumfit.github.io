@@ -15,24 +15,47 @@ breadcrumbs: true
 ## Contact
 
 {% comment %}
-  The name links to the e-mail address, and the address itself is not spelled
-  out. The link to the PI's own page is not here either -- it lives only on the
-  Team page (bio_link in _data/group.yml).
+  Two cards side by side: how to reach a person, and where to send post.
+  They reuse .member-grid / .member-card / .member-info from the Team page, so
+  the styling and the dark-mode rules in _sass/_dark.scss already cover them.
+
+  Links are written as raw <a> rather than markdown, which avoids needing
+  markdown="1" on the description divs -- and with it the kramdown rule that
+  every tag must start at column 0 or the closing </div>s get swallowed into
+  the paragraph above.
+
+  The name links to the e-mail address. The link to the PI's own page is
+  deliberately absent; it lives only on the Team page (bio_link in group.yml).
 {% endcomment %}
 {% assign c = site.data.positions.contact %}
-[**{{ c.name }}**](mailto:{{ c.email }})
-
-### Postal address
-
+<div class="member-grid">
+<div class="member-card">
+<div class="member-info">
+<h4>Contact person</h4>
+<div class="member-description">
 {% comment %}
-  Rendered as an <address> so each line stands on its own instead of running
-  together into a paragraph. font-style is reset because browsers italicise
-  <address> by default. No e-mail address here on purpose -- see
-  _data/positions.yml.
+  The name carries the mailto link and the address is not spelled out, as
+  requested earlier -- do not re-add a visible e-mail line here.
 {% endcomment %}
-<address style="font-style: normal; line-height: 1.6;">
+<a href="mailto:{{ c.email }}"><strong>{{ c.name }}</strong></a>{% if c.web %}<br>
+<a href="{{ c.web }}">{{ c.web | remove: "https://" | remove: "http://" | remove: "/" }}</a>{% endif %}
+</div>
+</div>
+</div>
+<div class="member-card">
+<div class="member-info">
+<h4>Postal address</h4>
+<div class="member-description">
+{% comment %}
+  An <address> so each line stands on its own instead of running together into
+  a paragraph. font-style is reset because browsers italicise it by default.
+  No e-mail address here on purpose -- see _data/positions.yml.
+{% endcomment %}
+<address style="font-style: normal; line-height: 1.6; margin: 0;">
 {{ c.name }}<br>
 {% for line in site.data.positions.postal.lines %}{{ line }}{% unless forloop.last %}<br>{% endunless %}
 {% endfor %}</address>
-
-{% if site.data.positions.postal.url %}[{{ site.data.positions.postal.url | remove: "https://" | remove: "/" }}]({{ site.data.positions.postal.url }}){% endif %}
+</div>
+</div>
+</div>
+</div>

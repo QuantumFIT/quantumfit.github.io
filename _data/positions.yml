@@ -1,19 +1,19 @@
-# Contact details shown on the About page (pages/about.md).
+# Contact details shown on the About page (pages/about.md), as two cards:
 #
-# Two separate blocks on purpose:
-#   contact -- the person to write to
-#   postal  -- where to send physical mail. It deliberately carries NO email
+#   contact -- how to reach a person electronically (name, e-mail, web)
+#   postal  -- where to send physical mail. It deliberately carries NO e-mail
 #              address; an e-mail address is not part of a postal address.
 #
-# Name, role, email and the address were taken from
+# Name, e-mail and the address were taken from
 # https://www.fit.vut.cz/person/lengal/ . Note the postal code: this file
 # previously said 612 66, which is out of date -- FIT lists 612 00.
 
-# No `url` here on purpose: the About page shows the name as plain text, and the
-# link to the PI's own page belongs to the Team page (bio_link in group.yml).
 contact:
   name: "Ondřej Lengál"
   email: "lengal@fit.vut.cz"
+  # The faculty's site. Not the PI's personal page -- that link is kept
+  # exclusive to the Team page (bio_link in group.yml).
+  web: "https://www.fit.vut.cz/"
 
 postal:
   # The addressee line is not repeated here: pages/about.md puts contact.name
@@ -25,4 +25,3 @@ postal:
     - "Božetěchova 2"
     - "612 00 Brno"
     - "Czech Republic"
-  url: "https://www.fit.vut.cz/"
