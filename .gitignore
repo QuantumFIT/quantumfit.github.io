@@ -9,3 +9,6 @@ _site/
 /vendor/
 Gemfile.lock
 .DS_Store
+# _tools/make-icons.py is only ever run as a script, but importing it to poke
+# at one function leaves bytecode behind.
+__pycache__/
