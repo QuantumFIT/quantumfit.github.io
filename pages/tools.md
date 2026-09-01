@@ -22,6 +22,17 @@ breadcrumbs: true
       paragraph, which nests the cards inside each other.
 -->
 
+<style>
+  /* .member-grid is repeat(auto-fill, minmax(300px, 1fr)) in _sass/_site.scss,
+     which puts two cards side by side. Tools carry more text than a person
+     does, so they read better stacked. Overridden here rather than in _sass so
+     the Team page keeps its multi-column grid; a page-local <style> comes after
+     the linked stylesheet, so equal specificity is enough to win. */
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+</style>
+
 <div class="member-grid">
 <div class="member-card">
 <div class="member-info">
