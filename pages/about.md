@@ -15,13 +15,12 @@ breadcrumbs: true
 ## Contact
 
 {% comment %}
-  The name links to the e-mail address, not to the PI's own page -- that link
-  lives only on the Team page (bio_link in _data/group.yml). The address is
-  spelled out underneath as well so it can be read and copied without hovering.
+  The name links to the e-mail address, and the address itself is not spelled
+  out. The link to the PI's own page is not here either -- it lives only on the
+  Team page (bio_link in _data/group.yml).
 {% endcomment %}
 {% assign c = site.data.positions.contact %}
-[**{{ c.name }}**](mailto:{{ c.email }})<br>
-[{{ c.email }}](mailto:{{ c.email }})
+[**{{ c.name }}**](mailto:{{ c.email }})
 
 ### Postal address
 
