@@ -66,8 +66,13 @@
   // The theme paints <strong> inside a member description with
   // darken($primary, 10%) -- a dark blue that is nearly invisible on a dark
   // card. Selector depth matches the theme's so this wins without !important.
+  //
+  // White rather than --qf-heading or --qf-text: this is used for names (the
+  // PI on the About contact card), and pure white sits just above the card's
+  // body text, which is rgba(#e9eef3, 0.87), giving the name a little weight
+  // without turning it into a heading colour.
   .member-card .member-info .member-description strong {
-    color: var(--qf-heading);
+    color: #fff;
   }
 
   .pi-card .pi-info .member-link,
