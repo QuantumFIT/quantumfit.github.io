@@ -31,6 +31,15 @@ breadcrumbs: true
   .member-grid {
     grid-template-columns: 1fr;
   }
+
+  /* The tool name is a link to its repository. `#page article a` (an ID
+     selector) gives every content link a dotted underline, which under a
+     heading looks like a rendering glitch; the h4 is already bold and
+     link-coloured, so the underline adds nothing. */
+  #page .entry-content .member-info h4 a,
+  #page .entry-content .member-info h4 a:hover {
+    border-bottom: none;
+  }
 </style>
 
 <div class="member-grid">

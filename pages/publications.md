@@ -73,6 +73,9 @@ breadcrumbs: true
   #page .entry-content li ul li a,
   #page .entry-content li ul li a:hover {
     border-bottom: none;
+    /* Same rule sets font-weight: bold on every content link. The reference
+       page renders these tags at normal weight. */
+    font-weight: normal;
   }
 
   .entry-content li ul li:hover {
