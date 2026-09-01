@@ -154,6 +154,18 @@
   }
 }
 
+// The theme underlines every content link -- `#page article a`, which is
+// (1,0,2) and so beats anything class-only. Under a card heading that dotted
+// line reads as a rendering glitch, and the name is already bold and
+// colour-shifted on hover, so the underline adds nothing. Matching the ID here
+// is the only way to win it without !important; it lives at the top level
+// because the rest of the card styling is nested under `.member-card`, which
+// cannot carry an ancestor prefix.
+#page .entry-content .member-card .member-info h4 a,
+#page .entry-content .member-card .member-info h4 a:hover {
+  border-bottom: none;
+}
+
 // Member grid
 .member-grid {
   display: grid;
@@ -226,14 +238,13 @@
       font-size: 1.05rem;
       font-weight: 700;
 
-      // The name is a link to the person's profile. `#page article a` (an ID
-      // selector) gives content links a dotted underline and the link colour,
-      // which under a heading reads as a rendering glitch -- so the name keeps
-      // the heading's own colour and picks up $primary only on hover.
-      a,
-      a:hover {
+      // The name is a link to the person's profile, but it should read as a
+      // name: it keeps the heading's own colour and takes $primary only on
+      // hover, rather than the link colour a bare `a` would give it. The
+      // dotted underline that comes with it needs more specificity than this
+      // block has and is removed below.
+      a {
         color: inherit;
-        border-bottom: none;
       }
 
       a:hover {
