@@ -33,12 +33,9 @@ breadcrumbs: true
 <div class="member-info">
 <h4>Contact person</h4>
 <div class="member-description">
-{% comment %}
-  The name carries the mailto link and the address is not spelled out, as
-  requested earlier -- do not re-add a visible e-mail line here.
-{% endcomment %}
-<a href="mailto:{{ c.email }}"><strong>{{ c.name }}</strong></a>{% if c.web %}<br>
-<a href="{{ c.web }}">{{ c.web | remove: "https://" | remove: "http://" | remove: "/" }}</a>{% endif %}
+<a href="mailto:{{ c.email }}"><strong>{{ c.name }}</strong></a><br>
+<a href="mailto:{{ c.email }}">{{ c.email }}</a>{% if c.web %}<br>
+<a href="{{ c.web }}">{{ c.web_label | default: c.web }}</a>{% endif %}
 </div>
 </div>
 </div>

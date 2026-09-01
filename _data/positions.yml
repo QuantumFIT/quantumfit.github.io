@@ -11,9 +11,12 @@
 contact:
   name: "Ondřej Lengál"
   email: "lengal@fit.vut.cz"
-  # The faculty's site. Not the PI's personal page -- that link is kept
-  # exclusive to the Team page (bio_link in group.yml).
-  web: "https://www.fit.vut.cz/"
+  # The PI's faculty profile page.
+  web: "https://www.fit.vut.cz/person/lengal/"
+  # Link text, given explicitly rather than derived from `web`: Liquid's
+  # `remove: "/"` strips every slash, so a URL with a path would render as
+  # "www.fit.vut.czpersonlengal".
+  web_label: "www.fit.vut.cz/person/lengal"
 
 postal:
   # The addressee line is not repeated here: pages/about.md puts contact.name
