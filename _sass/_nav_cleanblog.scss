@@ -183,3 +183,31 @@
     box-shadow: none;
   }
 }
+
+// Dark-mode toggle in the navbar.
+//
+// It is a <button>, not an <a>, because it performs an action rather than
+// navigating -- which means the theme's `.nav li a` rules do not reach it and
+// its browser-default button chrome has to be reset by hand. These values are
+// copied from those rules so it sits flush with the nav links.
+.navbar-custom .nav li .theme-toggle {
+    background: none;
+    border: 0;
+    padding: 20px;
+    color: $nav-color;
+    font-size: 16px;
+    line-height: inherit;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: $nav-faded;
+    }
+}
+
+// Matches the theme's own collapsed-navbar padding for `.nav li a`.
+@media (max-width: 767px) {
+    .navbar-custom .nav li .theme-toggle {
+        padding: 10px 20px;
+    }
+}

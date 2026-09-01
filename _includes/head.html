@@ -1,3 +1,24 @@
+{% comment %}
+  Theme bootstrap. Must stay the first thing in <head>, and must stay
+  synchronous: it runs before the browser paints, so a reader who chose a theme
+  never sees a flash of the other one. Deferring or moving it lower reintroduces
+  that flash.
+
+  Only an explicit choice is written here. With no stored choice we set nothing,
+  which leaves the @media (prefers-color-scheme) block in _theme-tokens.scss in
+  charge -- so the OS setting is the default and no JS is needed for it.
+{% endcomment %}
+<script>
+  (function () {
+    try {
+      var saved = window.localStorage.getItem('qf-theme');
+      if (saved === 'dark' || saved === 'light') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    } catch (e) { /* private mode / storage disabled: fall back to the OS */ }
+  })();
+</script>
+
 {% if site.google_analytics %}
 <!-- Google tag (gtag.js) for GA 4.0 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF0L42296D"></script>
