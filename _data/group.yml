@@ -1,16 +1,27 @@
-# Group members, shown on the Group page. These are placeholder entries
-# showing the expected shape -- replace with real people.
+# Group members, shown on the Group page (pages/group.md).
+#
+# Each section renders only if it has entries, so leaving a list empty hides
+# its heading rather than showing an empty section.
+#
+# Fields: name, image (optional, path under images/), bio or description,
+# period (optional, e.g. "since 2026"), bio_link (optional; absolute URLs and
+# site-relative paths both work).
 
 principle_investigator:
-  - name: "Full Name"
+  - name: "Ondřej Lengál"
     image:
-    bio: "Placeholder PI bio. Replace with a real bio."
-    bio_link: "/about/"
+    bio: >-
+      Associate professor at the Faculty of Information Technology, Brno
+      University of Technology. His work combines automata theory with the
+      verification and simulation of quantum circuits and programs, and also
+      covers SMT solving and efficient regular expression matching. He
+      habilitated in 2025 with *Awesome Automata: Algorithms and Applications*.
+    bio_link: "https://ondrik.github.io/"
 
-graduate_students:
-  - name: "Full Name"
-    period: "since 2026"
-    description: "Placeholder entry. Replace with a real description."
+# TODO: add the real people. Left empty on purpose rather than filled with
+# invented names -- co-authorship on the quantum papers does not by itself mean
+# somebody is a member of this group.
+graduate_students: []
 
 undergraduate_students: []
 
