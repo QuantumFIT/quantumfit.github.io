@@ -58,7 +58,8 @@
     color: var(--qf-heading);
   }
 
-  .member-card .member-info .member-period {
+  .member-card .member-info .member-period,
+  .member-card .member-info .member-role {
     background: var(--qf-border-soft);
     color: var(--qf-heading);
   }

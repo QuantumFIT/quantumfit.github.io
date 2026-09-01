@@ -4,7 +4,7 @@ layout: page
 title: Team
 description: "The people in the QuantumFIT research group."
 comments: false
-modified: 2026-08-28
+modified: 2026-09-01
 breadcrumbs: true
 ---
 
@@ -34,14 +34,15 @@ breadcrumbs: true
   entries, so a group with no BSc students (say) shows no empty BSc heading.
   The Principal Investigator section above is deliberately not guarded.
 {% endcomment %}
-{% if site.data.group.graduate_students.size > 0 %}
+{% if site.data.group.phd_and_postdocs.size > 0 %}
 <div class="group-section">
-  <h2 class="group-section-title">Ph.D. Students</h2>
+  <h2 class="group-section-title">Ph.D. Students and Postdocs</h2>
   <div class="member-grid">
-  {% for member in site.data.group.graduate_students %}
+  {% for member in site.data.group.phd_and_postdocs %}
     <div class="member-card">
       <div class="member-info">
         <h4>{{ member.name }}</h4>
+        {% if member.role %}<span class="member-role">{{ member.role }}</span>{% endif %}
         {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
         <div class="member-description">{{ member.description | markdownify }}</div>
       </div>

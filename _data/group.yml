@@ -1,7 +1,8 @@
-# Group members, shown on the Group page (pages/group.md).
+# Group members, shown on the Team page (pages/team.md).
 #
 # Fields: name, image (optional, path under images/), bio (PI) or description
-# (everyone else), period (optional, e.g. "since 2026"), bio_link (optional).
+# (everyone else), role (required in phd_and_postdocs, see below), period
+# (optional, e.g. "since 2026"), bio_link (optional).
 #
 # bio_link must be a SITE-RELATIVE path: pages/team.md renders it as
 # {{ site.url }}{{ member.bio_link }}, so an absolute URL would come out as
@@ -18,10 +19,33 @@ principle_investigator:
       habilitated in 2025 with *Awesome Automata: Algorithms and Applications*.
     bio_link: "/about/"
 
-# TODO: add the real people. Left empty on purpose rather than filled with
-# invented names -- being a co-author on the quantum papers does not by itself
-# mean somebody is a member of this group.
-graduate_students: []
+# TODO: the descriptions below say only the affiliation. Research blurbs
+# are left for the people themselves to supply rather than invented here, in
+# the same spirit as the note that used to stand where these entries now are:
+# being a co-author on the quantum papers does not by itself make somebody a
+# member of this group, and it does not tell us what they would want said.
+
+# Ph.D. students and postdocs share one list rather than sitting in separate
+# sections: the group is small. Which of the two a person is is carried by
+# `role`, rendered as a pill on the card, so EVERY entry here needs one --
+# without it the card gives no way to tell. Use exactly "Ph.D. Student" or
+# "Postdoc"; the descriptions deliberately do not repeat the role. Ordered by
+# surname.
+phd_and_postdocs:
+  - name: "Vojtěch Havlena"
+    role: "Postdoc"
+    image:
+    description: >-
+      Faculty of Information Technology, Brno University of Technology.
+
+  - name: "Michal Hečko"
+    role: "Ph.D. Student"
+    image:
+    description: >-
+      Faculty of Information Technology, Brno University of Technology.
+      Co-author of
+      [Parameterized Verification of Quantum Circuits](https://doi.org/10.1145/3776712)
+      (POPL'26).
 
 undergraduate_students: []
 
