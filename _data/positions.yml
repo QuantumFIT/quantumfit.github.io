@@ -11,12 +11,15 @@
 contact:
   name: "Ondřej Lengál"
   email: "lengal@fit.vut.cz"
-  # The PI's faculty profile page.
-  web: "https://www.fit.vut.cz/person/lengal/"
-  # Link text, given explicitly rather than derived from `web`: Liquid's
-  # `remove: "/"` strips every slash, so a URL with a path would render as
-  # "www.fit.vut.czpersonlengal".
-  web_label: "www.fit.vut.cz/person/lengal"
+  # Web pages, rendered one per line in this order: faculty profile first,
+  # personal page second. `label` is given explicitly rather than derived from
+  # the URL, because Liquid's `remove: "/"` strips every slash and would turn
+  # a URL with a path into "www.fit.vut.czpersonlengal".
+  web:
+    - url: "https://www.fit.vut.cz/person/lengal/"
+      label: "www.fit.vut.cz/person/lengal"
+    - url: "https://ondrik.github.io/"
+      label: "ondrik.github.io"
 
 postal:
   # The addressee line is not repeated here: pages/about.md puts contact.name

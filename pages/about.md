@@ -24,8 +24,9 @@ breadcrumbs: true
   every tag must start at column 0 or the closing </div>s get swallowed into
   the paragraph above.
 
-  The name links to the e-mail address. The link to the PI's own page is
-  deliberately absent; it lives only on the Team page (bio_link in group.yml).
+  The name is plain text; the e-mail address and each web page below it are the
+  links. contact.web is a list, rendered one per line in the order given, so
+  adding another page means adding a url/label pair in _data/positions.yml.
 {% endcomment %}
 {% assign c = site.data.positions.contact %}
 <div class="member-grid">
@@ -34,8 +35,8 @@ breadcrumbs: true
 <h4>Contact person</h4>
 <div class="member-description">
 <strong>{{ c.name }}</strong><br>
-<a href="mailto:{{ c.email }}">{{ c.email }}</a>{% if c.web %}<br>
-<a href="{{ c.web }}">{{ c.web_label | default: c.web }}</a>{% endif %}
+<a href="mailto:{{ c.email }}">{{ c.email }}</a>{% for w in c.web %}<br>
+<a href="{{ w.url }}">{{ w.label | default: w.url }}</a>{% endfor %}
 </div>
 </div>
 </div>
