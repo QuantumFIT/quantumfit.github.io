@@ -3,7 +3,7 @@
 # Fields: name, image (optional, path under images/), bio (PI) or description
 # (everyone else), period (optional, e.g. "since 2026"), bio_link (optional).
 #
-# bio_link must be a SITE-RELATIVE path: pages/group.md renders it as
+# bio_link must be a SITE-RELATIVE path: pages/team.md renders it as
 # {{ site.url }}{{ member.bio_link }}, so an absolute URL would come out as
 # https://quantumfit.github.io/https://example.org/ .
 

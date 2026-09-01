@@ -14,9 +14,13 @@ breadcrumbs: true
 
 ## Contact
 
+{% comment %}
+  The name is deliberately not a link here. The link to the PI's own page lives
+  on the Team page (bio_link in _data/group.yml), so it is not duplicated.
+{% endcomment %}
 {% assign c = site.data.positions.contact %}
-{% if c.url %}[**{{ c.name }}**]({{ c.url }}){% else %}**{{ c.name }}**{% endif %}
-&middot; [{{ c.email }}](mailto:{{ c.email }})
+**{{ c.name }}**<br>
+[{{ c.email }}](mailto:{{ c.email }})
 
 ### Postal address
 
