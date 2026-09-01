@@ -14,8 +14,20 @@ breadcrumbs: true
 
 ## Contact
 
-{% for org in site.data.positions %}
-**{{ org.title }}**{% if org.department %}, {{ org.department }}{% endif %}
-{% if org.address %}{{ org.address }}{% endif %}{% if org.location %}, {{ org.location }}{% endif %}
-{% if org.email %}Email: [{{ org.email }}](mailto:{{ org.email }}){% endif %}
-{% endfor %}
+{% assign c = site.data.positions.contact %}
+{% if c.url %}[**{{ c.name }}**]({{ c.url }}){% else %}**{{ c.name }}**{% endif %}, {{ c.role }}
+&middot; [{{ c.email }}](mailto:{{ c.email }})
+
+### Postal address
+
+{% comment %}
+  Rendered as an <address> so each line stands on its own instead of running
+  together into a paragraph. font-style is reset because browsers italicise
+  <address> by default. No e-mail address here on purpose -- see
+  _data/positions.yml.
+{% endcomment %}
+<address style="font-style: normal; line-height: 1.6;">
+{% for line in site.data.positions.postal.lines %}{{ line }}{% unless forloop.last %}<br>{% endunless %}
+{% endfor %}</address>
+
+{% if site.data.positions.postal.url %}[{{ site.data.positions.postal.url | remove: "https://" | remove: "/" }}]({{ site.data.positions.postal.url }}){% endif %}
