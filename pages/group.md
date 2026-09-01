@@ -30,7 +30,7 @@ breadcrumbs: true
 </div>
 
 <div class="group-section">
-  <h2 class="group-section-title">Graduate Students</h2>
+  <h2 class="group-section-title">Ph.D. Students</h2>
   <div class="member-grid">
   {% for member in site.data.group.graduate_students %}
     <div class="member-card">
@@ -45,7 +45,7 @@ breadcrumbs: true
 </div>
 
 <div class="group-section">
-  <h2 class="group-section-title">Undergraduate Students</h2>
+  <h2 class="group-section-title">BSc/MSc Students</h2>
   <div class="member-grid">
   {% for member in site.data.group.undergraduate_students %}
     <div class="member-card">

@@ -183,3 +183,42 @@
     box-shadow: none;
   }
 }
+
+// Dark-mode toggle in the navbar.
+//
+// It is a <button>, not an <a>, because it performs an action rather than
+// navigating -- which means the theme's `.nav li a` rules do not reach it and
+// its browser-default button chrome has to be reset by hand. These values are
+// copied from those rules so it sits flush with the nav links.
+.navbar-custom .nav li .theme-toggle {
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    // These must match `.navbar-custom .nav li a` above (padding 20px,
+    // font-size 14px) exactly. The navbar has no fixed height, so a taller
+    // control grows the bar and pushes it down over the breadcrumb strip.
+    // display:block matches Bootstrap's `.nav > li > a`. As an inline-block the
+    // button sits on a text baseline, and the descender gap under it made the
+    // navbar 1px taller than the anchors do.
+    display: block;
+    padding: 20px;
+    font-size: 14px;
+    // 20px, not inherit: Bootstrap gives `.nav > li > a` an explicit 20px line
+    // box, so inheriting the body's 22.4px made this control 2.4px taller than
+    // the links and grew the whole navbar over the breadcrumb strip.
+    line-height: 20px;
+    color: $nav-color;
+
+    &:hover,
+    &:focus {
+        color: $nav-faded;
+    }
+}
+
+// Matches the theme's own collapsed-navbar padding for `.nav li a`.
+@media (max-width: 767px) {
+    .navbar-custom .nav li .theme-toggle {
+        padding: 10px 20px;
+    }
+}

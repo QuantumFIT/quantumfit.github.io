@@ -3,13 +3,19 @@ Web page of QuantumFIT, the Quantum Computing Systems research group at Faculty 
 
 ## Structure
 
-Built with Jekyll, using the theme from [liuyxpp/liuyxpp.github.io](https://github.com/liuyxpp/liuyxpp.github.io)
-pulled in at build time via `remote_theme:` in `_config.yml`, pinned to a fixed commit. GitHub Pages fetches
-it automatically -- the theme is not cloned/forked into this repo.
+Built with Jekyll. The theme is **vendored into this repo** -- `_sass/`, `_includes/`, `_layouts/` and
+`assets/` were copied from [liuyxpp/liuyxpp.github.io](https://github.com/liuyxpp/liuyxpp.github.io)
+at commit `8d46aef`, which `remote_theme:` used to be pinned to. There is no `remote_theme:` any more;
+those directories are ours to edit.
 
-`_layouts/home.html` is a local override of the theme's homepage layout: upstream hardcodes its own group's
-branding and links directly in that layout file (not in config/data), so it had to be copied and adapted here
-rather than left untouched. Every other theme file (includes, sass, assets) is pulled unmodified.
+It was vendored to make site-wide dark mode possible: the theme's palette is Sass variables, which are
+compile-time, while runtime theme switching needs CSS custom properties -- and `lighten()`/`darken()`/`mix()`
+hard-error when handed a `var()`. Roughly 140 such calls sit inside theme partials, which had to become
+editable. Theme partials the site does not use (`_syntax`, `_gist`, `_dl-menu`, `_publication`, `_bloghome`,
+`_sidebar`) have been removed.
+
+`_layouts/home.html` was already adapted before vendoring: upstream hardcodes its own group's branding
+and links in that layout rather than in config/data.
 
 - `pages/` -- site pages (Group, Publications, News, About), plus `index.html` for the home page
 - `_data/group.yml` -- group members, shown on the Group page (placeholder entries)
@@ -25,13 +31,30 @@ automatically on every push and is served at https://quantumfit.github.io/.
 
 ## Local preview
 
+Now that the theme is vendored, `jekyll-remote-theme` is no longer needed and a modern Jekyll can build
+the site directly. Do **not** use `bundle exec`: the `Gemfile` pins the legacy `github-pages` gem chain,
+which fails on a current system Ruby (missing `csv`/`bigdecimal`/`logger`, or `String#tainted?` from an
+old `liquid`). Run Jekyll from a directory that has no `Gemfile` so it does not try to bundle-load:
+
 ```
-bundle install
-bundle exec jekyll serve
+cd "$(mktemp -d)"
+jekyll serve --source /path/to/quantumfit.github.io
 ```
 
-Requires Ruby matching GitHub Pages' legacy build environment (Ruby ~2.7). On a newer system Ruby
-(3.4+/4.x), the bundled `github-pages` gem chain may fail with missing-stdlib errors (`csv`, `bigdecimal`,
-`logger`, ...) or a `String#tainted?` error from an old `liquid` version -- both are local-environment
-artifacts of running an old gem stack on a new Ruby, not real GitHub Pages build failures. Use a Ruby version
-manager (e.g. `rbenv install 2.7.8`) for a faithful local preview, or just push and check the Pages build log.
+`site.url` is the production URL, so page assets are absolute and a plain local build still pulls CSS
+from the live site. For a genuinely local preview, overlay the URL:
+
+```
+printf 'url: "http://localhost:8899"\n' > /tmp/local.yml
+cd "$(mktemp -d)"
+jekyll build --source /path/to/quantumfit.github.io \
+  --config /path/to/quantumfit.github.io/_config.yml,/tmp/local.yml \
+  --destination ./_localsite
+(cd _localsite && python3 -m http.server 8899)
+```
+
+Sass emits deprecation warnings (`@import`, `lighten()`, `$a/$b`) under dart-sass but compiles without
+errors. To iterate on colours alone, skip Jekyll entirely -- strip the front matter from
+`assets/css/main.scss` and run `sass --load-path=_sass`.
+
+The `Gemfile` is kept only because GitHub Pages' own build reads it.

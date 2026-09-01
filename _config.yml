@@ -11,10 +11,14 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Theme pulled in at build time; not cloned into this repo.
-# https://github.com/liuyxpp/liuyxpp.github.io , pinned to a fixed commit
-# so an upstream change can't silently alter this site.
-remote_theme: "liuyxpp/liuyxpp.github.io@8d46aef2e6d81e7757745f816aaedc55f6bb4c9f"
+# No theme setting: the theme is vendored into this repo (_sass, _includes,
+# _layouts, assets), copied from
+# https://github.com/liuyxpp/liuyxpp.github.io @ 8d46aef2e6d81e7757745f816aaedc55f6bb4c9f
+# -- the commit `remote_theme:` used to be pinned to. It was vendored so the
+# colour definitions could be edited directly, which is what site-wide dark
+# mode needs: the theme's palette is Sass variables, and dark mode needs
+# runtime CSS custom properties, so `lighten()`/`darken()`/`mix()` call sites
+# inside the theme's own partials had to become editable.
 
 # Main author of the website (see _data/authors.yml)
 author: quantumfit

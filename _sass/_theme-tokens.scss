@@ -1,0 +1,92 @@
+// Theme tokens -- the single place where light and dark palettes are defined.
+//
+// Why CSS custom properties and not Sass variables: Sass variables are resolved
+// at compile time, so they cannot switch per reader. These tokens are resolved
+// by the browser, so one stylesheet serves both themes.
+//
+// The light values are written as #{$sass-var} rather than repeated literals, so
+// they stay tied to _variables.scss and cannot drift from it. Partials were
+// changed to use var(--qf-*) wherever a palette variable was used *directly* as
+// a colour value. Where a palette variable sits inside lighten()/darken()/mix()
+// the call is still compile-time and still light-only -- those are decorative
+// (hover tints, shadows, gradients) and are corrected in _dark.scss where dark
+// mode needs it.
+//
+// Three blocks, deliberately in this order:
+//   :root                         light, and the fallback when nothing else applies
+//   @media (prefers-color-scheme) dark for readers whose OS asks for it, unless
+//                                 they explicitly chose light on this site
+//   :root[data-theme="dark"]      explicit choice, must beat the media query
+// The media query is guarded with :not([data-theme="light"]) so that a reader on
+// a dark OS who picks light here actually gets light.
+
+@mixin qf-dark-tokens {
+  --qf-bg:            #10171f;
+  --qf-surface:       #1a222c;
+  --qf-surface-alt:   #151d26;
+
+  --qf-text:          #{rgba(#e9eef3, 0.87)};
+  --qf-text-light:    #{rgba(#e9eef3, 0.6)};
+  --qf-heading:       #8fb4d9;
+
+  --qf-primary:       #7aa7d0;
+  --qf-secondary:     #2fd6b4;
+  --qf-accent-rule:   #a1d044;
+
+  --qf-link:          #6cb6e8;
+  --qf-link-hover:    #9bd0f5;
+  --qf-link-rule:     #{rgba(#6cb6e8, 0.35)};
+
+  --qf-border:        #{rgba(#8fb4d9, 0.18)};
+  --qf-border-soft:   #{rgba(#8fb4d9, 0.1)};
+  --qf-shadow:        #{rgba(#000, 0.5)};
+
+  --qf-nav-bg:        #16202b;
+  --qf-footer-text:   #{rgba(#e9eef3, 0.6)};
+
+  --qf-hero-bg:       #060d16;
+
+  // Publication link pills (pages/publications.md)
+  --qf-pill-border:       #{rgba(#6cb6e8, 0.45)};
+  --qf-pill-hover-border: #9bd0f5;
+  --qf-pill-hover-bg:     #{rgba(#6cb6e8, 0.12)};
+}
+
+:root {
+  --qf-bg:            #{$body-color};
+  --qf-surface:       #{$white};
+  --qf-surface-alt:   #{$body-color};
+
+  --qf-text:          #{$text-color};
+  --qf-text-light:    #{$text-color-light};
+  --qf-heading:       #{$primary};
+
+  --qf-primary:       #{$primary};
+  --qf-secondary:     #{$secondary};
+  --qf-accent-rule:   #a1d044;
+
+  --qf-link:          #{$link-color};
+  --qf-link-hover:    #{$link-color-hover};
+  --qf-link-rule:     #{lighten($link-color, 55%)};
+
+  --qf-border:        #{rgba($primary, 0.1)};
+  --qf-border-soft:   #{rgba($primary, 0.06)};
+  --qf-shadow:        #{rgba(#000, 0.1)};
+
+  --qf-nav-bg:        #{$navbar-bgcolor};
+  --qf-footer-text:   #{rgba(#fff, 0.5)};
+
+  --qf-hero-bg:       #0a1628;
+
+  // Publication link pills (pages/publications.md). Light values are the
+  // literals the pills shipped with, so light mode is unchanged.
+  --qf-pill-border:       #{rgba($link-color, 0.4)};
+  --qf-pill-hover-border: #{$link-color};
+  --qf-pill-hover-bg:     #{$body-color};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include qf-dark-tokens; }
+}
+
+:root[data-theme="dark"] { @include qf-dark-tokens; }
