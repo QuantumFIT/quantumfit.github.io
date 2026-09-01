@@ -27,6 +27,26 @@ breadcrumbs: true
   original light-mode values, used only if the tokens ever go missing.
 -->
 <style>
+  /* One rectangle per publication.
+     No markup change was needed: each publication is already a top-level <li>
+     of a markdown list, so styling `.entry-content > ul > li` turns every entry
+     into a card and leaves the nested pill lists (li ul) untouched.
+     `> ul >` matters -- a descendant selector would also catch the pills. */
+  #page .entry-content > ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  #page .entry-content > ul > li {
+    background: var(--qf-surface-alt, #f1f8ff);
+    border: 1px solid var(--qf-border, rgba(74, 107, 138, 0.1));
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem 0.4rem;
+    margin-bottom: 1.1rem;
+    box-shadow: 0 2px 10px var(--qf-shadow, rgba(0, 0, 0, 0.05));
+  }
+
   .entry-content li ul {
     display: flex;
     flex-wrap: wrap;
