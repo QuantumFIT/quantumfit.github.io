@@ -1,11 +1,18 @@
 # Group members, shown on the Team page (pages/team.md).
 #
-# Fields: name, image (optional, path under images/), bio (PI) or description
-# (everyone else), role (required in phd_and_postdocs, see below), period
-# (optional, e.g. "since 2026"), bio_link (optional).
+# Fields for the PI: name, image (optional, path under images/), bio,
+# bio_link (optional).
+# Fields for everyone else: name, web, role (required in phd_and_postdocs,
+# see below), period (optional, e.g. "since 2026").
 #
-# bio_link must be a SITE-RELATIVE path: pages/team.md renders it as
-# {{ site.url }}{{ member.bio_link }}, so an absolute URL would come out as
+# Non-PI cards carry the name and the role tag and nothing else -- no bio, no
+# affiliation. Everyone here is at FIT BUT, so printing that on every card said
+# nothing; `web` (an ABSOLUTE URL, the person's FIT BUT profile) turns the name
+# into the link to the details instead.
+#
+# bio_link, used only by the PI, is the opposite: it must be a SITE-RELATIVE
+# path, because pages/team.md renders it as {{ site.url }}{{ member.bio_link }}
+# and an absolute URL would come out as
 # https://quantumfit.github.io/https://example.org/ .
 
 principle_investigator:
@@ -19,33 +26,23 @@ principle_investigator:
       habilitated in 2025 with *Awesome Automata: Algorithms and Applications*.
     bio_link: "/about/"
 
-# TODO: the descriptions below say only the affiliation. Research blurbs
-# are left for the people themselves to supply rather than invented here, in
-# the same spirit as the note that used to stand where these entries now are:
-# being a co-author on the quantum papers does not by itself make somebody a
-# member of this group, and it does not tell us what they would want said.
-
-# Ph.D. students and postdocs share one list rather than sitting in separate
+# PhD students and postdocs share one list rather than sitting in separate
 # sections: the group is small. Which of the two a person is is carried by
-# `role`, rendered as a pill on the card, so EVERY entry here needs one --
-# without it the card gives no way to tell. Use exactly "Ph.D. Student" or
-# "Postdoc"; the descriptions deliberately do not repeat the role. Ordered by
-# surname.
+# `role`, rendered as a pill under the name, so EVERY entry here needs one --
+# a card is otherwise just a name, with no way to tell. Use exactly
+# "PhD Student" or "Postdoc". Ordered by surname.
+#
+# The `web` URLs were verified to resolve and to name the right person; FIT
+# logins are not derivable from the surname (Havlena is `ihavlena`, not
+# `havlena`), so check a new one rather than pattern-match it.
 phd_and_postdocs:
   - name: "Vojtěch Havlena"
     role: "Postdoc"
-    image:
-    description: >-
-      Faculty of Information Technology, Brno University of Technology.
+    web: "https://www.fit.vut.cz/person/ihavlena/"
 
   - name: "Michal Hečko"
-    role: "Ph.D. Student"
-    image:
-    description: >-
-      Faculty of Information Technology, Brno University of Technology.
-      Co-author of
-      [Parameterized Verification of Quantum Circuits](https://doi.org/10.1145/3776712)
-      (POPL'26).
+    role: "PhD Student"
+    web: "https://www.fit.vut.cz/person/ihecko/"
 
 undergraduate_students: []
 

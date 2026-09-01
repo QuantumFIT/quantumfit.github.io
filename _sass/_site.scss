@@ -225,9 +225,23 @@
       color: darken($primary, 15%);
       font-size: 1.05rem;
       font-weight: 700;
+
+      // The name is a link to the person's profile. `#page article a` (an ID
+      // selector) gives content links a dotted underline and the link colour,
+      // which under a heading reads as a rendering glitch -- so the name keeps
+      // the heading's own colour and picks up $primary only on hover.
+      a,
+      a:hover {
+        color: inherit;
+        border-bottom: none;
+      }
+
+      a:hover {
+        color: $primary;
+      }
     }
 
-    // One pill style, two uses: the role tag ("Postdoc", "Ph.D. Student") and
+    // One pill style, two uses: the role tag ("Postdoc", "PhD Student") and
     // the optional period ("since 2026"). They can appear together, hence the
     // right margin.
     .member-period,

@@ -33,18 +33,21 @@ breadcrumbs: true
   The three sections below render only when their list in _data/group.yml has
   entries, so a group with no BSc students (say) shows no empty BSc heading.
   The Principal Investigator section above is deliberately not guarded.
+
+  A non-PI card is a name and a role tag, nothing more: the name links to the
+  person's FIT BUT profile (`web` in _data/group.yml), which is where a bio
+  belongs. Only the PI carries prose here.
 {% endcomment %}
 {% if site.data.group.phd_and_postdocs.size > 0 %}
 <div class="group-section">
-  <h2 class="group-section-title">Ph.D. Students and Postdocs</h2>
+  <h2 class="group-section-title">PhD Students and Postdocs</h2>
   <div class="member-grid">
   {% for member in site.data.group.phd_and_postdocs %}
     <div class="member-card">
       <div class="member-info">
-        <h4>{{ member.name }}</h4>
+        <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
         {% if member.role %}<span class="member-role">{{ member.role }}</span>{% endif %}
         {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
-        <div class="member-description">{{ member.description | markdownify }}</div>
       </div>
     </div>
   {% endfor %}
@@ -59,9 +62,8 @@ breadcrumbs: true
   {% for member in site.data.group.undergraduate_students %}
     <div class="member-card">
       <div class="member-info">
-        <h4>{{ member.name }}</h4>
+        <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
         {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
-        <div class="member-description">{{ member.description | markdownify }}</div>
       </div>
     </div>
   {% endfor %}
@@ -76,9 +78,8 @@ breadcrumbs: true
   {% for member in site.data.group.alumni %}
     <div class="member-card">
       <div class="member-info">
-        <h4>{{ member.name }}</h4>
+        <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
         {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
-        <div class="member-description">{{ member.description | markdownify }}</div>
       </div>
     </div>
   {% endfor %}

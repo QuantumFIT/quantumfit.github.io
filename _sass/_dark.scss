@@ -54,8 +54,13 @@
   }
 
   .pi-card .pi-info h3,
-  .member-card .member-info h4 {
+  .member-card .member-info h4,
+  .member-card .member-info h4 a {
     color: var(--qf-heading);
+  }
+
+  .member-card .member-info h4 a:hover {
+    color: var(--qf-link);
   }
 
   .member-card .member-info .member-period,
