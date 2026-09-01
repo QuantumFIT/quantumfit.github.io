@@ -22,20 +22,13 @@ breadcrumbs: true
       <h3>{{ member.name }}</h3>
       <div class="member-bio">{{ member.bio | markdownify }}</div>
       {% if member.bio_link %}
-      {% comment %}Absolute URLs are used as-is; only site-relative paths get site.url.{% endcomment %}
-      {% if member.bio_link contains "//" %}{% assign bio_href = member.bio_link %}{% else %}{% assign bio_href = site.url | append: member.bio_link %}{% endif %}
-      <a href="{{ bio_href }}" class="member-link">View Biography</a>
+      <a href="{{ site.url }}{{ member.bio_link }}" class="member-link">View Biography</a>
       {% endif %}
     </div>
   </div>
   {% endfor %}
 </div>
 
-{% comment %}
-  Each section below renders only when its list has entries, so a section that
-  is not filled in yet stays hidden instead of showing a bare heading.
-{% endcomment %}
-{% if site.data.group.graduate_students.size > 0 %}
 <div class="group-section">
   <h2 class="group-section-title">Ph.D. Students</h2>
   <div class="member-grid">
@@ -50,9 +43,7 @@ breadcrumbs: true
   {% endfor %}
   </div>
 </div>
-{% endif %}
 
-{% if site.data.group.undergraduate_students.size > 0 %}
 <div class="group-section">
   <h2 class="group-section-title">BSc/MSc Students</h2>
   <div class="member-grid">
@@ -67,9 +58,7 @@ breadcrumbs: true
   {% endfor %}
   </div>
 </div>
-{% endif %}
 
-{% if site.data.group.alumni.size > 0 %}
 <div class="group-section">
   <h2 class="group-section-title">Alumni</h2>
   <div class="member-grid">
@@ -84,4 +73,3 @@ breadcrumbs: true
   {% endfor %}
   </div>
 </div>
-{% endif %}

@@ -1,11 +1,11 @@
 # Group members, shown on the Group page (pages/group.md).
 #
-# Each section renders only if it has entries, so leaving a list empty hides
-# its heading rather than showing an empty section.
+# Fields: name, image (optional, path under images/), bio (PI) or description
+# (everyone else), period (optional, e.g. "since 2026"), bio_link (optional).
 #
-# Fields: name, image (optional, path under images/), bio or description,
-# period (optional, e.g. "since 2026"), bio_link (optional; absolute URLs and
-# site-relative paths both work).
+# bio_link must be a SITE-RELATIVE path: pages/group.md renders it as
+# {{ site.url }}{{ member.bio_link }}, so an absolute URL would come out as
+# https://quantumfit.github.io/https://example.org/ .
 
 principle_investigator:
   - name: "Ondřej Lengál"
@@ -16,11 +16,11 @@ principle_investigator:
       verification and simulation of quantum circuits and programs, and also
       covers SMT solving and efficient regular expression matching. He
       habilitated in 2025 with *Awesome Automata: Algorithms and Applications*.
-    bio_link: "https://ondrik.github.io/"
+    bio_link: "/about/"
 
 # TODO: add the real people. Left empty on purpose rather than filled with
-# invented names -- co-authorship on the quantum papers does not by itself mean
-# somebody is a member of this group.
+# invented names -- being a co-author on the quantum papers does not by itself
+# mean somebody is a member of this group.
 graduate_students: []
 
 undergraduate_students: []
