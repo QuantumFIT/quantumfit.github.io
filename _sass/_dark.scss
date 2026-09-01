@@ -38,6 +38,25 @@
     > *:not(:last-child)::after { color: var(--qf-text-light); }
   }
 
+  // ---- inline code -------------------------------------------------------
+  // Two places paint an inline <code> and neither knew about dark mode:
+  // components/_type.scss sets --code-color and --code-bg on :root as
+  // literals, and _typography.scss then overrides the background and adds a
+  // border for code inside a p or li. Untouched, a code span comes out #333
+  // on #f8f9fa -- a bright white chip in the middle of a dark page.
+  //
+  // The tokens are redefined here rather than in _theme-tokens.scss because
+  // they are the vendored component's, not ours; this keeps every dark-mode
+  // decision in one file.
+  --code-color: var(--qf-text);
+  --code-bg: var(--qf-border-soft);
+
+  p code,
+  li code {
+    background-color: var(--qf-border-soft);
+    border-color: var(--qf-border);
+  }
+
   // ---- group page cards --------------------------------------------------
   .pi-card,
   .member-card,

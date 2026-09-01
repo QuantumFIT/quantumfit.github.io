@@ -19,6 +19,8 @@
   --link-hover-color: #0056b3;
 
   // Code styles
+  // Dead: _typography.scss sets `code { font-family: $code-font }` and is
+  // imported later, so it wins. Change $code-font in _variables.scss, not this.
   --code-font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   --code-color: #333;
   --code-bg: #f8f9fa;

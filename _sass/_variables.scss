@@ -2,7 +2,18 @@
 $base-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 $heading-font: 'Lato', 'Open Sans', sans-serif;
 $site-title-font: $heading-font;
-$code-font: "Roboto Mono", monospace;
+// Roboto Mono is not among the four faces assets/css/fonts.css loads, and the
+// Google Fonts link that used to fetch it is commented out in head.html, so
+// this stack never reached it -- every inline <code> fell through to the
+// browser's generic `monospace`, which on Linux is DejaVu Sans Mono: wide,
+// slabby, and the reason code spans looked like a typewriter. Naming real
+// faces first picks up something modern on each platform (SF Mono on macOS,
+// Cascadia or Segoe UI Mono on Windows, Noto Sans Mono on Linux) at no
+// download cost. Roboto Mono stays late in the list in case it is ever
+// self-hosted.
+$code-font: ui-monospace, "SF Mono", SFMono-Regular, "Cascadia Mono",
+            "Segoe UI Mono", "Noto Sans Mono", "Roboto Mono", Menlo, Consolas,
+            monospace;
 
 $doc-font-size: 14;
 $doc-line-height: 26;
