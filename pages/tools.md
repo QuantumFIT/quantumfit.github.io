@@ -8,8 +8,25 @@ modified: 2026-09-01
 breadcrumbs: true
 ---
 
-## AutoQ
+<!--
+  Each tool is a card, reusing .member-grid / .member-card / .member-info from
+  the Team page (styled in _sass/_site.scss) rather than introducing a parallel
+  set of classes. That keeps the two pages looking like one site, and means the
+  dark-mode rules already in _sass/_dark.scss cover these cards too.
 
+  Two kramdown constraints, both of which silently mangle the page if broken:
+    - markdown="1" is required on the description div, otherwise the links
+      inside render as literal [text](url).
+    - every tag and every line of content must start at column 0. Indenting
+      them makes kramdown swallow the closing </div>s into the preceding
+      paragraph, which nests the cards inside each other.
+-->
+
+<div class="member-grid">
+<div class="member-card">
+<div class="member-info">
+<h4>AutoQ</h4>
+<div class="member-description" markdown="1">
 An automata-based verifier for quantum circuits and programs. Sets of quantum
 states are represented as tree automata, which lets a circuit be checked against
 a pre-/post-condition specification --- or searched for bugs --- without
@@ -27,9 +44,13 @@ Introduced in
 (TACAS'25) and
 [a practical specification language](https://doi.org/10.1007/978-3-032-32537-2_15)
 (CAV'26).
-
-## Medusa
-
+</div>
+</div>
+</div>
+<div class="member-card">
+<div class="member-info">
+<h4>Medusa</h4>
+<div class="member-description" markdown="1">
 An MTBDD-based quantum circuit simulator. It uses symbolic execution together
 with loop summarization, so that a repeated block of gates is analysed once
 rather than unrolled.
@@ -39,3 +60,7 @@ rather than unrolled.
 Introduced in
 [Accelerating Quantum Circuit Simulation with Symbolic Execution and Loop Summarization](https://doi.org/10.1145/3676536.3676711)
 (ICCAD'24).
+</div>
+</div>
+</div>
+</div>

@@ -1,8 +1,8 @@
 ---
-permalink: /group/
+permalink: /team/
 layout: page
-title: Group Members
-description: "Group members: a list of current group members and alumni."
+title: Team
+description: "The people in the QuantumFIT research group."
 comments: false
 modified: 2026-08-28
 breadcrumbs: true
