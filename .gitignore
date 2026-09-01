@@ -3,6 +3,9 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .bundle/
-vendor/
+# Anchored to the repo root on purpose: this is Bundler's vendor dir. An
+# unanchored `vendor/` would also swallow the vendored theme's
+# _sass/vendor/ (Font Awesome) and assets/js/vendor/ (jQuery, Bootstrap).
+/vendor/
 Gemfile.lock
 .DS_Store

@@ -1,0 +1,15 @@
+@import "variables";
+
+// Sidebar specific styles
+.sidebar {
+  .sidebar-widget {
+    ul {
+      padding-left: 0;
+      margin-left: 0;
+
+      li {
+        padding-left: 0.3rem;
+      }
+    }
+  }
+}
