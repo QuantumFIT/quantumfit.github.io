@@ -29,6 +29,12 @@ breadcrumbs: true
   {% endfor %}
 </div>
 
+{% comment %}
+  The three sections below render only when their list in _data/group.yml has
+  entries, so a group with no BSc students (say) shows no empty BSc heading.
+  The Principal Investigator section above is deliberately not guarded.
+{% endcomment %}
+{% if site.data.group.graduate_students.size > 0 %}
 <div class="group-section">
   <h2 class="group-section-title">Ph.D. Students</h2>
   <div class="member-grid">
@@ -43,7 +49,9 @@ breadcrumbs: true
   {% endfor %}
   </div>
 </div>
+{% endif %}
 
+{% if site.data.group.undergraduate_students.size > 0 %}
 <div class="group-section">
   <h2 class="group-section-title">BSc/MSc Students</h2>
   <div class="member-grid">
@@ -58,7 +66,9 @@ breadcrumbs: true
   {% endfor %}
   </div>
 </div>
+{% endif %}
 
+{% if site.data.group.alumni.size > 0 %}
 <div class="group-section">
   <h2 class="group-section-title">Alumni</h2>
   <div class="member-grid">
@@ -73,3 +83,4 @@ breadcrumbs: true
   {% endfor %}
   </div>
 </div>
+{% endif %}
