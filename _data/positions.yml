@@ -11,11 +11,12 @@
 
 contact:
   name: "Ondřej Lengál"
-  role: "Principal Investigator"
   email: "lengal@fit.vut.cz"
   url: "https://ondrik.github.io/"
 
 postal:
+  # The addressee line is not repeated here: pages/about.md puts contact.name
+  # at the top of this block, so the two cannot drift apart.
   # Rendered one per line, in this order.
   lines:
     - "Faculty of Information Technology"

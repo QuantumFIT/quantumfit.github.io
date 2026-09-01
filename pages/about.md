@@ -15,7 +15,7 @@ breadcrumbs: true
 ## Contact
 
 {% assign c = site.data.positions.contact %}
-{% if c.url %}[**{{ c.name }}**]({{ c.url }}){% else %}**{{ c.name }}**{% endif %}, {{ c.role }}
+{% if c.url %}[**{{ c.name }}**]({{ c.url }}){% else %}**{{ c.name }}**{% endif %}
 &middot; [{{ c.email }}](mailto:{{ c.email }})
 
 ### Postal address
@@ -27,6 +27,7 @@ breadcrumbs: true
   _data/positions.yml.
 {% endcomment %}
 <address style="font-style: normal; line-height: 1.6;">
+{{ c.name }}<br>
 {% for line in site.data.positions.postal.lines %}{{ line }}{% unless forloop.last %}<br>{% endunless %}
 {% endfor %}</address>
 
