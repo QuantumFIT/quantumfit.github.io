@@ -1,3 +1,31 @@
+- title: "Parameterized verification of quantum circuits accepted at POPL'26"
+  date: 2025-11-10
+  description: "The paper “Parameterized Verification of Quantum Circuits” was accepted at POPL'26 in Rennes, France, to appear in PACMPL 10 (POPL)."
+  url: "https://doi.org/10.1145/3776712"
+  image:
+  category: publication
+
+- title: "Quantum program verification accepted at TACAS'25"
+  date: 2024-12-23
+  description: "The paper “AutoQ 2.0: From Verification of Quantum Circuits to Verification of Quantum Programs” was accepted at TACAS'25 in Hamilton, Canada. It extends AutoQ from verifying quantum circuits to verifying quantum programs."
+  url: "https://doi.org/10.1007/978-3-031-90660-2_5"
+  image:
+  category: publication
+
+- title: "Level-synchronized tree automata for quantum circuits accepted at POPL'25"
+  date: 2024-11-11
+  description: "The paper “Verifying Quantum Circuits with Level-Synchronized Tree Automata” was accepted at POPL'25 in Denver, Colorado, to appear in PACMPL 9 (POPL). The level-synchronized automata it introduces extend the class of quantum circuits AutoQ can verify."
+  url: "https://doi.org/10.1145/3704868"
+  image:
+  category: publication
+
+- title: "Quantum circuit simulation accepted at ICCAD'24"
+  date: 2024-07-03
+  description: "The paper “Accelerating Quantum Circuit Simulation with Symbolic Execution and Loop Summarization” was accepted at ICCAD'24 in New Jersey. It introduces Medusa, which simulates quantum circuits symbolically and analyses a repeated block of gates once rather than unrolling it."
+  url: "https://doi.org/10.1145/3676536.3676711"
+  image:
+  category: publication
+
 - title: "Quantum circuit verifier AutoQ accepted at CAV'23"
   date: 2023-07-01
   description: "The paper “AutoQ: An Automata-based Quantum Circuit Verifier” was accepted at CAV'23 in Paris, France. AutoQ verifies quantum circuits and programs by representing whole sets of quantum states as tree automata, so a circuit can be checked against a specification without enumerating individual states."
