@@ -6,7 +6,7 @@
     the two have to agree: date, then the slugified title.
   {% endcomment %}
   {% capture anchor %}{{ item.date | date: "%Y-%m-%d" }}-{{ item.title | slugify }}{% endcapture %}
-  <article class="news-item" id="{{ anchor }}">
+  <article class="news-item{% if item.image and item.image != '' %} news-item--with-image{% endif %}" id="{{ anchor }}">
     <div class="news-content">
       <h3>{{ item.title }}</h3>
       <p class="news-meta">{{ item.date | date: "%Y.%m.%d" }} | {{ item.category | capitalize }}</p>

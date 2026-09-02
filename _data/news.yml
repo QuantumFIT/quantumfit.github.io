@@ -1,20 +1,20 @@
 - title: "Quantum circuit verifier AutoQ accepted at CAV'23"
   date: 2023-07-01
-  description: "“AutoQ: An Automata-based Quantum Circuit Verifier” was accepted at CAV'23 in Paris, France. AutoQ verifies quantum circuits and programs by representing whole sets of quantum states as tree automata, so a circuit can be checked against a specification without enumerating individual states."
+  description: "The paper “AutoQ: An Automata-based Quantum Circuit Verifier” was accepted at CAV'23 in Paris, France. AutoQ verifies quantum circuits and programs by representing whole sets of quantum states as tree automata, so a circuit can be checked against a specification without enumerating individual states."
   url: "https://doi.org/10.1007/978-3-031-37709-9_7"
   image:
   category: publication
 
 - title: "Distinguished Paper Award at PLDI'23 for quantum circuit verification"
   date: 2023-06-19
-  description: "“An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits” was named a Distinguished Paper at PLDI'23 in Orlando, Florida."
+  description: "The paper “An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits” was named a Distinguished Paper at PLDI'23 in Orlando, Florida."
   url: "https://doi.org/10.1145/3591270"
   image:
   category: award
 
 - title: "Quantum circuit verification paper accepted at PLDI'23"
   date: 2023-02-27
-  description: "“An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits” was accepted at PLDI'23, to appear in PACMPL 7 (PLDI). It checks a quantum circuit against a pre-/post-condition specification, or searches it for bugs, without ever enumerating individual quantum states."
-  url: "https://arxiv.org/abs/2301.07747"
+  description: "The paper “An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits” was accepted at PLDI'23, to appear in PACMPL 7 (PLDI). It checks a quantum circuit against a pre-/post-condition specification, or searches it for bugs, without ever enumerating individual quantum states."
+  url: "https://doi.org/10.1145/3591270"
   image:
   category: publication

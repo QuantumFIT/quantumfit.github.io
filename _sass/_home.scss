@@ -565,11 +565,19 @@
       }
     }
 
+    // The 300px track is for the item's image, so it may only exist when the
+    // item has one. Unconditionally, it reserved a column that .news-image
+    // never filled -- pages/news.md renders that div only under
+    // `{% if item.image %}` -- and squeezed every description into the
+    // remaining third of the width with a wide empty gutter beside it. The
+    // modifier class comes from _includes/news-list.html.
     @media (min-width: 768px) {
-      grid-template-columns: 1fr 300px;
+      &.news-item--with-image {
+        grid-template-columns: 1fr 300px;
 
-      .news-image {
-        order: 2;
+        .news-image {
+          order: 2;
+        }
       }
     }
   }
