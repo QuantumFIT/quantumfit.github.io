@@ -1,7 +1,12 @@
 <div class="news-list">
   {% assign sorted_news = site.data.news | sort: 'date' | reverse %}
   {% for item in sorted_news %}
-  <article class="news-item">
+  {% comment %}
+    The anchor is what feed.xml uses for each entry's id and alternate link, so
+    the two have to agree: date, then the slugified title.
+  {% endcomment %}
+  {% capture anchor %}{{ item.date | date: "%Y-%m-%d" }}-{{ item.title | slugify }}{% endcapture %}
+  <article class="news-item" id="{{ anchor }}">
     <div class="news-content">
       <h3>{{ item.title }}</h3>
       <p class="news-meta">{{ item.date | date: "%Y.%m.%d" }} | {{ item.category | capitalize }}</p>

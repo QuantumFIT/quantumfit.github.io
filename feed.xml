@@ -1,0 +1,62 @@
+---
+layout: null
+permalink: /feed.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="utf-8"?>
+{%- comment -%}
+  Atom feed for the site's news.
+
+  Hand-written rather than jekyll-feed: that plugin feeds site.posts, and this
+  site has no _posts at all -- its news lives in _data/news.yml -- so the
+  plugin would publish a valid but permanently empty feed, and would fight this
+  file for /feed.xml besides.
+
+  head.html, footer.html and sidebar.html all advertise /feed.xml, so until
+  this existed every page on the site linked a 404.
+
+  Everything interpolated goes through xml_escape. An ampersand or angle
+  bracket in a title would otherwise produce a feed no reader can parse.
+{%- endcomment -%}
+{%- assign news = site.data.news | sort: 'date' | reverse -%}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title | xml_escape }}</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  <id>{{ site.url }}/</id>
+  <link rel="alternate" type="text/html" href="{{ site.url }}/" />
+  <link rel="self" type="application/atom+xml" href="{{ site.url }}/feed.xml" />
+  {%- comment -%}
+    Atom requires feed-level <updated>. The newest item's date is the honest
+    answer; site.time would move on every rebuild and make each poll look like
+    a change.
+  {%- endcomment %}
+  <updated>{% if news.size > 0 %}{{ news[0].date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</updated>
+  <author>
+    <name>{{ site.owner.name | xml_escape }}</name>
+  </author>
+  <rights>{{ site.owner.name | xml_escape }}</rights>
+{%- for item in news %}
+  {%- capture anchor %}{{ item.date | date: "%Y-%m-%d" }}-{{ item.title | slugify }}{% endcapture %}
+  <entry>
+    <title>{{ item.title | xml_escape }}</title>
+    {%- comment -%}
+      The id must be a stable IRI that never changes for an entry, and
+      `alternate` must be the entry's own HTML page -- so both are built from
+      this site's address and the anchor _includes/news-list.html puts on the
+      matching <article>. item.url is an external DOI or preprint and is
+      optional, so it goes in `related` where it belongs.
+    {%- endcomment %}
+    <id>{{ site.url }}/news/#{{ anchor }}</id>
+    <link rel="alternate" type="text/html" href="{{ site.url }}/news/#{{ anchor }}" />
+    {%- if item.url and item.url != '' %}
+    <link rel="related" href="{{ item.url | xml_escape }}" />
+    {%- endif %}
+    <published>{{ item.date | date_to_xmlschema }}</published>
+    <updated>{{ item.date | date_to_xmlschema }}</updated>
+    {%- if item.category and item.category != '' %}
+    <category term="{{ item.category | xml_escape }}" />
+    {%- endif %}
+    <summary type="text">{{ item.description | xml_escape }}</summary>
+  </entry>
+{%- endfor %}
+</feed>
