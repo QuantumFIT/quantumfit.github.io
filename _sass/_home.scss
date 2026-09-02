@@ -387,11 +387,16 @@
         margin-bottom: 1rem;
         font-size: 0.9rem;
         line-height: 1.55;
-        flex-grow: 1;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        // No flex-grow here. It used to stretch this -webkit-box to fill the
+        // card, which defeats -webkit-line-clamp: the box grows past three
+        // lines and the fourth is clipped mid-glyph instead of ellipsised.
+        // Only long descriptions show it. .read-more already carries
+        // margin-top: auto, so the button still sits at the card's foot.
       }
 
       .read-more {

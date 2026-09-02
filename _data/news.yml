@@ -1,32 +1,20 @@
-# News items, newest first (shown on Home and News pages). Both templates sort
-# by `date` themselves, so file order is for humans only.
-#
-# `description` is rendered as plain text, not markdown -- asterisks and
-# brackets would show up literally. `url` is optional: both templates hide the
-# "Read more" link when it is unset.
-#
-# `category` is shown as-is on the home page and capitalised on the News page,
-# so keep it one lower-case word. In use so far: award, publication.
-
-# Date supplied rather than looked up. Worth knowing that it is later than the
-# CAV'23 notification would have been -- the conference itself was 17-22 July
-# 2023 -- so this reads as the day the group noted the acceptance, not the day
-# the e-mail arrived.
-- title: "AutoQ paper accepted at CAV'23"
+- title: "Quantum circuit verifier AutoQ accepted at CAV'23"
   date: 2023-07-01
-  description: "AutoQ: An Automata-based Quantum Circuit Verifier was accepted at CAV'23 in Paris, France. The paper presents the verifier itself, built on the tree-automata framework published at PLDI'23."
+  description: "“AutoQ: An Automata-based Quantum Circuit Verifier” was accepted at CAV'23 in Paris, France. AutoQ verifies quantum circuits and programs by representing whole sets of quantum states as tree automata, so a circuit can be checked against a specification without enumerating individual states."
   url: "https://doi.org/10.1007/978-3-031-37709-9_7"
   image:
   category: publication
 
-# PLDI'23 ran 17-21 June 2023 and its programme has no awards ceremony: the
-# Distinguished Paper designation appears as a badge on the paper itself. So
-# the date here is the paper's own session, Mon 19 June 2023 at 10:20 in
-# https://pldi23.sigplan.org/track/pldi-2023-pldi , which is when it was
-# presented as a Distinguished Paper. There is no more specific date to use.
-- title: "Distinguished Paper Award at PLDI'23"
+- title: "Distinguished Paper Award at PLDI'23 for quantum circuit verification"
   date: 2023-06-19
-  description: "An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits was named a Distinguished Paper at PLDI'23 in Orlando, Florida. The paper introduces the tree-automata approach behind AutoQ."
+  description: "“An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits” was named a Distinguished Paper at PLDI'23 in Orlando, Florida."
   url: "https://doi.org/10.1145/3591270"
   image:
   category: award
+
+- title: "Quantum circuit verification paper accepted at PLDI'23"
+  date: 2023-02-27
+  description: "“An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits” was accepted at PLDI'23, to appear in PACMPL 7 (PLDI). It checks a quantum circuit against a pre-/post-condition specification, or searches it for bugs, without ever enumerating individual quantum states."
+  url: "https://arxiv.org/abs/2301.07747"
+  image:
+  category: publication
