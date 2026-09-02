@@ -2,6 +2,8 @@
 quantumfit:
   name: "QuantumFIT"
   siterole: "research group"
-  url: "https://quantumfit.github.io"
+  # The site's own address, and the one jekyll-seo-tag puts in the JSON-LD as
+  # the author's url. Keep it in step with `url:` in _config.yml and CNAME.
+  url: "https://quantum.fit.vut.cz"
   email:
   twitter:

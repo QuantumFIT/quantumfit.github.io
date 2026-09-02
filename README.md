@@ -32,7 +32,15 @@ and links in that layout rather than in config/data.
 ## Enabling GitHub Pages
 
 In the repo's Settings -> Pages, set the source to the `master` branch (root). The site then builds
-automatically on every push and is served at https://quantumfit.github.io/.
+automatically on every push.
+
+It is served at https://quantum.fit.vut.cz/, the custom domain named in `CNAME` (that file is written
+by GitHub when the domain is set in Settings -> Pages, so leave it alone). `quantumfit.github.io` still
+resolves and 301s there, path preserved.
+
+**`url:` in `_config.yml` must match `CNAME`.** Every asset URL, canonical link, `og:url` and sitemap
+entry is built from `site.url`. If it names the old host the site still renders, but each page pulls all
+of its subresources cross-origin through GitHub's redirect and reports the wrong canonical URL.
 
 ## Local preview
 

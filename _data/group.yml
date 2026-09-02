@@ -13,7 +13,7 @@
 # bio_link, used only by the PI, is the opposite: it must be a SITE-RELATIVE
 # path, because pages/team.md renders it as {{ site.url }}{{ member.bio_link }}
 # and an absolute URL would come out as
-# https://quantumfit.github.io/https://example.org/ .
+# https://quantum.fit.vut.cz/https://example.org/ .
 
 principle_investigator:
   - name: "Ondřej Lengál"

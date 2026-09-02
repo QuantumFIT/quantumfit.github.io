@@ -1,6 +1,12 @@
 title:            QuantumFIT
 description:      "QuantumFIT is the Quantum Computing Systems research group at the Faculty of Information Technology, Brno University of Technology, focused on quantum computing and quantum software engineering."
-url:              "https://quantumfit.github.io"
+# The custom domain, and the name in CNAME. This has to track CNAME: every
+# asset, canonical link, og:url and sitemap entry is built from site.url, and
+# GitHub 301s the quantumfit.github.io host to whatever CNAME says. Left
+# pointing at the old host, every page still renders but fetches all thirty of
+# its subresources cross-origin through that redirect, and advertises the wrong
+# canonical URL to search engines.
+url:              "https://quantum.fit.vut.cz"
 baseurl:          ""
 
 reading_time: false
