@@ -42,11 +42,12 @@ principle_investigator:
     facts:
       - label: "Position"
         value: "Associate professor, Faculty of Information Technology, Brno University of Technology"
-      # Taken from the Research Interests list he keeps on ondrik.github.io,
-      # in his own wording and order, rather than paraphrased. The previous
-      # wording said "verification and simulation" and omitted omega-automata.
+      # Wording taken from the Research Interests list he keeps on
+      # ondrik.github.io, but reordered: the quantum item leads, where his own
+      # page has automata theory first. This is the group's site, so what the
+      # group is about belongs at the front.
       - label: "Research"
-        value: "Automata theory; simulation and analysis of quantum circuits and programs; logic and SMT solving; omega-automata; efficient regular expression matching"
+        value: "Simulation and analysis of quantum circuits and programs; automata theory; logic and SMT solving; omega-automata; efficient regular expression matching"
       - label: "Email"
         value: "[lengal@fit.vut.cz](mailto:lengal@fit.vut.cz)"
 

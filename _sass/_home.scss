@@ -522,23 +522,33 @@
         margin-bottom: 1.5rem;
       }
 
+      // Sized down from a 2px-bordered 0.9rem/600 button. On a list of items
+      // this is a secondary affordance, not the call to action it looked like.
+      // The metrics now match .pill-link in _site.scss and the Publications
+      // tag pills, so the site has one small-pill size rather than three
+      // variations on the same idea. The home page cards keep the larger
+      // button, where it is the card's only action.
+      //
+      // Colours stay on $primary rather than moving to --qf-pill-border,
+      // because _dark.scss already overrides border-color and the hover pair
+      // for this selector; switching tokens here would just be overridden.
       .read-more {
         color: $primary;
-        font-weight: 600;
+        font-weight: 500;
         text-decoration: none;
-        font-size: 0.9rem;
-        transition: all 0.2s ease;
+        font-size: 0.78rem;
+        transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
         background: transparent;
-        padding: 0.5rem 1rem;
-        margin: 0.5rem 0;
-        border: 2px solid $primary;
-        border-radius: 25px;
+        padding: 0.18rem 0.7rem;
+        margin: 0;
+        border: 1px solid $primary;
+        border-radius: 999px;
         display: inline-block;
         position: relative;
 
         &::after {
           content: '→';
-          margin-left: 0.5rem;
+          margin-left: 0.35rem;
           transition: transform 0.2s ease;
           position: relative;
           display: inline-block;
