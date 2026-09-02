@@ -105,41 +105,12 @@
     flex: 1;
 
     h3 {
-      margin-top: 0;
+      // Zero on both sides: .member-facts below sets its own top margin, and
+      // the theme's h1-h6 rule would otherwise add 1rem on top of it.
+      margin: 0;
       color: darken($primary, 15%);
       font-size: 1.4rem;
       font-weight: 700;
-    }
-
-    .member-bio {
-      color: var(--qf-text);
-      line-height: 1.65;
-      margin-bottom: 1rem;
-    }
-
-    .member-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: $primary;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.92rem;
-      transition: all 0.25s ease;
-      border-bottom: none !important;
-
-      &:hover {
-        color: $secondary;
-        gap: 0.6rem;
-      }
-
-      svg {
-        transition: transform 0.25s ease;
-      }
-
-      &:hover svg {
-        transform: translateX(3px);
-      }
     }
   }
 
@@ -164,6 +135,135 @@
 #page .entry-content .member-card .member-info h4 a,
 #page .entry-content .member-card .member-info h4 a:hover {
   border-bottom: none;
+}
+
+// Name and pills on one line: a role pill labels the name, so it belongs beside
+// it rather than on a line of its own. Baseline-aligned so the small pill text
+// lines up with the name rather than floating; wrapping so a long name in a
+// narrow column pushes the pills down instead of overflowing the card. Left at
+// the top level rather than nested in .member-info because the margin reset
+// below already has to name its owner in full.
+.member-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+// The heading must drop its bottom margin inside that row. Its owner sets that
+// margin at two-class specificity, so this has to be spelled out in full
+// rather than left to a bare `.member-heading h4`.
+.member-card .member-info .member-heading h4 {
+  margin-bottom: 0;
+}
+
+// An outlined pill that is also a link. Same shape and the same --qf-pill-*
+// tokens as the tag pills on the Publications page, so the two read as one
+// device; those are page-local because they style bare markdown list items,
+// while this one is a class and belongs here.
+.pill-link {
+  display: inline-block;
+  padding: 0.15em 0.8em;
+  border: 1px solid var(--qf-pill-border);
+  border-radius: 999px;
+  color: var(--qf-link);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    border-color: var(--qf-pill-hover-border);
+    background-color: var(--qf-pill-hover-bg);
+    color: var(--qf-link-hover);
+  }
+}
+
+// `#page article a` sets border-bottom: 1px dotted and font-weight: bold on
+// every content link, and a longhand border-bottom in an ID rule overrides the
+// `border` shorthand above -- so without this the pill's bottom edge turns
+// dotted and its text goes bold. Restoring the style rather than removing the
+// border, because here the border is the pill.
+#page .entry-content a.pill-link,
+#page .entry-content a.pill-link:hover {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  font-weight: normal;
+}
+
+// The e-mail line under a member card's heading. Sized down and set in the
+// link colour so it reads as secondary to the name above it; --qf-link is
+// theme-aware, so no dark-mode rule is needed.
+.member-email {
+  display: inline-block;
+  margin-top: 0.15rem;
+  color: var(--qf-link);
+  font-size: 0.8rem;
+  text-decoration: none;
+  word-break: break-word;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--qf-link-hover);
+  }
+}
+
+// `#page article a` sets a dotted border-bottom and bold on every content
+// link. The names and pills in these cards carry neither, so an underlined
+// bold address would be the odd one out. Same ID prefix as the pill rule,
+// for the same specificity reason.
+//
+// The second selector covers links inside a PI fact value, which arrive from
+// markdownify as bare <a> and so cannot carry a class of their own.
+#page .entry-content a.member-email,
+#page .entry-content a.member-email:hover,
+#page .entry-content .member-facts dd a,
+#page .entry-content .member-facts dd a:hover {
+  border-bottom: none;
+  font-weight: normal;
+}
+
+// The PI card's facts, as label/value rows. A grid rather than a plain <dl> so
+// the values line up in a column regardless of label length.
+.member-facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1.1rem;
+  margin: 0.9rem 0 1.1rem;
+
+  dt {
+    color: var(--qf-text-light);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-top: 0.2rem;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--qf-text);
+    line-height: 1.55;
+
+    a {
+      color: var(--qf-link);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover { color: var(--qf-link-hover); }
+    }
+  }
+
+  // Two columns need room. Narrow enough and the label sits above its value
+  // instead, which is why dt keeps its own top padding only in grid mode.
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+
+    dt {
+      padding-top: 0.6rem;
+    }
+  }
 }
 
 // Member grid
@@ -231,22 +331,6 @@
   .member-info {
     flex: 1;
     min-width: 0;
-
-    // Name and pills sit on one line: a pill labels the name, so it belongs
-    // beside it rather than on a line of its own. Baseline-aligned so the
-    // small pill text lines up with the name rather than floating; wrapping so
-    // a long name in a narrow column pushes the pills down instead of
-    // overflowing the card.
-    .member-heading {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-
-      h4 {
-        margin-bottom: 0;
-      }
-    }
 
     h4 {
       margin: 0 0 0.3rem;

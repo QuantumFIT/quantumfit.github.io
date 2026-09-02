@@ -4,7 +4,7 @@ layout: page
 title: Team
 description: "The people in the QuantumFIT research group."
 comments: false
-modified: 2026-09-01
+modified: 2026-09-02
 breadcrumbs: true
 ---
 
@@ -20,9 +20,21 @@ breadcrumbs: true
     {% endif %}
     <div class="pi-info">
       <h3>{{ member.name }}</h3>
-      <div class="member-bio">{{ member.bio | markdownify }}</div>
-      {% if member.bio_link %}
-      <a href="{{ site.url }}{{ member.bio_link }}" class="member-link">View Biography</a>
+      {% if member.facts %}
+      {% comment %}
+        markdownify wraps its output in <p>, which inside a <dd> adds a margin
+        the grid gap already provides. Every value is a single line, so
+        stripping the wrapper is safe here.
+      {% endcomment %}
+      <dl class="member-facts">
+        {% for fact in member.facts %}
+        <dt>{{ fact.label }}</dt>
+        <dd>{{ fact.value | markdownify | replace: '<p>', '' | replace: '</p>', '' }}</dd>
+        {% endfor %}
+      </dl>
+      {% endif %}
+      {% if member.web %}
+      <a class="pill-link" href="{{ member.web }}">{{ member.web_label | default: member.web }}</a>
       {% endif %}
     </div>
   </div>
@@ -34,9 +46,10 @@ breadcrumbs: true
   entries, so a group with no BSc students (say) shows no empty BSc heading.
   The Principal Investigator section above is deliberately not guarded.
 
-  A non-PI card is a name and a role tag, nothing more: the name links to the
-  person's FIT BUT profile (`web` in _data/group.yml), which is where a bio
-  belongs. Only the PI carries prose here.
+  A non-PI card is a name, a role tag and an e-mail address: the name links to
+  the person's FIT BUT profile (`web` in _data/group.yml), which is where a bio
+  belongs. Both the link and the address are optional, so a card degrades to
+  just the name. Only the PI carries prose here.
 {% endcomment %}
 {% if site.data.group.phd_and_postdocs.size > 0 %}
 <div class="group-section">
@@ -50,6 +63,7 @@ breadcrumbs: true
           {% if member.role %}<span class="member-role">{{ member.role }}</span>{% endif %}
           {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
         </div>
+        {% if member.email %}<a class="member-email" href="mailto:{{ member.email }}">{{ member.email }}</a>{% endif %}
       </div>
     </div>
   {% endfor %}
@@ -68,6 +82,7 @@ breadcrumbs: true
           <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
           {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
         </div>
+        {% if member.email %}<a class="member-email" href="mailto:{{ member.email }}">{{ member.email }}</a>{% endif %}
       </div>
     </div>
   {% endfor %}
@@ -86,6 +101,7 @@ breadcrumbs: true
           <h4>{% if member.web %}<a href="{{ member.web }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h4>
           {% if member.period %}<span class="member-period">{{ member.period }}</span>{% endif %}
         </div>
+        {% if member.email %}<a class="member-email" href="mailto:{{ member.email }}">{{ member.email }}</a>{% endif %}
       </div>
     </div>
   {% endfor %}

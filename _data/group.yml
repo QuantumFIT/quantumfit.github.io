@@ -1,30 +1,48 @@
 # Group members, shown on the Team page (pages/team.md).
 #
-# Fields for the PI: name, image (optional, path under images/), bio,
-# bio_link (optional).
-# Fields for everyone else: name, web, role (required in phd_and_postdocs,
-# see below), period (optional, e.g. "since 2026").
+# Fields for the PI: name, image (optional, path under images/), facts,
+# web + web_label.
+# Fields for everyone else: name, web, email (both optional), role (required in
+# phd_and_postdocs, see below), period (optional, e.g. "since 2026").
 #
-# Non-PI cards carry the name and the role tag and nothing else -- no bio, no
-# affiliation. Everyone here is at FIT BUT, so printing that on every card said
-# nothing; `web` (an ABSOLUTE URL, the person's FIT BUT profile) turns the name
-# into the link to the details instead.
+# Addresses come from the person's own page under
+# https://www.fit.vut.cz/person/ -- staff from the profile, students from its
+# contact sub-page -- or, where the faculty publishes none, from the person.
+# Never derive one: staff sit at fit.vut.cz and students at stud.fit.vut.cz
+# under an entirely different and irregular login scheme (see Jobranová below),
+# and a student login does not resolve as a person URL, so a guess cannot even
+# be checked.
 #
-# bio_link, used only by the PI, is the opposite: it must be a SITE-RELATIVE
-# path, because pages/team.md renders it as {{ site.url }}{{ member.bio_link }}
-# and an absolute URL would come out as
-# https://quantum.fit.vut.cz/https://example.org/ .
+# `web` is an ABSOLUTE URL in both cases, but the two cards use it differently.
+# A non-PI card carries the name and the role tag and nothing else -- no bio, no
+# affiliation, since everyone here is at FIT BUT and printing that on every card
+# said nothing -- so there the name itself becomes the link. The PI card has
+# prose-free facts instead, and puts the link at its foot as a pill labelled by
+# web_label.
 
+# The PI card carries no prose: `facts` is a labelled list, rendered as a
+# two-column definition list in the order given here. Each value is
+# markdownified, so *emphasis* and [links](...) work inside one.
+#
+# web / web_label become an outlined pill at the foot of the card. The label is
+# given rather than derived from the URL: Liquid's `remove: "/"` strips every
+# slash, so a URL with a path comes out as nonsense -- the same reason
+# _data/positions.yml spells its labels out.
 principle_investigator:
   - name: "Ondřej Lengál"
     image:
-    bio: >-
-      Associate professor at the Faculty of Information Technology, Brno
-      University of Technology. His work combines automata theory with the
-      verification and simulation of quantum circuits and programs, and also
-      covers SMT solving and efficient regular expression matching. He
-      habilitated in 2025 with *Awesome Automata: Algorithms and Applications*.
-    bio_link: "/about/"
+    web: "https://ondrik.github.io/"
+    web_label: "Personal page"
+    facts:
+      - label: "Position"
+        value: "Associate professor, Faculty of Information Technology, Brno University of Technology"
+      # Taken from the Research Interests list he keeps on ondrik.github.io,
+      # in his own wording and order, rather than paraphrased. The previous
+      # wording said "verification and simulation" and omitted omega-automata.
+      - label: "Research"
+        value: "Automata theory; simulation and analysis of quantum circuits and programs; logic and SMT solving; omega-automata; efficient regular expression matching"
+      - label: "Email"
+        value: "[lengal@fit.vut.cz](mailto:lengal@fit.vut.cz)"
 
 # PhD students and postdocs share one list rather than sitting in separate
 # sections: the group is small. Which of the two a person is is carried by
@@ -46,22 +64,33 @@ phd_and_postdocs:
   - name: "Vojtěch Havlena"
     role: "Postdoc"
     web: "https://www.fit.vut.cz/person/ihavlena/"
+    email: "ihavlena@fit.vut.cz"
 
   - name: "Michal Hečko"
     role: "PhD Student"
     web: "https://www.fit.vut.cz/person/ihecko/"
+    email: "ihecko@fit.vut.cz"
 
 # Ordered by surname, as above.
 undergraduate_students:
   - name: "Jakub Havlík"
     web: "https://www.fit.vut.cz/person/260286/"
+    email: "xhavlij00@stud.fit.vut.cz"
 
   # No `web`: she has no FIT person page -- the faculty publishes those for
-  # staff, and the unit staff listings do not carry her. Her name renders as
-  # plain text until there is somewhere to point it.
+  # staff, and the unit staff listings do not carry her -- so her name renders
+  # as plain text until there is somewhere to point it.
+  #
+  # The address came from the PI directly, not from a faculty page, and it is
+  # the reason the note above about not deriving these is worth heeding: the
+  # scheme has no regularity to infer from. The other two students are
+  # xhavlij00 and xnovakf00, surname-plus-initial-plus-00, which would predict
+  # xjobras00 for her. It is xjobra01.
   - name: "Sára Jobranová"
+    email: "xjobra01@stud.fit.vut.cz"
 
   - name: "Filip Novák"
     web: "https://www.fit.vut.cz/person/259543/"
+    email: "xnovakf00@stud.fit.vut.cz"
 
 alumni: []
