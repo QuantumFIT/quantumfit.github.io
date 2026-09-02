@@ -1,33 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="QuantumFIT">
   <title>QuantumFIT</title>
   <!--
-    The site's mark: a white Q, a ring plus a diagonal tail, on a rounded tile
-    carrying the theme gradient. This file is the source; _tools/make-icons.py
-    rasterises it into favicon.ico, favicon.png and images/apple-touch-icon.png,
-    so re-run that after editing here.
+    The site's mark: a white Q, a ring plus a diagonal tail, on a rounded tile.
+    This file is the source; _tools/make-icons.py rasterises it into
+    favicon.ico, favicon.png and images/apple-touch-icon.png, so re-run that
+    after editing here.
 
-    Two things to keep in mind when editing.
+    Everything about the tile is taken from the navbar wordmark, so the tab
+    icon and the badge at the top left of every page read as the same object.
+    From .navbar-brand in _sass/_nav_cleanblog.scss:
+
+      background   linear-gradient($info, darken($info, 10%)), top to bottom
+      colour       #fff
+      text-shadow  0 2px 0 darken($info, 35%)
+
+    with $info: #3498db from _sass/_variables.scss. The three resolved values
+    are inlined below because SCSS cannot reach into a static .svg; if $info
+    ever changes, recompute them here. The shadow is a second copy of the Q
+    drawn 2 units lower and painted over by the white one, which is what a
+    text-shadow amounts to for a shape.
+
+    White on the lighter end of this gradient is 3.15:1, and 4.45:1 at the
+    darker end. That is under the 4.5:1 wanted for body text but over the 3:1
+    that applies to a graphic like this, and it is the same contrast the
+    wordmark itself has always carried.
 
     No double hyphen may appear inside a comment. A standalone .svg is parsed
     as XML, where that is fatal, and the icon then silently fails to load.
-
-    The colours are $primary and $secondary from _sass/_variables.scss, both
-    darkened. White on #1abc9c is about 2:1 contrast and turns to mush at
-    16px; these sit at 6.4:1 and 3.7:1 and still read as the site's palette.
-    The middle stop biases the ramp so the tile stays mostly blue and the teal
-    reads as a corner highlight rather than half the icon.
   -->
   <defs>
-    <linearGradient id="q" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#3f5f7d"/>
-      <stop offset="0.5" stop-color="#317780"/>
-      <stop offset="1" stop-color="#1a9e86"/>
+    <linearGradient id="q" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3498db"/>
+      <stop offset="1" stop-color="#217dbb"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14.08" fill="url(#q)"/>
-  <g fill="none" stroke="#fff" stroke-width="5.76">
-    <circle cx="32" cy="32" r="16.96"/>
-    <!-- The tail runs past the ring far enough to still register at 16px. -->
-    <path d="M37.88 37.88L52.36 52.36" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="10.24" fill="url(#q)"/>
+  <g fill="none" stroke-width="5.76">
+    <g stroke="#0e354f" transform="translate(0,2)">
+      <circle cx="32" cy="32" r="16.96"/>
+      <path d="M37.88 37.88L52.36 52.36" stroke-linecap="round"/>
+    </g>
+    <g stroke="#fff">
+      <circle cx="32" cy="32" r="16.96"/>
+      <!-- The tail runs past the ring far enough to still register at 16px. -->
+      <path d="M37.88 37.88L52.36 52.36" stroke-linecap="round"/>
+    </g>
   </g>
 </svg>
