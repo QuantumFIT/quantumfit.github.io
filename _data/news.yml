@@ -5,12 +5,26 @@
   image:
   category: publication
 
+- title: "Quantum circuit verification in Communications of the ACM"
+  date: 2025-05-29
+  description: "The paper “An Automata-Based Framework for Verification and Bug Hunting in Quantum Circuits” appeared in the June 2025 issue of Communications of the ACM, volume 68 issue 6, pages 85–93."
+  url: "https://doi.org/10.1145/3725728"
+  image:
+  category: publication
+
 - title: "Quantum program verification accepted at TACAS'25"
   date: 2024-12-23
   description: "The paper “AutoQ 2.0: From Verification of Quantum Circuits to Verification of Quantum Programs” was accepted at TACAS'25 in Hamilton, Canada. It extends AutoQ from verifying quantum circuits to verifying quantum programs."
   url: "https://doi.org/10.1007/978-3-031-90660-2_5"
   image:
   category: publication
+
+- title: "Sára Jobranová wins 8 z VUT with quantum circuit simulation"
+  date: 2024-12-12
+  description: "Sára Jobranová won 8 z VUT 2024, the university-wide showcase of the best bachelor’s theses from across all VUT faculties. The jury judged her presentation on quantum circuit simulation the most impressive of the final evening, praising how clearly she put across a difficult topic."
+  url: "https://www.vut.cz/vut/aktuality-f19528/prehlidka-8-z-vut-patrila-kvantovym-pocitacum-robotice-a-designu-osvetleni-d270966"
+  image:
+  category: award
 
 - title: "Level-synchronized tree automata for quantum circuits accepted at POPL'25"
   date: 2024-11-11
