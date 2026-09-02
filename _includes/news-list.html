@@ -6,7 +6,13 @@
       <h3>{{ item.title }}</h3>
       <p class="news-meta">{{ item.date | date: "%Y.%m.%d" }} | {{ item.category | capitalize }}</p>
       <p>{{ item.description }}</p>
+      {% comment %}
+        Same guard as _layouts/home.html. Without it an item with no `url`
+        renders href="", which looks like a link and reloads the page.
+      {% endcomment %}
+      {% if item.url and item.url != "" %}
       <a href="{{ item.url }}" class="read-more">Read more</a>
+      {% endif %}
     </div>
     {% if item.image %}
     <div class="news-image">
