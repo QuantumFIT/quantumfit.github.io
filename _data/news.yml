@@ -6,7 +6,18 @@
 # "Read more" link when it is unset.
 #
 # `category` is shown as-is on the home page and capitalised on the News page,
-# so keep it one lower-case word. In use so far: award.
+# so keep it one lower-case word. In use so far: award, publication.
+
+# Date supplied rather than looked up. Worth knowing that it is later than the
+# CAV'23 notification would have been -- the conference itself was 17-22 July
+# 2023 -- so this reads as the day the group noted the acceptance, not the day
+# the e-mail arrived.
+- title: "AutoQ paper accepted at CAV'23"
+  date: 2023-07-01
+  description: "AutoQ: An Automata-based Quantum Circuit Verifier was accepted at CAV'23 in Paris, France. The paper presents the verifier itself, built on the tree-automata framework published at PLDI'23."
+  url: "https://doi.org/10.1007/978-3-031-37709-9_7"
+  image:
+  category: publication
 
 # PLDI'23 ran 17-21 June 2023 and its programme has no awards ceremony: the
 # Distinguished Paper designation appears as a badge on the paper itself. So
