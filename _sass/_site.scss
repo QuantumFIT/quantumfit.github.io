@@ -57,7 +57,11 @@
 .pi-card {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
+  // Top-aligned, so the photo's top edge sits level with the name instead of
+  // being centred against the facts and leaving a gap beside the heading.
+  // Note the mobile block below has to restore `center`: once the card is a
+  // column, align-items is what centres the photo horizontally.
+  align-items: flex-start;
   gap: 2rem;
   background: white;
   border-radius: 14px;
@@ -116,6 +120,7 @@
 
   @media (max-width: 600px) {
     flex-direction: column;
+    align-items: center;
     text-align: center;
 
     .pi-photo {

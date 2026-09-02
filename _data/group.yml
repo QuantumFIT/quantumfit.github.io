@@ -1,7 +1,13 @@
 # Group members, shown on the Team page (pages/team.md).
 #
-# Fields for the PI: name, image (optional, path under images/), facts,
-# web + web_label.
+# Fields for the PI: name, image (optional), facts, web + web_label.
+#
+# `image` is a path from the site root, because pages/team.md renders it as
+# {{ site.url }}/{{ member.image }} -- so it has to start with images/, not be
+# relative to it. Photos live in images/team/ and are pre-cropped square:
+# .pi-photo is a 180px circle with object-fit: cover, so anything else has its
+# edges thrown away, and there is no point shipping pixels the circle discards.
+# 360px is twice the largest size the card ever displays.
 # Fields for everyone else: name, web, email (both optional), role (required in
 # phd_and_postdocs, see below), period (optional, e.g. "since 2026").
 #
@@ -30,7 +36,7 @@
 # _data/positions.yml spells its labels out.
 principle_investigator:
   - name: "Ondřej Lengál"
-    image:
+    image: "images/team/lengal.webp"
     web: "https://ondrik.github.io/"
     web_label: "Personal page"
     facts:
