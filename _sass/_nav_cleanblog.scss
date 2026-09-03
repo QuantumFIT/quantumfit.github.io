@@ -74,6 +74,17 @@
           // as a filter.
           filter: drop-shadow(0 2px 0 darken($info, 35%));
         }
+
+        // The closing bracket is diagonal, and a diagonal at the same stroke
+        // width reads lighter than a vertical stem: far more of it is
+        // antialiased edge. So it is drawn heavier, which is the ordinary
+        // optical correction type designers apply to diagonals. 4.6 against
+        // 3.6 was picked by eye at 3x against Lato 800's stems; 4.2 still
+        // read light and 5.0 started to look chunky. The opening bar is a
+        // vertical and needs no correction.
+        .brand-ket--close {
+          stroke-width: 4.6;
+        }
 	}
 	.nav {
 		li {
