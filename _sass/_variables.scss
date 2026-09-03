@@ -1,6 +1,9 @@
 // Typography
-$base-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-$heading-font: 'Lato', 'Open Sans', sans-serif;
+// 'QF Ket' leads both stacks and is harmless there: its @font-face carries
+// unicode-range: U+27E8-27E9, so it is consulted for the angle brackets and
+// for nothing else, and is not even downloaded by a page without one.
+$base-font: 'QF Ket', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$heading-font: 'QF Ket', 'Lato', 'Open Sans', sans-serif;
 $site-title-font: $heading-font;
 // Roboto Mono is not among the four faces assets/css/fonts.css loads, and the
 // Google Fonts link that used to fetch it is commented out in head.html, so

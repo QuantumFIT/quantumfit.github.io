@@ -1,25 +1,22 @@
 # The group's name is written as a ket in every piece of visible text.
 #
-# In text it uses ASCII | and >, not U+27E9. The proper mathematical bracket is
-# not in Lato, nor in the Latin subset the site loads, so a literal one is
-# substituted from whatever fallback font the reader happens to have -- which
-# has no matching bold, leaving the bracket thin beside heavy text. ASCII > is
-# in every face at every weight and inherits weight, size, colour and
-# text-shadow like any other character.
+# The closing bracket is a real U+27E9. Lato does not carry that glyph, so it
+# used to be substituted from whatever font the reader happened to have -- and
+# those fallbacks have no matching bold, which left it thin beside heavy text.
+# assets/css/fonts.css now supplies it at 400 and 700 through a two-glyph face
+# scoped by unicode-range, so it bolds like any other character. Built by
+# _tools/make-ket-font.py.
 #
-# The navbar badge is the exception: at 24px and weight 800 the ASCII > reads
-# as an operator, mid-height and small beside a full-height bar, so the badge
-# draws proper brackets as SVG instead and takes title_plain for the bare
-# name. See _includes/nav_cleanblog.html. That is affordable in one controlled
-# spot and not in running text.
+# The navbar badge still draws its own brackets as SVG and takes title_plain
+# for the bare name, because at 24px it wants a weight of its own -- currently
+# 3 against the bar's 3.6. See _includes/nav_cleanblog.html.
 #
-# Careful when putting this name into markdown BODY text: kramdown reads a
-# bare `|` as a table cell separator and will silently turn the paragraph
-# into a one-row table. Escape it as `\|` there. Front matter, raw HTML and
-# Liquid output outside markdown need no escaping.
-title:            "|QuantumFIT>"
+# Careful when putting the name into markdown BODY text: kramdown reads a bare
+# `|` as a table cell separator. Escape it as `\|` there.
+
+title:            "|QuantumFIT⟩"
 title_plain:      "QuantumFIT"
-description:      "|QuantumFIT> is the Quantum Computing Systems research group at the Faculty of Information Technology, Brno University of Technology, focused on quantum computing and quantum software engineering."
+description:      "|QuantumFIT⟩ is the Quantum Computing Systems research group at the Faculty of Information Technology, Brno University of Technology, focused on quantum computing and quantum software engineering."
 # The custom domain, and the name in CNAME. This has to track CNAME: every
 # asset, canonical link, og:url and sitemap entry is built from site.url, and
 # GitHub 301s the quantumfit.github.io host to whatever CNAME says. Left
@@ -50,9 +47,9 @@ plugins:
 author: quantumfit
 
 owner:
-  name:           "|QuantumFIT>"
+  name:           "|QuantumFIT⟩"
   avatar:
-  bio:            "|QuantumFIT> is the Quantum Computing Systems research group at the Faculty of Information Technology, Brno University of Technology."
+  bio:            "|QuantumFIT⟩ is the Quantum Computing Systems research group at the Faculty of Information Technology, Brno University of Technology."
   email:
   twitter:
   facebook:

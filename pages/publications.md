@@ -2,7 +2,7 @@
 permalink: /publications/
 layout: page
 title: Publications
-description: "Publications of the |QuantumFIT> research group."
+description: "Publications of the |QuantumFIT⟩ research group."
 comments: false
 modified: 2026-08-31
 breadcrumbs: true

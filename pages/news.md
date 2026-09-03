@@ -2,7 +2,7 @@
 layout: page
 title: News
 permalink: /news/
-description: "All the latest news and updates from |QuantumFIT>"
+description: "All the latest news and updates from |QuantumFIT⟩"
 comments: false
 breadcrumbs: true
 ---

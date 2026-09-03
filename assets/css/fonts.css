@@ -18,3 +18,36 @@
   font-weight: 700;
   src: url('../fonts/ubuntu-v20-latin-700.woff2') format('woff2');
 }
+
+/* The angle brackets around the group's name.
+
+   Lato carries no U+27E9, nor does the Latin subset loaded above, so a literal
+   one used to be substituted from whatever font the reader happened to have --
+   and those fallbacks have no matching bold, which left the bracket thin
+   beside heavy text. These two faces supply the glyph at 400 and 700 so it
+   bolds with everything around it.
+
+   unicode-range keeps them inert for every other character: the browser only
+   fetches and only uses them where a bracket actually appears.
+
+   Two glyphs subset from DejaVu Sans Book and Bold and renamed, a modified
+   font not being allowed to claim the original's name. Licence in
+   ../fonts/LICENSE-qf-ket.txt. Regenerate with the snippet recorded in
+   _tools/make-ket-font.py. */
+@font-face {
+  font-family: 'QF Ket';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/qf-ket-400.woff2') format('woff2');
+  unicode-range: U+27E8-27E9;
+}
+
+@font-face {
+  font-family: 'QF Ket';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/qf-ket-700.woff2') format('woff2');
+  unicode-range: U+27E8-27E9;
+}
