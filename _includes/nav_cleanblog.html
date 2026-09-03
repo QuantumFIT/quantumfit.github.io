@@ -9,7 +9,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+            {%- comment -%}
+              The ket brackets around the name are decoration on the badge
+              only, so they live here rather than in site.title -- that value
+              also feeds the browser tab title, og:site_name, the Atom feed and
+              the footer copyright, none of which want brackets.
+
+              Drawn rather than typed. The loaded face is
+              assets/fonts/lato-v24-latin-700.woff2, a Latin subset, so
+              U+27E9 is not in it: a literal bracket would silently fall back
+              to whatever maths-capable font each visitor happens to have, at
+              a weight and size we do not control. Stroked SVG sized in `em`
+              tracks the text and looks the same everywhere, and matches the
+              favicon, which is stroked for the same reason.
+
+              aria-hidden keeps the accessible name "QuantumFIT" rather than
+              having a screen reader announce the punctuation.
+            {%- endcomment -%}
+            <a class="navbar-brand" href="{{ site.baseurl }}/"><svg class="brand-ket" viewBox="0 0 6 24" aria-hidden="true" focusable="false"><path d="M3 1.5V22.5"/></svg>{{ site.title }}<svg class="brand-ket" viewBox="0 0 10 24" aria-hidden="true" focusable="false"><path d="M2.2 1.5L8 12L2.2 22.5"/></svg></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
