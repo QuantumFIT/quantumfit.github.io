@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="QuantumFIT">
+  <title>QuantumFIT</title>
+  <!--
+    The 16px frame of favicon.ico only. Not served: this file sits under
+    _tools/, which Jekyll leaves out of the built site.
+
+    ../favicon.svg draws the ket |+>, and at 16px its bar, plus and bracket
+    merge into an unreadable blob. This variant drops the plus and thickens
+    what is left, so an empty ket still reads at that size. Keep the tile,
+    the gradient and the stroke colour identical to ../favicon.svg, or the
+    small frame will not look like the same icon.
+
+    No double hyphen inside a comment: a standalone .svg is parsed as XML,
+    where that is fatal.
+  -->
+  <defs>
+    <linearGradient id="q" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3498db"/>
+      <stop offset="1" stop-color="#217dbb"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="10.24" fill="url(#q)"/>
+  <g fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 17V47"/>
+    <path d="M36 17L49 32L36 47"/>
+  </g>
+</svg>

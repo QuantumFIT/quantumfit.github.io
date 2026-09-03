@@ -1,29 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="QuantumFIT">
   <title>QuantumFIT</title>
   <!--
-    The site's mark: a white Q, a ring plus a diagonal tail, on a rounded tile.
-    This file is the source; _tools/make-icons.py rasterises it into
-    favicon.ico, favicon.png and images/apple-touch-icon.png, so re-run that
-    after editing here.
+    The site's mark: the ket |+> in white on a rounded tile carrying the
+    navbar wordmark's gradient. This file is the source; _tools/make-icons.py
+    rasterises it into favicon.ico, favicon.png and
+    images/apple-touch-icon.png, so re-run that after editing here.
 
-    Everything about the tile is taken from the navbar wordmark, so the tab
-    icon and the badge at the top left of every page read as the same object.
-    From .navbar-brand in _sass/_nav_cleanblog.scss:
+    Drawn as strokes rather than set as text. A favicon rasteriser cannot be
+    relied on to have any particular font, and glyph metrics would leave the
+    spacing of the three parts out of our hands, which is exactly what has to
+    be controlled at these sizes.
 
-      background   linear-gradient($info, darken($info, 10%)), top to bottom
-      colour       #fff
-      text-shadow  0 2px 0 darken($info, 35%)
+    Three separate strokes do not survive 16px: bar, plus and bracket merge
+    into a blob. The 16px frame of favicon.ico is therefore rendered from
+    _tools/favicon-small.svg, which drops the plus. Everything from 32px up
+    uses this file.
 
-    with $info: #3498db from _sass/_variables.scss. The three resolved values
-    are inlined below because SCSS cannot reach into a static .svg; if $info
-    ever changes, recompute them here. The shadow is a second copy of the Q
-    drawn 2 units lower and painted over by the white one, which is what a
-    text-shadow amounts to for a shape.
+    No drop shadow, unlike the wordmark it borrows from. Two units of
+    darkening under a chunky letterform reads as depth; under strokes this
+    fine it just softens them.
 
-    White on the lighter end of this gradient is 3.15:1, and 4.45:1 at the
-    darker end. That is under the 4.5:1 wanted for body text but over the 3:1
-    that applies to a graphic like this, and it is the same contrast the
-    wordmark itself has always carried.
+    Tile colours are $info and darken($info, 10%) from
+    _sass/_variables.scss, the same pair as .navbar-brand.
 
     No double hyphen may appear inside a comment. A standalone .svg is parsed
     as XML, where that is fatal, and the icon then silently fails to load.
@@ -35,15 +33,10 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="10.24" fill="url(#q)"/>
-  <g fill="none" stroke-width="5.76">
-    <g stroke="#0e354f" transform="translate(0,2)">
-      <circle cx="32" cy="32" r="16.96"/>
-      <path d="M37.88 37.88L52.36 52.36" stroke-linecap="round"/>
-    </g>
-    <g stroke="#fff">
-      <circle cx="32" cy="32" r="16.96"/>
-      <!-- The tail runs past the ring far enough to still register at 16px. -->
-      <path d="M37.88 37.88L52.36 52.36" stroke-linecap="round"/>
-    </g>
+  <g fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 19V45"/>
+    <path d="M23.5 32H40.5"/>
+    <path d="M32 23.5V40.5"/>
+    <path d="M46 19L55 32L46 45"/>
   </g>
 </svg>

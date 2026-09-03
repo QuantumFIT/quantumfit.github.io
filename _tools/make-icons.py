@@ -35,13 +35,24 @@ PNG_TARGETS = {
     180: os.path.join("images", "apple-touch-icon.png"),
 }
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
 SVG = os.path.join(ROOT, "favicon.svg")
+
+# The mark is the ket |+>, and at 16px its bar, plus and bracket merge into a
+# blob. That frame is drawn from a variant without the plus instead. Anything
+# above 16px renders the real thing.
+SVG_SMALL = os.path.join(HERE, "favicon-small.svg")
+SMALL_UP_TO = 16
+
+
+def source_for(size):
+    return SVG_SMALL if size <= SMALL_UP_TO else SVG
 
 
 def render(size, out):
     subprocess.run(
-        ["rsvg-convert", "-w", str(size), "-h", str(size), SVG, "-o", out],
+        ["rsvg-convert", "-w", str(size), "-h", str(size), source_for(size), "-o", out],
         check=True,
     )
 
@@ -49,6 +60,9 @@ def render(size, out):
 def main():
     if shutil.which("rsvg-convert") is None:
         sys.exit("rsvg-convert not found; install librsvg2-bin")
+    for f in (SVG, SVG_SMALL):
+        if not os.path.exists(f):
+            sys.exit(f"missing source: {f}")
 
     for size, rel in sorted(PNG_TARGETS.items()):
         path = os.path.join(ROOT, rel)
