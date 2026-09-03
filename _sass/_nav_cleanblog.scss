@@ -78,12 +78,15 @@
         // The closing bracket is diagonal, and a diagonal at the same stroke
         // width reads lighter than a vertical stem: far more of it is
         // antialiased edge. So it is drawn heavier, which is the ordinary
-        // optical correction type designers apply to diagonals. 4.6 against
-        // 3.6 was picked by eye at 3x against Lato 800's stems; 4.2 still
-        // read light and 5.0 started to look chunky. The opening bar is a
-        // vertical and needs no correction.
+        // optical correction type designers apply to diagonals. The opening
+        // bar is a vertical and needs none.
+        //
+        // 4.1 against the bar's 3.6. Settled by eye rather than by matching
+        // the letters' measured weight: 3.6 read unbolded beside them, 4.6
+        // matched their stems but made the bracket the loudest thing in the
+        // badge. This sits between.
         .brand-ket--close {
-          stroke-width: 4.6;
+          stroke-width: 4.1;
         }
 	}
 	.nav {
