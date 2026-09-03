@@ -59,7 +59,7 @@ principle_investigator:
 #
 # Every `web` URL below was verified to resolve and to name the right person.
 # Do the same for a new one rather than pattern-matching it: the FIT login is
-# not derivable from the surname (Havlena is `ihavlena`, not `havlena`), and
+# not derivable from the surname (Hečko is `ihecko`, not `hecko`), and
 # some people have no login alias at all, only the numeric id the faculty's
 # staff listing links to. Guessing is actively risky here -- `inovak` resolves,
 # but to a different Novák.
@@ -68,11 +68,6 @@ principle_investigator:
 # staff, so a student who is not also employed has none, and pages/team.md
 # renders those names as plain text.
 phd_and_postdocs:
-  - name: "Vojtěch Havlena"
-    role: "Postdoc"
-    web: "https://www.fit.vut.cz/person/ihavlena/"
-    email: "ihavlena@fit.vut.cz"
-
   - name: "Michal Hečko"
     role: "PhD Student"
     web: "https://www.fit.vut.cz/person/ihecko/"
