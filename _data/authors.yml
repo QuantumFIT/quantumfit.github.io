@@ -1,6 +1,6 @@
 # Author details -- see _config.yml `author:` key
 quantumfit:
-  name: "QuantumFIT"
+  name: "|QuantumFIT⟩"
   siterole: "research group"
   # The site's own address, and the one jekyll-seo-tag puts in the JSON-LD as
   # the author's url. Keep it in step with `url:` in _config.yml and CNAME.

@@ -1,14 +1,14 @@
 ---
 permalink: /about/
 layout: page
-title: About QuantumFIT
-description: A brief introduction to the QuantumFIT research group and this website.
+title: About |QuantumFIT⟩
+description: A brief introduction to the |QuantumFIT⟩ research group and this website.
 comments: false
 modified: 2026-09-03
 breadcrumbs: true
 ---
 
-**QuantumFIT** is the Quantum Computing Systems research group at the [Faculty of Information Technology](https://www.fit.vut.cz/), [Brno University of Technology](https://www.vut.cz/), working on quantum computing and quantum software engineering.
+**|QuantumFIT⟩** is the Quantum Computing Systems research group at the [Faculty of Information Technology](https://www.fit.vut.cz/), [Brno University of Technology](https://www.vut.cz/), working on quantum computing and quantum software engineering.
 
 {% comment %}
   Prose here rather than the labelled list the home page uses, so the two
@@ -73,7 +73,7 @@ ICCAD.
   No e-mail address here on purpose -- see _data/positions.yml.
 {% endcomment %}
 <address style="font-style: normal; line-height: 1.6; margin: 0;">
-{{ c.name }}<br>
+{{ c.name }}, {{ site.title }}<br>
 {% for line in site.data.positions.postal.lines %}{{ line }}{% unless forloop.last %}<br>{% endunless %}
 {% endfor %}</address>
 </div>

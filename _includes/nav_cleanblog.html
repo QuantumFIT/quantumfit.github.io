@@ -23,10 +23,10 @@
               tracks the text and looks the same everywhere, and matches the
               favicon, which is stroked for the same reason.
 
-              aria-hidden keeps the accessible name "QuantumFIT" rather than
+              aria-hidden keeps the accessible name plain rather than
               having a screen reader announce the punctuation.
             {%- endcomment -%}
-            <a class="navbar-brand" href="{{ site.baseurl }}/"><svg class="brand-ket" viewBox="0 0 6 24" aria-hidden="true" focusable="false"><path d="M3 1.5V22.5"/></svg>{{ site.title }}<svg class="brand-ket" viewBox="0 0 10 24" aria-hidden="true" focusable="false"><path d="M2.2 1.5L8 12L2.2 22.5"/></svg></a>
+            <a class="navbar-brand" href="{{ site.baseurl }}/"><svg class="brand-ket" viewBox="0 0 6 24" aria-hidden="true" focusable="false"><path d="M3 1.5V22.5"/></svg>{{ site.title_plain | default: site.title }}<svg class="brand-ket" viewBox="0 0 10 24" aria-hidden="true" focusable="false"><path d="M2.2 1.5L8 12L2.2 22.5"/></svg></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

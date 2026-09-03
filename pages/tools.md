@@ -2,7 +2,7 @@
 permalink: /tools/
 layout: page
 title: Tools
-description: "Tools developed by the QuantumFIT research group."
+description: "Tools developed by the |QuantumFIT⟩ research group."
 comments: false
 modified: 2026-09-01
 breadcrumbs: true

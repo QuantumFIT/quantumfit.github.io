@@ -1,24 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="QuantumFIT">
   <title>QuantumFIT</title>
   <!--
-    The site's mark: the ket |+> in white on a rounded tile carrying the
-    navbar wordmark's gradient. This file is the source; _tools/make-icons.py
-    rasterises it into favicon.ico, favicon.png and
+    The site's mark: an empty ket in white on a rounded tile carrying the
+    navbar wordmark's gradient. This file is the only source;
+    _tools/make-icons.py rasterises it into favicon.ico, favicon.png and
     images/apple-touch-icon.png, so re-run that after editing here.
 
     Drawn as strokes rather than set as text. A favicon rasteriser cannot be
     relied on to have any particular font, and glyph metrics would leave the
-    spacing of the three parts out of our hands, which is exactly what has to
-    be controlled at these sizes.
+    spacing of the two parts out of our hands, which is what has to be
+    controlled at these sizes.
 
-    Three separate strokes do not survive 16px: bar, plus and bracket merge
-    into a blob. The 16px frame of favicon.ico is therefore rendered from
-    _tools/favicon-small.svg, which drops the plus. Everything from 32px up
-    uses this file.
+    An empty ket rather than |+>: three strokes merge into a blob at 16px, and
+    several weights and spacings were tried before accepting that. Two strokes
+    with this much air between them survive it, so one source now covers every
+    size and there is no separate small variant to keep in step.
 
-    No drop shadow, unlike the wordmark it borrows from. Two units of
-    darkening under a chunky letterform reads as depth; under strokes this
-    fine it just softens them.
+    Stroke 8 of 64 is heavier than a letterform would want, and deliberately:
+    at 16px the bar and the bracket have to stay apart.
+
+    No drop shadow, unlike the wordmark this borrows from. Two units of
+    darkening under a chunky letter reads as depth; under strokes it softens
+    them.
 
     Tile colours are $info and darken($info, 10%) from
     _sass/_variables.scss, the same pair as .navbar-brand.
@@ -33,10 +36,8 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="10.24" fill="url(#q)"/>
-  <g fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M14 19V45"/>
-    <path d="M23.5 32H40.5"/>
-    <path d="M32 23.5V40.5"/>
-    <path d="M46 19L55 32L46 45"/>
+  <g fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 17V47"/>
+    <path d="M36 17L49 32L36 47"/>
   </g>
 </svg>
