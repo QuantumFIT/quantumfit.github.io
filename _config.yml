@@ -1,6 +1,11 @@
 # The group's name is written as a ket in every piece of visible text. The
 # navbar badge is the one exception: it draws its own brackets, so it takes
 # title_plain instead -- see _includes/nav_cleanblog.html.
+#
+# Careful when putting this name into markdown BODY text: kramdown reads a
+# bare `|` as a table cell separator and will silently turn the paragraph
+# into a one-row table. Escape it as `\|` there. Front matter, raw HTML and
+# Liquid output outside markdown need no escaping.
 title:            "|QuantumFIT⟩"
 title_plain:      "QuantumFIT"
 description:      "|QuantumFIT⟩ is the Quantum Computing Systems research group at the Faculty of Information Technology, Brno University of Technology, focused on quantum computing and quantum software engineering."

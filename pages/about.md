@@ -8,7 +8,14 @@ modified: 2026-09-03
 breadcrumbs: true
 ---
 
-**|QuantumFIT⟩** is the Quantum Computing Systems research group at the [Faculty of Information Technology](https://www.fit.vut.cz/), [Brno University of Technology](https://www.vut.cz/), working on quantum computing and quantum software engineering.
+{% comment %}
+  The pipe is escaped. Unescaped, kramdown reads it as a table cell separator
+  and turns this paragraph into a one-row table, cells "**" and the rest --
+  which is exactly what it did until this comment was written. Anywhere the
+  group's name appears in markdown body text it needs the backslash; front
+  matter, raw HTML and Liquid output outside markdown are unaffected.
+{% endcomment %}
+**\|QuantumFIT⟩** is the Quantum Computing Systems research group at the [Faculty of Information Technology](https://www.fit.vut.cz/), [Brno University of Technology](https://www.vut.cz/), working on quantum computing and quantum software engineering.
 
 {% comment %}
   Prose here rather than the labelled list the home page uses, so the two
