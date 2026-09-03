@@ -75,17 +75,18 @@
           filter: drop-shadow(0 2px 0 darken($info, 35%));
         }
 
-        // 3.4, against the bar's 3.6 -- so the closing bracket is drawn
-        // slightly LIGHTER than the opening one, not heavier. That is the
+        // 3, against the bar's 3.6 -- so the closing bracket is drawn
+        // distinctly LIGHTER than the opening one, not heavier. That is the
         // opposite of the usual optical correction for diagonals, and it is
         // deliberate: a diagonal at equal width does read lighter, but here
-        // that reads as wanted, the bracket sitting back from the name rather
-        // than competing with it. Chosen from a ladder of ten weights at real
-        // size (3.4 to 5.0); 4.1 and 4.6 both made it too prominent.
+        // that is wanted, the bracket sitting back from the name rather than
+        // competing with it. Chosen from a ladder of twelve weights rendered
+        // at real size, 1.0 to 4.6; every value at or above the bar's made
+        // the bracket too prominent.
         //
         // Do not "fix" this to match the bar without looking at it at 24px.
         .brand-ket--close {
-          stroke-width: 3.4;
+          stroke-width: 3;
         }
 	}
 	.nav {
