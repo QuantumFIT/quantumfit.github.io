@@ -1,0 +1,8 @@
+- label: "Verification"
+  text: "Checking a quantum circuit or program against a pre-/post-condition specification, or searching it for bugs, without ever enumerating individual quantum states."
+
+- label: "Simulation"
+  text: "Symbolic execution over MTBDDs with loop summarization, so a repeated block of gates is analysed once rather than unrolled."
+
+- label: "Foundations"
+  text: "The automata and logic underneath: tree automata and their level-synchronized extension, omega-automata, logic and SMT solving."

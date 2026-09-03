@@ -39,10 +39,28 @@
           <a href="/publications/" class="button secondary">Publications</a>
         </div>
       </div>
-      <a href="#featured" class="scroll-indicator">
+      <a href="#focus" class="scroll-indicator">
         <i class="fa fa-chevron-down"></i>
       </a>
     </section>
+
+    {% comment %}
+      What the group works on, before the reader is offered navigation. The
+      directions live in _data/focus.yml, like the news and the team, so
+      editing them does not mean touching this layout. Labels are stored in
+      natural case and uppercased by CSS.
+    {% endcomment %}
+    {% if site.data.focus and site.data.focus.size > 0 %}
+    <section id="focus" class="focus-section">
+      <h2 class="section-title">Our Focus</h2>
+      <dl class="focus-list">
+        {% for item in site.data.focus %}
+        <dt>{{ item.label }}</dt>
+        <dd>{{ item.text }}</dd>
+        {% endfor %}
+      </dl>
+    </section>
+    {% endif %}
 
     <section id="featured" class="featured-section">
       <div class="grid-container">

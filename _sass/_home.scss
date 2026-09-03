@@ -6,6 +6,7 @@
 // Full-width breakout from #main container
 // ================================
 .hero-section,
+.focus-section,
 .featured-section {
   width: 100vw;
   position: relative;
@@ -285,6 +286,88 @@
   }
 }
 
+// Centred section heading with the short gradient rule under it, shared by
+// "Our Focus" and "Latest News" so the two cannot drift apart. The colour is
+// --qf-heading rather than $primary: identical in light mode, and taking the
+// token means _dark.scss needs no entry for a new section using this.
+@mixin qf-section-title {
+  text-align: center;
+  display: block;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--qf-heading);
+  position: relative;
+  padding-bottom: 1rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, $primary, $secondary);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100px;
+  }
+}
+
+// ================================
+// Focus Section
+// ================================
+.focus-section {
+  padding: 3.5rem 2rem;
+  // Alternates with its neighbours: the hero above is near-black, the featured
+  // cards below sit on --qf-bg, so this band takes --qf-surface.
+  background: var(--qf-surface);
+
+  .section-title {
+    @include qf-section-title;
+  }
+
+  // Same label/value device as .member-facts on the Team page, a size up for
+  // a full-width band.
+  .focus-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.15rem 2rem;
+    max-width: 860px;
+    margin: 0 auto;
+
+    dt {
+      padding-top: 0.15rem;
+      color: var(--qf-text-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    dd {
+      margin: 0;
+      color: var(--qf-text);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+
+      dt {
+        padding-top: 1.1rem;
+      }
+    }
+  }
+}
+
 // ================================
 // News Section
 // ================================
@@ -294,31 +377,7 @@
   background: white;
 
   .section-title {
-    text-align: center;
-    display: block;
-    margin-bottom: 2.5rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: $primary;
-    position: relative;
-    padding-bottom: 1rem;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, $primary, $secondary);
-      border-radius: 2px;
-      transition: width 0.3s ease;
-    }
-
-    &:hover::after {
-      width: 100px;
-    }
+    @include qf-section-title;
   }
 
   .news-grid {
