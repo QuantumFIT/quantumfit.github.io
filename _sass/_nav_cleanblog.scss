@@ -75,18 +75,17 @@
           filter: drop-shadow(0 2px 0 darken($info, 35%));
         }
 
-        // The closing bracket is diagonal, and a diagonal at the same stroke
-        // width reads lighter than a vertical stem: far more of it is
-        // antialiased edge. So it is drawn heavier, which is the ordinary
-        // optical correction type designers apply to diagonals. The opening
-        // bar is a vertical and needs none.
+        // 3.4, against the bar's 3.6 -- so the closing bracket is drawn
+        // slightly LIGHTER than the opening one, not heavier. That is the
+        // opposite of the usual optical correction for diagonals, and it is
+        // deliberate: a diagonal at equal width does read lighter, but here
+        // that reads as wanted, the bracket sitting back from the name rather
+        // than competing with it. Chosen from a ladder of ten weights at real
+        // size (3.4 to 5.0); 4.1 and 4.6 both made it too prominent.
         //
-        // 4.1 against the bar's 3.6. Settled by eye rather than by matching
-        // the letters' measured weight: 3.6 read unbolded beside them, 4.6
-        // matched their stems but made the bracket the loudest thing in the
-        // badge. This sits between.
+        // Do not "fix" this to match the bar without looking at it at 24px.
         .brand-ket--close {
-          stroke-width: 4.1;
+          stroke-width: 3.4;
         }
 	}
 	.nav {
