@@ -4,13 +4,36 @@ layout: page
 title: About QuantumFIT
 description: A brief introduction to the QuantumFIT research group and this website.
 comments: false
-modified: 2026-08-28
+modified: 2026-09-03
 breadcrumbs: true
 ---
 
 **QuantumFIT** is the Quantum Computing Systems research group at the [Faculty of Information Technology](https://www.fit.vut.cz/), [Brno University of Technology](https://www.vut.cz/), working on quantum computing and quantum software engineering.
 
-<!-- TODO: replace this placeholder paragraph with a real description of the group's research focus. -->
+{% comment %}
+  Prose here rather than the labelled list the home page uses, so the two
+  complement each other instead of repeating. Everything below is traceable to
+  pages/tools.md and pages/publications.md; nothing claims a result the record
+  does not carry.
+{% endcomment %}
+Our work applies **formal methods to quantum computing**. The recurring idea is to
+represent whole sets of quantum states symbolically, as tree automata, rather than
+enumerating states one at a time: a question about a quantum circuit then becomes a
+question about automata. That makes it possible to check a circuit against a
+pre-/post-condition specification, or to search it for bugs, without ever
+enumerating individual states. The same perspective extends from circuits to
+quantum programs, and to families of circuits rather than single instances.
+
+Alongside verification we work on **simulation**, using symbolic execution over
+multi-terminal binary decision diagrams together with loop summarization, so that a
+repeated block of gates is analysed once instead of being unrolled. Underneath both
+sits the automata and logic the methods are built from: tree automata and their
+level-synchronized extension, omega-automata, and logic and SMT solving.
+
+Two tools carry this into practice --- [AutoQ](/tools/), a verifier for quantum
+circuits and programs, and [Medusa](/tools/), a simulator --- and the results behind
+them appear in our [publications](/publications/), at PLDI, POPL, CAV, TACAS and
+ICCAD.
 
 ## Contact
 
