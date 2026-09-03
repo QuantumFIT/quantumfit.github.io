@@ -4,5 +4,11 @@
 - label: "Simulation"
   text: "Symbolic execution over MTBDDs with loop summarization, so a repeated block of gates is analysed once rather than unrolled."
 
+- label: "Synthesis"
+  text: "Constructing a circuit that realizes a given computation, deriving the gates from the specification instead of writing them by hand."
+
+- label: "Optimization"
+  text: "Rewriting a circuit into an equivalent one that is cheaper to run: fewer gates, shallower depth, and fewer of the expensive non-Clifford ones."
+
 - label: "Foundations"
   text: "The automata and logic underneath: tree automata and their level-synchronized extension, omega-automata, logic and SMT solving."

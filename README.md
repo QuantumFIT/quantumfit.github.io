@@ -19,7 +19,7 @@ and links in that layout rather than in config/data.
 
 - `pages/` -- site pages (Team, Publications, Tools, News, About), plus `index.html` for the home page
 - `_data/group.yml` -- the PI and the group members, shown on the Team page
-- `_data/focus.yml` -- the research directions in the home page's Our Focus band
+- `_data/focus.yml` -- the research directions in the home page's Focus band
 - `_data/news.yml` -- news items, shown on the home page and the News page
 - `_data/positions.yml` -- contact/affiliation info, shown on the About page
 - `images/team/` -- member photos, pre-cropped square: `.pi-photo` is a circle with

@@ -287,7 +287,7 @@
 }
 
 // Centred section heading with the short gradient rule under it, shared by
-// "Our Focus" and "Latest News" so the two cannot drift apart. The colour is
+// "Focus" and "Latest News" so the two cannot drift apart. The colour is
 // --qf-heading rather than $primary: identical in light mode, and taking the
 // token means _dark.scss needs no entry for a new section using this.
 @mixin qf-section-title {
