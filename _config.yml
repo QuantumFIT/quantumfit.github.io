@@ -1,19 +1,24 @@
-# The group's name is written as a ket in every piece of visible text,
-# including the navbar badge.
+# The group's name is written as a ket in every piece of visible text.
 #
-# ASCII | and > rather than U+007C with U+27E9. The proper mathematical
-# bracket is not in Lato, nor in the Latin subset the site loads, so a literal
-# one is substituted from whatever fallback font the reader happens to have --
-# which has no matching bold, leaving the bracket thin beside heavy text. That
-# was visible in the About heading and in bold body text. ASCII > is in every
-# face at every weight, so it inherits weight, size, colour and text-shadow
-# like any other character.
+# In text it uses ASCII | and >, not U+27E9. The proper mathematical bracket is
+# not in Lato, nor in the Latin subset the site loads, so a literal one is
+# substituted from whatever fallback font the reader happens to have -- which
+# has no matching bold, leaving the bracket thin beside heavy text. ASCII > is
+# in every face at every weight and inherits weight, size, colour and
+# text-shadow like any other character.
+#
+# The navbar badge is the exception: at 24px and weight 800 the ASCII > reads
+# as an operator, mid-height and small beside a full-height bar, so the badge
+# draws proper brackets as SVG instead and takes title_plain for the bare
+# name. See _includes/nav_cleanblog.html. That is affordable in one controlled
+# spot and not in running text.
 #
 # Careful when putting this name into markdown BODY text: kramdown reads a
 # bare `|` as a table cell separator and will silently turn the paragraph
 # into a one-row table. Escape it as `\|` there. Front matter, raw HTML and
 # Liquid output outside markdown need no escaping.
 title:            "|QuantumFIT>"
+title_plain:      "QuantumFIT"
 description:      "|QuantumFIT> is the Quantum Computing Systems research group at the Faculty of Information Technology, Brno University of Technology, focused on quantum computing and quantum software engineering."
 # The custom domain, and the name in CNAME. This has to track CNAME: every
 # asset, canonical link, og:url and sitemap entry is built from site.url, and
