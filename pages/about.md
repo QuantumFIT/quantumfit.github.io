@@ -1,8 +1,8 @@
 ---
 permalink: /about/
 layout: page
-title: About |QuantumFIT⟩
-description: A brief introduction to the |QuantumFIT⟩ research group and this website.
+title: About |QuantumFIT>
+description: A brief introduction to the |QuantumFIT> research group and this website.
 comments: false
 modified: 2026-09-03
 breadcrumbs: true
@@ -15,7 +15,7 @@ breadcrumbs: true
   group's name appears in markdown body text it needs the backslash; front
   matter, raw HTML and Liquid output outside markdown are unaffected.
 {% endcomment %}
-**\|QuantumFIT⟩** is the Quantum Computing Systems research group at the [Faculty of Information Technology](https://www.fit.vut.cz/), [Brno University of Technology](https://www.vut.cz/), working on quantum computing and quantum software engineering.
+**\|QuantumFIT>** is the Quantum Computing Systems research group at the [Faculty of Information Technology](https://www.fit.vut.cz/), [Brno University of Technology](https://www.vut.cz/), working on quantum computing and quantum software engineering.
 
 {% comment %}
   Prose here rather than the labelled list the home page uses, so the two

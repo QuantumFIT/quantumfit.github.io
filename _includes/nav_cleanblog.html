@@ -10,23 +10,14 @@
                 <span class="icon-bar"></span>
             </button>
             {%- comment -%}
-              The ket brackets around the name are decoration on the badge
-              only, so they live here rather than in site.title -- that value
-              also feeds the browser tab title, og:site_name, the Atom feed and
-              the footer copyright, none of which want brackets.
-
-              Drawn rather than typed. The loaded face is
-              assets/fonts/lato-v24-latin-700.woff2, a Latin subset, so
-              U+27E9 is not in it: a literal bracket would silently fall back
-              to whatever maths-capable font each visitor happens to have, at
-              a weight and size we do not control. Stroked SVG sized in `em`
-              tracks the text and looks the same everywhere, and matches the
-              favicon, which is stroked for the same reason.
-
-              aria-hidden keeps the accessible name plain rather than
-              having a screen reader announce the punctuation.
+              The brackets are part of site.title, plain ASCII, so they are
+              Lato glyphs like every other character here: same weight, same
+              text-shadow, nothing to keep in step. An earlier version drew
+              them as SVG to dodge a missing U+27E9, which then needed its own
+              optical correction to stop the diagonal reading light; using
+              characters the face actually has removes both problems.
             {%- endcomment -%}
-            <a class="navbar-brand" href="{{ site.baseurl }}/"><svg class="brand-ket" viewBox="0 0 6 24" aria-hidden="true" focusable="false"><path d="M3 1.5V22.5"/></svg>{{ site.title_plain | default: site.title }}<svg class="brand-ket brand-ket--close" viewBox="0 0 10 24" aria-hidden="true" focusable="false"><path d="M2.2 1.5L8 12L2.2 22.5"/></svg></a>
+            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

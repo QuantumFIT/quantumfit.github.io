@@ -2,7 +2,7 @@
 permalink: /team/
 layout: page
 title: Team
-description: "The people in the |QuantumFIT⟩ research group."
+description: "The people in the |QuantumFIT> research group."
 comments: false
 modified: 2026-09-02
 breadcrumbs: true
