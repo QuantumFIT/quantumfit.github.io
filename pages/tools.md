@@ -4,7 +4,7 @@ layout: page
 title: Tools
 description: "Tools developed by the |QuantumFIT⟩ research group."
 comments: false
-modified: 2026-09-01
+modified: 2026-09-04
 breadcrumbs: true
 ---
 
@@ -67,6 +67,24 @@ rather than unrolled.
 Introduced in
 [Accelerating Quantum Circuit Simulation with Symbolic Execution and Loop Summarization](https://doi.org/10.1145/3676536.3676711)
 (ICCAD'24).
+</div>
+</div>
+</div>
+<div class="member-card">
+<div class="member-info">
+<h4><a href="https://quantum.fit.vut.cz/q-vis/">q-vis</a></h4>
+<div class="member-description" markdown="1">
+An in-browser visualizer for the MTBDD of a pure quantum state --- the same
+representation Medusa computes with. It applies a unitary circuit gate by gate
+and redraws the decision diagram, picking out the nodes each gate created, so
+what the structure costs is visible: a uniform superposition over 8 qubits is
+one node, a 5-qubit GHZ state is 11, and a 3-qubit QFT shares nothing and grows
+as large as the state vector.
+
+Amplitudes are exact, in the ring Z[1/&radic;2, i] extended with free symbols,
+so nothing is rounded and two states are equal precisely when their diagrams are
+the same node. It runs as a single HTML file with no install and no server; the
+[source](https://github.com/QuantumFIT/q-vis) is on GitHub.
 </div>
 </div>
 </div>
