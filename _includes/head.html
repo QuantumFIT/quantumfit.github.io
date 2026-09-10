@@ -53,7 +53,8 @@
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
 
-{% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+{% comment %}site.noindex is set by the preview build in .github/workflows/pages.yml, so a draft of the whole site at /preview/ stays out of search results.{% endcomment %}
+{% if page.noindex or site.noindex %}<meta name="robots" content="noindex">{% endif %}
 
 {% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
 {% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}

@@ -32,14 +32,33 @@ and links in that layout rather than in config/data.
   `images/apple-touch-icon.png`. Those are committed, because GitHub Pages runs
   Jekyll and nothing else. The script needs `librsvg2-bin` and `python3-pil`.
 
-## Enabling GitHub Pages
+## How it is published
 
-In the repo's Settings -> Pages, set the source to the `master` branch (root). The site then builds
-automatically on every push.
+The site is built by `.github/workflows/pages.yml`, not by GitHub Pages' own Jekyll. In the repo's
+Settings -> Pages, the source is **GitHub Actions**; the `github-pages` environment allows deployments
+from `master` and from `preview`.
 
 It is served at https://quantum.fit.vut.cz/, the custom domain named in `CNAME` (that file is written
 by GitHub when the domain is set in Settings -> Pages, so leave it alone). `quantumfit.github.io` still
 resolves and 301s there, path preserved.
+
+### Preview before master
+
+Push a branch to `preview` and the whole site is published at https://quantum.fit.vut.cz/preview/ for
+review. The root keeps serving `master`: the deploy job checks master out whatever ref started the run,
+so a preview push can only create or replace `/preview/`.
+
+```
+git push -f origin HEAD:preview
+```
+
+The preview build overlays `url: https://quantum.fit.vut.cz/preview`, `baseurl: /preview` and
+`noindex: true`, so every link and asset stays inside the draft and search engines leave it alone.
+Anything that hardcodes a root-relative `href="/..."` would escape to the live site instead -- use
+`{{ site.url }}/...`, the way the navigation does.
+
+Delete the branch once the change lands on master; `/preview/` disappears on the next deploy (run the
+workflow by hand if nothing else is due to be pushed).
 
 **`url:` in `_config.yml` must match `CNAME`.** Every asset URL, canonical link, `og:url` and sitemap
 entry is built from `site.url`. If it names the old host the site still renders, but each page pulls all
