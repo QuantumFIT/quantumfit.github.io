@@ -46,19 +46,29 @@
 
     {% comment %}
       What the group works on, before the reader is offered navigation. The
-      directions live in _data/focus.yml, like the news and the team, so
-      editing them does not mean touching this layout. Labels are stored in
-      natural case and uppercased by CSS.
+      text lives in _data/focus.yml, like the news and the team, so editing it
+      does not mean touching this layout. Each entry there is one paragraph,
+      markdownified -- which is also why the name is escaped as `\|` in that
+      file; see the note at the top of it.
     {% endcomment %}
-    {% if site.data.focus and site.data.focus.size > 0 %}
+    {% if site.data.focus.paragraphs and site.data.focus.paragraphs.size > 0 %}
+    {%- comment -%}
+      No heading: the band is the first thing under the hero and says what
+      the group is, which a word like "Focus" only delayed. The id stays --
+      the hero's scroll indicator points at it.
+    {%- endcomment -%}
     <section id="focus" class="focus-section">
-      <h2 class="section-title">Focus</h2>
-      <dl class="focus-list">
-        {% for item in site.data.focus %}
-        <dt>{{ item.label }}</dt>
-        <dd>{{ item.text }}</dd>
+      <div class="focus-prose">
+        {% for para in site.data.focus.paragraphs %}
+        {{ para | markdownify }}
         {% endfor %}
-      </dl>
+        {% if site.data.focus.invitation %}
+        <p class="focus-invite">
+          {{ site.data.focus.invitation }}
+          <a href="mailto:{{ site.data.positions.contact.email }}">{{ site.data.positions.contact.name }}</a>.
+        </p>
+        {% endif %}
+      </div>
     </section>
     {% endif %}
 

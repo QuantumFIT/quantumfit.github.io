@@ -327,42 +327,49 @@
   // cards below sit on --qf-bg, so this band takes --qf-surface.
   background: var(--qf-surface);
 
-  .section-title {
-    @include qf-section-title;
-  }
+  // No .section-title rule here on purpose: this band carries no heading, and
+  // the qf-section-title mixin is still used by .news-section below.
 
-  // Same label/value device as .member-facts on the Team page, a size up for
-  // a full-width band.
-  .focus-list {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.15rem 2rem;
-    max-width: 860px;
+  // A couple of paragraphs of running text, so the measure is narrower than
+  // the band: 62rem would be about 120 characters a line at this size, which
+  // is where the eye starts losing the return sweep. 44rem lands near 75.
+  .focus-prose {
+    max-width: 44rem;
     margin: 0 auto;
 
-    dt {
-      padding-top: 0.15rem;
-      color: var(--qf-text-light);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
+    p {
+      color: var(--qf-text);
+      font-size: 1.05rem;
+      line-height: 1.72;
+      margin: 0 0 1.15rem;
     }
 
-    dd {
-      margin: 0;
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    // The line addressed to students, boxed off from the two paragraphs
+    // above. --qf-surface-alt is the same inset tone the Team and Tools
+    // cards sit on, so the band still reads as one piece rather than as a
+    // second section: the box is set INTO the prose, at the prose measure,
+    // not spanning the band.
+    .focus-invite {
+      margin-top: 1.8rem;
+      padding: 1.05rem 1.3rem;
+      background: var(--qf-surface-alt);
+      border: 1px solid var(--qf-border);
+      border-radius: 10px;
+      // Full text colour rather than the muted one: on a tinted ground the
+      // muted grey drops below a comfortable contrast.
       color: var(--qf-text);
       font-size: 1rem;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     @media (max-width: 600px) {
-      grid-template-columns: 1fr;
-      gap: 0.3rem;
-
-      dt {
-        padding-top: 1.1rem;
+      p {
+        font-size: 1rem;
+        line-height: 1.65;
       }
     }
   }

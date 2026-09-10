@@ -1,14 +1,37 @@
-- label: "Verification"
-  text: "Checking a quantum circuit or program against a pre-/post-condition specification, or searching it for bugs, without ever enumerating individual quantum states."
+# What the group is about, shown as the Focus band on the home page
+# (_layouts/home.html). Each entry is one paragraph, markdownified, so
+# *emphasis* and [links](...) work inside one.
+#
+# Written as folded block scalars (`>`) rather than quoted strings for one
+# specific reason: the name has to be escaped as `\|` here.
+#
+# The text is markdownified, and kramdown reads a bare `|` as a table cell
+# separator -- a line containing one becomes a one-row <table>, which is how
+# the About page broke once already. `\|` is the escape, and a double-quoted
+# YAML string would try to interpret that backslash and fail to parse.
 
-- label: "Simulation"
-  text: "Symbolic execution over MTBDDs with loop summarization, so a repeated block of gates is analysed once rather than unrolled."
+paragraphs:
+  - >
+    \|QuantumFIT⟩ is a group of researchers and students at the Faculty of
+    Information Technology, Brno University of Technology, studying quantum
+    computing systems in the broad sense. Our aim is to help bring quantum
+    computers to the point of practical quantum advantage by developing
+    methods and prototype tools for the design and analysis of quantum
+    computation — simulators, optimizers, verifiers, circuit synthesis
+    engines, and tools supporting the design of quantum error-correcting
+    codes.
 
-- label: "Synthesis"
-  text: "Constructing a circuit that realizes a given computation, deriving the gates from the specification instead of writing them by hand."
+  - >
+    Methodologically, the group builds on formal methods and automated
+    reasoning (decision diagrams, automata, SAT/SMT solving, tensor networks)
+    and combines basic research with the development and experimental
+    evaluation of prototype implementations.
 
-- label: "Optimization"
-  text: "Rewriting a circuit into an equivalent one that is cheaper to run: fewer gates, shallower depth, and fewer of the expensive non-Clifford ones."
-
-- label: "Foundations"
-  text: "The automata and logic underneath: tree automata and their level-synchronized extension, omega-automata, logic and SMT solving."
+# A closing line addressed to students, boxed off from the paragraphs above
+# (see .focus-invite in _sass/_home.scss). It stops mid-sentence on
+# purpose: the layout appends the PI's name as a mailto link built from
+# _data/positions.yml, so the address stays in exactly one place in the repo.
+invitation: >
+  A student interested in quantum computing? If you are looking for a topic
+  for a bachelor's or master's thesis, for a project practice, or for a PhD,
+  write to
