@@ -1,26 +1,19 @@
-info_website: "About This Site"
-archive: "Archive"
-blog_archive: "Blog Archive"
-blog: "Blog"
-comments_headline: "Dialogue &amp; Discussion"
-more: "More ›"
-more_articles: "More Articles"
-navigation_title: "Navigation"
-new_blog_entries: "Latest Blog Articles"
-next: "Next"
-next_posts: "Next Posts"
-previous: "Previous"
-previous_posts: "Previous Posts"
-read: "Read"
-read_more: "Read More&nbsp;›"
-if_you_are_not_redirected_automatically: "If you are not redirected automatically,"
-click_here: "click here"
-next_post_in: "Next Post in"
-previous_post_in: "Previous Post in"
+# User-interface strings from the vendored theme, read as
+# site.data.language.<key>.
+#
+# This file used to carry 26 keys. Exactly one of them reaches a page this
+# site builds: `breadcrumb_start`, used by _includes/masthead-breadcrumbs.html
+# on the five pages with `breadcrumbs: true`.
+#
+# The other 25 belonged to the theme's blog machinery -- pagination, archives,
+# next/previous post navigation, the front-page widget, the table of contents.
+# None of it is reachable: there is no _posts directory, and the layouts that
+# would include those partials (blog, post, post-index, blog_by_category) are
+# not used by any page here. Keeping the strings suggested they were live and
+# that translating or editing them would change something on the site.
+#
+# If the blog is ever switched on, the full original file is in git history at
+# the commit that trimmed it, and in the upstream theme
+# (liuyxpp/liuyxpp.github.io @ 8d46aef).
+
 breadcrumb_start: "Home"
-edit: "Edit"
-this_content_is_open_source: "This content is open source."
-help_improve_it: "Help improve it"
-enter_search_term: "Enter search term and hit enter"
-go_top: "Go to top"
-go_toc: "Go to Table of Contents"
