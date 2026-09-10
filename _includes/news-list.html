@@ -3,9 +3,11 @@
   {% for item in sorted_news %}
   {% comment %}
     The anchor is what feed.xml uses for each entry's id and alternate link, so
-    the two have to agree: date, then the slugified title.
+    the two have to agree: date, then the item's `slug` from _data/news.yml.
+    The fallback to `title | slugify` is what this used to do unconditionally,
+    which tied every permalink to a title that might later be reworded.
   {% endcomment %}
-  {% capture anchor %}{{ item.date | date: "%Y-%m-%d" }}-{{ item.title | slugify }}{% endcapture %}
+  {% capture anchor %}{{ item.date | date: "%Y-%m-%d" }}-{% if item.slug %}{{ item.slug }}{% else %}{{ item.title | slugify }}{% endif %}{% endcapture %}
   <article class="news-item{% if item.image and item.image != '' %} news-item--with-image{% endif %}" id="{{ anchor }}">
     <div class="news-content">
       <h3>{{ item.title }}</h3>

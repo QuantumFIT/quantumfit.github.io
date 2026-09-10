@@ -1,4 +1,23 @@
+# News shown on the home page, the News page and in feed.xml.
+#
+# `slug` is the stable half of every item's anchor and of its feed <id>; the
+# rendered anchor is "<date>-<slug>". It is written out rather than derived
+# from the title, because news-list.html and feed.xml used to build it as
+# `title | slugify`, which meant that editing a title silently broke every
+# link to that item and made feed readers show it again as new.
+#
+# The values below are exactly what slugify produced for the titles as they
+# stood, so freezing them changed no existing link and no feed id. That
+# includes the diacritics in the Jobranova entry: Jekyll's slugify is
+# Unicode-aware and keeps them, which is valid but percent-encodes when the
+# link is copied. A new item may use a shorter, ASCII slug -- once written
+# here it never has to change again.
+#
+# An item with no `slug` still falls back to `title | slugify`, so a forgotten
+# one degrades to the old behaviour rather than to an empty anchor.
+
 - title: "Parameterized verification of quantum circuits accepted at POPL'26"
+  slug: "parameterized-verification-of-quantum-circuits-accepted-at-popl-26"
   date: 2025-11-10
   description: "The paper “Parameterized Verification of Quantum Circuits” was accepted at POPL'26 in Rennes, France, to appear in PACMPL 10 (POPL)."
   url: "https://doi.org/10.1145/3776712"
@@ -6,6 +25,7 @@
   category: publication
 
 - title: "Quantum circuit verification in Communications of the ACM"
+  slug: "quantum-circuit-verification-in-communications-of-the-acm"
   date: 2025-05-29
   description: "The paper “An Automata-Based Framework for Verification and Bug Hunting in Quantum Circuits” appeared in the June 2025 issue of Communications of the ACM, volume 68 issue 6, pages 85–93."
   url: "https://doi.org/10.1145/3725728"
@@ -13,6 +33,7 @@
   category: publication
 
 - title: "Quantum program verification accepted at TACAS'25"
+  slug: "quantum-program-verification-accepted-at-tacas-25"
   date: 2024-12-23
   description: "The paper “AutoQ 2.0: From Verification of Quantum Circuits to Verification of Quantum Programs” was accepted at TACAS'25 in Hamilton, Canada. It extends AutoQ from verifying quantum circuits to verifying quantum programs."
   url: "https://doi.org/10.1007/978-3-031-90660-2_5"
@@ -20,6 +41,7 @@
   category: publication
 
 - title: "Sára Jobranová wins 8 z VUT with quantum circuit simulation"
+  slug: "sára-jobranová-wins-8-z-vut-with-quantum-circuit-simulation"
   date: 2024-12-12
   description: "Sára Jobranová won 8 z VUT 2024, the university-wide showcase of the best bachelor’s theses from across all VUT faculties. The jury judged her presentation on quantum circuit simulation the most impressive of the final evening, praising how clearly she put across a difficult topic."
   url: "https://www.vut.cz/vut/aktuality-f19528/prehlidka-8-z-vut-patrila-kvantovym-pocitacum-robotice-a-designu-osvetleni-d270966"
@@ -27,6 +49,7 @@
   category: award
 
 - title: "Level-synchronized tree automata for quantum circuits accepted at POPL'25"
+  slug: "level-synchronized-tree-automata-for-quantum-circuits-accepted-at-popl-25"
   date: 2024-11-11
   description: "The paper “Verifying Quantum Circuits with Level-Synchronized Tree Automata” was accepted at POPL'25 in Denver, Colorado, to appear in PACMPL 9 (POPL). The level-synchronized automata it introduces extend the class of quantum circuits AutoQ can verify."
   url: "https://doi.org/10.1145/3704868"
@@ -34,6 +57,7 @@
   category: publication
 
 - title: "Quantum circuit simulation accepted at ICCAD'24"
+  slug: "quantum-circuit-simulation-accepted-at-iccad-24"
   date: 2024-07-03
   description: "The paper “Accelerating Quantum Circuit Simulation with Symbolic Execution and Loop Summarization” was accepted at ICCAD'24 in New Jersey. It introduces Medusa, which simulates quantum circuits symbolically and analyses a repeated block of gates once rather than unrolling it."
   url: "https://doi.org/10.1145/3676536.3676711"
@@ -41,6 +65,7 @@
   category: publication
 
 - title: "Quantum circuit verifier AutoQ accepted at CAV'23"
+  slug: "quantum-circuit-verifier-autoq-accepted-at-cav-23"
   date: 2023-07-01
   description: "The paper “AutoQ: An Automata-based Quantum Circuit Verifier” was accepted at CAV'23 in Paris, France. AutoQ verifies quantum circuits and programs by representing whole sets of quantum states as tree automata, so a circuit can be checked against a specification without enumerating individual states."
   url: "https://doi.org/10.1007/978-3-031-37709-9_7"
@@ -48,6 +73,7 @@
   category: publication
 
 - title: "Distinguished Paper Award at PLDI'23 for quantum circuit verification"
+  slug: "distinguished-paper-award-at-pldi-23-for-quantum-circuit-verification"
   date: 2023-06-19
   description: "The paper “An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits” was named a Distinguished Paper at PLDI'23 in Orlando, Florida."
   url: "https://doi.org/10.1145/3591270"
@@ -55,6 +81,7 @@
   category: award
 
 - title: "Quantum circuit verification paper accepted at PLDI'23"
+  slug: "quantum-circuit-verification-paper-accepted-at-pldi-23"
   date: 2023-02-27
   description: "The paper “An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits” was accepted at PLDI'23, to appear in PACMPL 7 (PLDI). It checks a quantum circuit against a pre-/post-condition specification, or searches it for bugs, without ever enumerating individual quantum states."
   url: "https://doi.org/10.1145/3591270"
