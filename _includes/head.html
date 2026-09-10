@@ -113,8 +113,30 @@
 <style type="text/css">body {background-image:url({{ background }});}</style>
 {% endif %}
 
-<!-- For plugin: jekyll-seo-tag -->
-{% seo %}
+<!-- There is no jekyll-seo-tag call here, and the plugin is off the list in
+     _config.yml, because every tag it produced was already produced above --
+     and produced correctly.
+
+     Two problems, both verified in the served HTML:
+
+       - It emitted a SECOND <title> and a second <link rel="canonical">, plus
+         duplicate og:title, og:description, og:url, og:site_name, og:locale
+         and description. Two <title> elements is invalid HTML; browsers took
+         the first (ours), but a crawler may take either.
+       - Worse, its copies lost the leading `|` of the name: "QuantumFIT>"
+         instead of "|QuantumFIT>". jekyll-seo-tag runs every string through
+         markdownify before stripping tags (FORMAT_STRING_METHODS in its
+         drop.rb), and kramdown turns ANY line containing a pipe into a
+         one-row table -- the same trap _config.yml warns about for body text.
+         There is no way to escape around it: the `\|` that fixes markdown
+         would show up literally everywhere else site.title is used.
+
+     What its removal costs is one JSON-LD block, replaced below. Its version
+     also declared the group a schema.org Person and carried the mangled
+     description, so this is not a like-for-like loss. -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":{{ site.title | jsonify }},"url":{{ site.url | jsonify }},"description":{{ site.description | jsonify }}}
+</script>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
