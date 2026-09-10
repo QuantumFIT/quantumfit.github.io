@@ -12,18 +12,18 @@
 
 paragraphs:
   - >
-    \|QuantumFIT⟩ is a group of researchers and students at the Faculty of
-    Information Technology, Brno University of Technology, studying quantum
-    computing systems in the broad sense. Our aim is to help bring quantum
-    computers to the point of practical quantum advantage by developing
+    **\|QuantumFIT⟩** is a group of researchers and students at the Faculty of
+    Information Technology, Brno University of Technology, studying **quantum
+    computing systems** in the broad sense. Our aim is to help bring quantum
+    computers to the point of **practical quantum advantage** by developing
     methods and prototype tools for the design and analysis of quantum
     computation — simulators, optimizers, verifiers, circuit synthesis
     engines, and tools supporting the design of quantum error-correcting
     codes.
 
   - >
-    Methodologically, the group builds on formal methods and automated
-    reasoning (decision diagrams, automata, SAT/SMT solving, tensor networks)
+    Methodologically, the group builds on **formal methods** and **automated
+    reasoning** (decision diagrams, automata, SAT/SMT solving)
     and combines basic research with the development and experimental
     evaluation of prototype implementations.
 
