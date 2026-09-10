@@ -4,7 +4,7 @@ layout: page
 title: About |QuantumFIT⟩
 description: A brief introduction to the |QuantumFIT⟩ research group and this website.
 comments: false
-modified: 2026-09-03
+modified: 2026-09-10
 breadcrumbs: true
 ---
 
@@ -15,32 +15,30 @@ breadcrumbs: true
   group's name appears in markdown body text it needs the backslash; front
   matter, raw HTML and Liquid output outside markdown are unaffected.
 {% endcomment %}
-**\|QuantumFIT⟩** is the Quantum Computing Systems research group at the [Faculty of Information Technology](https://www.fit.vut.cz/), [Brno University of Technology](https://www.vut.cz/), working on quantum computing and quantum software engineering.
+**\|QuantumFIT⟩** is a research group at the [Faculty of Information Technology](https://www.fit.vut.cz/), [Brno University of Technology](https://www.vut.cz/), bringing together researchers and students interested in studying quantum computing systems in the broad sense. The main aim of the group is empowering the transition from today's noisy, small-scale quantum devices towards machines delivering a practical quantum advantage --- by developing the algorithmic foundations and the software tools needed to design, analyse, and trust quantum computation.
+
+The group builds on a strong background in formal methods, automated reasoning, and automata theory, and transfers these techniques into the quantum domain: symbolic and decision-diagram-based representations of quantum states and operations, SAT/SMT solving, and rigorous semantics of quantum circuits and programs. On top of these foundations we develop [prototype tools]({{ site.url }}/tools/) --- simulators, optimizers, verifiers, synthesis engines, and tools supporting the design of quantum error-correcting codes --- and evaluate them on realistic benchmarks. The same foundations also let us go beyond analysing existing computations and design new ones: quantum algorithms and trusted building blocks --- quantum arithmetic, oracles, state-preparation and uncomputation primitives --- that come with correctness guarantees and a known resource cost, and can therefore be reused as reliable components of larger quantum computations. Besides basic research, the group is involved in building the surrounding community infrastructure, such as benchmark collections for the evaluation of such tools.
+
+## Research Focus
 
 {% comment %}
-  Prose here rather than the labelled list the home page uses, so the two
-  complement each other instead of repeating. Everything below is traceable to
-  pages/tools.md and pages/publications.md; nothing claims a result the record
-  does not carry.
+  The lead phrase of each item is bold so the list can be skimmed for a
+  subject rather than read straight through; the rest of the item is the
+  same sentence it was written as.
+
+  Internal links go through {{ site.url }}, not a bare /tools/. A
+  root-relative link jumps out of the /preview/ build straight to the live
+  site -- which is what the two links this page used to carry did.
 {% endcomment %}
-Our work applies **formal methods to quantum computing**. The recurring idea is to
-represent whole sets of quantum states symbolically, as tree automata, rather than
-enumerating states one at a time: a question about a quantum circuit then becomes a
-question about automata. That makes it possible to check a circuit against a
-pre-/post-condition specification, or to search it for bugs, without ever
-enumerating individual states. The same perspective extends from circuits to
-quantum programs, and to families of circuits rather than single instances.
+Analysis, verification, optimization, and synthesis of quantum circuits and programs, together with the underlying methods from automated reasoning, automata theory, and logic, including:
 
-Alongside verification we work on **simulation**, using symbolic execution over
-multi-terminal binary decision diagrams together with loop summarization, so that a
-repeated block of gates is analysed once instead of being unrolled. Underneath both
-sits the automata and logic the methods are built from: tree automata and their
-level-synchronized extension, omega-automata, and logic and SMT solving.
-
-Two tools carry this into practice --- [AutoQ](/tools/), a verifier for quantum
-circuits and programs, and [Medusa](/tools/), a simulator --- and the results behind
-them appear in our [publications](/publications/), at PLDI, POPL, CAV, TACAS and
-ICCAD.
+* **Simulation of quantum circuits and programs** --- scalable symbolic and semi-symbolic simulation techniques based on decision diagrams, targeting both near-term (NISQ) and fault-tolerant workloads.
+* **Verification and equivalence checking** --- automated reasoning about the equivalence of quantum circuits, their correctness with respect to a specification, and properties of quantum programs, using decision procedures, model checking, and automata-based representations of sets of quantum states.
+* **Optimization and compilation** --- reducing the resource cost of quantum computation (gate count, T-count and T-depth, circuit depth, number of qubits, ancilla usage), fault-tolerant compilation and resource estimation, and hardware-aware mapping and routing onto real devices.
+* **Synthesis of quantum circuits** --- exact and approximate synthesis driven by solvers (SAT, SMT, #SAT, QBF) and by search, including synthesis over restricted and hardware-native gate sets, and probabilistic constructions such as repeat-until-success circuits.
+* **Quantum algorithms and trusted building blocks** --- design of new quantum algorithms and of reusable, resource-efficient circuit primitives (quantum arithmetic, oracles, multi-controlled operations, state preparation, measurement-based uncomputation) whose correctness and cost are established rigorously, so that they can serve as trusted components of larger computations.
+* **Quantum error correction** --- techniques and tools supporting the design, analysis, and evaluation of quantum error-correcting codes and their decoders, and the assessment of the overhead they impose on fault-tolerant execution.
+* **Benchmarks and community infrastructure** --- benchmark suites, input/output formats, and competitions of tools for automated reasoning over quantum circuits, enabling a fair and reproducible comparison of the approaches developed in the field.
 
 ## Contact
 
