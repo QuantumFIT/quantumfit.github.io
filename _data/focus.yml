@@ -12,20 +12,24 @@
 
 paragraphs:
   - >
-    **\|QuantumFIT⟩** is a group of researchers and students at the Faculty of
-    Information Technology, Brno University of Technology, studying **quantum
-    computing systems** in the broad sense. Our aim is to help bring quantum
-    computers to the point of **practical quantum advantage** by developing
-    methods and prototype tools for the design and analysis of quantum
-    computation — simulators, optimizers, verifiers, circuit synthesis
-    engines, and tools supporting the design of quantum error-correcting
-    codes.
+    **\|QuantumFIT⟩** is a research group at FIT BUT bringing together
+    researchers and students interested in studying **quantum computing
+    systems** in a broad range. The main aim of the group is to empower the
+    transition from today's noisy, small-scale quantum devices to machines
+    delivering a **practical quantum advantage**, by developing the
+    algorithmic foundations and the software tools needed to design quantum
+    computations, analyse them, and make their results trustworthy.
 
   - >
-    Methodologically, the group builds on **formal methods** and **automated
-    reasoning** (decision diagrams, automata, SAT/SMT solving)
-    and combines basic research with the development and experimental
-    evaluation of prototype implementations.
+    The group builds on a strong background in **formal methods**, **automated
+    reasoning**, and automata theory, and transfers these techniques into the
+    quantum domain: automata and decision diagram models of quantum states and
+    operations, decision procedures based on SAT/SMT solving, and rigorous
+    semantics of quantum circuits and programs. On these foundations we
+    develop prototype tools — simulators, optimizers, verifiers, synthesis
+    engines, and tools supporting the design of quantum error-correcting codes
+    — and design new computations: quantum algorithms and trusted building
+    blocks that come with correctness guarantees and a known resource cost.
 
 # A closing line addressed to students, boxed off from the paragraphs above
 # (see .focus-invite in _sass/_home.scss). It stops mid-sentence on
