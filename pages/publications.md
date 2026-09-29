@@ -4,7 +4,7 @@ layout: page
 title: Publications
 description: "Publications of the |QuantumFIT⟩ research group."
 comments: false
-modified: 2026-08-31
+modified: 2026-09-29
 breadcrumbs: true
 ---
 
@@ -85,6 +85,19 @@ breadcrumbs: true
 </style>
 
 ## 2026
+
+* J. Lin, Y. Chen, J. Havlik, O. Lengal, F. Lo, W. Tsai, and Y. Wu.
+[Verifying Repeat-Until-Success Protocols using Automata](https://doi.org/10.1145/3839506).
+In *Proc. of the ACM on Programming Languages* --- [OOPSLA'26](https://2026.splashcon.org/track/oopsla-2026) issue
+(for Object-Oriented Programming, Systems, Languages, and Applications),
+volume 10 of PACMPL (number OOPSLA2),
+article number 374, 2026.
+ACM.
+  * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/oopsla26-rus-verification.pdf)
+  * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ)
+  * 🛠️ [AutoQ](https://github.com/fmlab-iis/AutoQ)
+  * 📦 [artifact](https://doi.org/10.5281/zenodo.21428108)
+  * 🚧 **INCOMPLETE REFERENCE**
 
 * W. Tsai, Y. Chen, and O. Lengal.
 [A Practical Specification Language for Automatic Quantum Program Verification](https://doi.org/10.1007/978-3-032-32537-2_15).
