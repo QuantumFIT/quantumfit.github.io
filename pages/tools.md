@@ -4,7 +4,7 @@ layout: page
 title: Tools
 description: "Tools developed by the |QuantumFIT⟩ research group."
 comments: false
-modified: 2026-09-04
+modified: 2026-10-02
 breadcrumbs: true
 ---
 
@@ -58,7 +58,7 @@ Introduced in
 </div>
 <div class="member-card">
 <div class="member-info">
-<h4><a href="https://github.com/VeriFIT/MEDUSA">Medusa</a></h4>
+<h4><a href="https://github.com/QuantumFIT/MEDUSA">Medusa</a></h4>
 <div class="member-description" markdown="1">
 An MTBDD-based quantum circuit simulator. It uses symbolic execution together
 with loop summarization, so that a repeated block of gates is analysed once

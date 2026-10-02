@@ -4,7 +4,7 @@ layout: page
 title: Publications
 description: "Publications of the |QuantumFIT⟩ research group."
 comments: false
-modified: 2026-09-29
+modified: 2026-10-02
 breadcrumbs: true
 ---
 
@@ -151,7 +151,7 @@ ACM.
   * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/popl25-lstas-for-quantum.pdf)
   * 📝 [technical report](https://arxiv.org/abs/2410.18540)
   * 📦 [artifact](https://doi.org/10.5281/zenodo.13957472)
-  * 🛠️ [AutoQ](https://github.com/alan23273850/AutoQ/)
+  * 🛠️ [AutoQ](https://github.com/fmlab-iis/AutoQ)
   * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/vqc25-automata-quantum.pdf) (from [VQC'25](https://verifiedqc.github.io/2025/))
   * 🖼️ [poster](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/vqc25-poster-autoq.pdf)
 
@@ -166,7 +166,7 @@ pages 1--9, 2024.
 ACM.
   * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/iccad24-quantum-symb-exec.pdf)
   * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/iccad24-quantum-symbolic-exec.pdf)
-  * 🛠️ [Medusa](https://github.com/VeriFIT/MEDUSA)
+  * 🛠️ [Medusa](https://github.com/QuantumFIT/MEDUSA)
   * 📦 [artifact](https://doi.org/10.5281/zenodo.13243595)
 
 ## 2023
@@ -180,7 +180,7 @@ pages 139--153, 2023.
 Springer-Verlag.
   * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/cav23-autoq.pdf)
   * 📦 [artifact](https://doi.org/10.5281/zenodo.7966542)
-  * 🛠️ [AutoQ](https://github.com/alan23273850/AutoQ/)
+  * 🛠️ [AutoQ](https://github.com/fmlab-iis/AutoQ)
 
 * Y. Chen, K. Chung, O. Lengal, J. Lin, W. Tsai, and D. Yen.
 [An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits](https://doi.org/10.1145/3591270).
@@ -193,5 +193,5 @@ ACM.
   * 📦 [artifact](https://doi.org/10.5281/zenodo.7707349)
   * 🎥 [video](https://www.youtube.com/live/1L1eKWwa6fE?t=4481)
   * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/pldi23-quantum-bug-hunting.pdf) ([.pptx](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/pldi23-quantum-bug-hunting.pptx))
-  * 🛠️ [AutoQ](https://github.com/alan23273850/AutoQ/)
+  * 🛠️ [AutoQ](https://github.com/fmlab-iis/AutoQ)
   * 🏆 **Distinguished Paper of PLDI'23**
