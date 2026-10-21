@@ -93,11 +93,16 @@ Lisboa, Portugal,
 volume 16684 of LNCS,
 pages 302--325, 2026.
 Springer-Verlag.
-  * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/cav26-quantum-specification.pdf)
-  * 📝 [technical report](https://arxiv.org/abs/2605.05786)
-  * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/cav26-autoq-specification.pdf)
-  * 🛠️ [AutoQ](https://github.com/fmlab-iis/AutoQ)
-  * 📦 [artifact](https://doi.org/10.5281/zenodo.19756802)
+  * 📄 
+    [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/cav26-quantum-specification.pdf)
+  * 📝 
+    [technical report](https://arxiv.org/abs/2605.05786)
+  * 📊 
+    [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/cav26-autoq-specification.pdf)
+  * 🛠️ 
+    [AutoQ](https://fmlab-iis.github.io/AutoQ/)
+  * 📦 
+    [artifact](https://doi.org/10.5281/zenodo.19756802)
 
 * P. A. Abdulla, Y. Chen, M. Hecko, L. Holik, O. Lengal, J. Lin, and R. S. Thinniyam.
 [Parameterized Verification of Quantum Circuits](https://doi.org/10.1145/3776712).
@@ -123,11 +128,16 @@ Hamilton, Canada,
 volume 15698 of LNCS,
 pages 87--108, 2025.
 Springer-Verlag.
-  * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/tacas25-autoq-2-programs.pdf)
-  * 📝 [technical report](https://arxiv.org/abs/2411.09121)
-  * 🛠️ [AutoQ](https://github.com/fmlab-iis/AutoQ)
-  * 📦 [artifact](https://doi.org/10.5281/zenodo.14114791)
-  * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/tacas25-autoq-2-programs.pdf) ([.pptx](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/tacas25-autoq-2-programs.pptx))
+  * 📄
+    [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/tacas25-autoq-2-programs.pdf)
+  * 📝
+    [technical report](https://arxiv.org/abs/2411.09121)
+  * 🛠️ 
+    [AutoQ](https://fmlab-iis.github.io/AutoQ/)
+  * 📦
+    [artifact](https://doi.org/10.5281/zenodo.14114791)
+  * 📊
+    [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/tacas25-autoq-2-programs.pdf) ([.pptx](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/tacas25-autoq-2-programs.pptx))
 
 * P. A. Abdulla, Y. Chen, Y. Chen, L. Holik, O. Lengal, J. Lin, F. Lo, and W. Tsai.
 [Verifying Quantum Circuits with Level-Synchronized Tree Automata](https://doi.org/10.1145/3704868).
@@ -135,12 +145,18 @@ In *Proc. of 52nd ACM SIGPLAN Symposium on Principles of Programming Languages* 
 Denver, Colorado, USA,
 article 32, pages 923--953, 2025.
 ACM.
-  * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/popl25-lstas-for-quantum.pdf)
-  * 📝 [technical report](https://arxiv.org/abs/2410.18540)
-  * 📦 [artifact](https://doi.org/10.5281/zenodo.13957472)
-  * 🛠️ [AutoQ](https://github.com/alan23273850/AutoQ/)
-  * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/vqc25-automata-quantum.pdf) (from [VQC'25](https://verifiedqc.github.io/2025/))
-  * 🖼️ [poster](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/vqc25-poster-autoq.pdf)
+  * 📄
+    [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/popl25-lstas-for-quantum.pdf)
+  * 📝
+    [technical report](https://arxiv.org/abs/2410.18540)
+  * 📦
+    [artifact](https://doi.org/10.5281/zenodo.13957472)
+  * 🛠️ 
+    [AutoQ](https://fmlab-iis.github.io/AutoQ/)
+  * 📊
+    [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/vqc25-automata-quantum.pdf) (from [VQC'25](https://verifiedqc.github.io/2025/))
+  * 🖼️
+    [poster](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/vqc25-poster-autoq.pdf)
 
 ## 2024
 
@@ -151,10 +167,14 @@ New Jersey, USA,
 Article No. 42,
 pages 1--9, 2024.
 ACM.
-  * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/iccad24-quantum-symb-exec.pdf)
-  * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/iccad24-quantum-symbolic-exec.pdf)
-  * 🛠️ [Medusa](https://github.com/VeriFIT/MEDUSA)
-  * 📦 [artifact](https://doi.org/10.5281/zenodo.13243595)
+  * 📄
+    [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/iccad24-quantum-symb-exec.pdf)
+  * 📊
+    [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/iccad24-quantum-symbolic-exec.pdf)
+  * 🛠️
+    [Medusa](https://quantumfit.github.io/MEDUSA)
+  * 📦
+    [artifact](https://doi.org/10.5281/zenodo.13243595)
 
 ## 2023
 
@@ -165,9 +185,12 @@ Paris, France,
 volume 13966 of LNCS,
 pages 139--153, 2023.
 Springer-Verlag.
-  * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/cav23-autoq.pdf)
-  * 📦 [artifact](https://doi.org/10.5281/zenodo.7966542)
-  * 🛠️ [AutoQ](https://github.com/alan23273850/AutoQ/)
+  * 📄
+    [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/cav23-autoq.pdf)
+  * 📦
+    [artifact](https://doi.org/10.5281/zenodo.7966542)
+  * 🛠️
+    [AutoQ](https://fmlab-iis.github.io/AutoQ/)
 
 * Y. Chen, K. Chung, O. Lengal, J. Lin, W. Tsai, and D. Yen.
 [An Automata-based Framework for Verification and Bug Hunting in Quantum Circuits](https://doi.org/10.1145/3591270).
@@ -175,10 +198,17 @@ In *Proc. of 44th ACM SIGPLAN Conference on Programming Language Design and Impl
 Orlando, Florida, USA,
 article 156, pages 1218--1243, 2023.
 ACM.
-  * 📄 [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/pldi23-quantum-bug-hunting.pdf)
-  * 📝 [technical report](https://arxiv.org/abs/2301.07747)
-  * 📦 [artifact](https://doi.org/10.5281/zenodo.7707349)
-  * 🎥 [video](https://www.youtube.com/live/1L1eKWwa6fE?t=4481)
-  * 📊 [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/pldi23-quantum-bug-hunting.pdf) ([.pptx](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/pldi23-quantum-bug-hunting.pptx))
-  * 🛠️ [AutoQ](https://github.com/alan23273850/AutoQ/)
-  * 🏆 **Distinguished Paper of PLDI'23**
+  * 📄
+    [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/pldi23-quantum-bug-hunting.pdf)
+  * 📝
+    [technical report](https://arxiv.org/abs/2301.07747)
+  * 📦
+    [artifact](https://doi.org/10.5281/zenodo.7707349)
+  * 🎥
+    [video](https://www.youtube.com/live/1L1eKWwa6fE?t=4481)
+  * 📊
+    [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/pldi23-quantum-bug-hunting.pdf) ([.pptx](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/pldi23-quantum-bug-hunting.pptx))
+  * 🛠️ 
+    [AutoQ](https://fmlab-iis.github.io/AutoQ/)
+  * 🏆
+    **Distinguished Paper of PLDI'23**

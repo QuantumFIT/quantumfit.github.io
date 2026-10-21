@@ -36,7 +36,7 @@ breadcrumbs: true
 <div class="member-grid">
 <div class="member-card">
 <div class="member-info">
-<h4><a href="https://github.com/fmlab-iis/AutoQ">AutoQ</a></h4>
+<h4><a href="https://fmlab-iis.github.io/AutoQ/">AutoQ</a></h4>
 <div class="member-description" markdown="1">
 An automata-based verifier for quantum circuits and programs. Sets of quantum
 states are represented as tree automata, which lets a circuit be checked against
@@ -58,7 +58,7 @@ Introduced in
 </div>
 <div class="member-card">
 <div class="member-info">
-<h4><a href="https://github.com/VeriFIT/MEDUSA">Medusa</a></h4>
+<h4><a href="https://quantumfit.github.io/MEDUSA">Medusa</a></h4>
 <div class="member-description" markdown="1">
 An MTBDD-based quantum circuit simulator. It uses symbolic execution together
 with loop summarization, so that a repeated block of gates is analysed once
