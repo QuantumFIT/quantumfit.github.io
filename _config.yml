@@ -30,9 +30,12 @@ reading_time: false
 word_count: false
 excerpt_separator: "<!--more-->"
 
+# jekyll-seo-tag is deliberately NOT here. _includes/head.html already emits
+# the title, canonical link, description and Open Graph tags, and the plugin
+# emitted its own copy of each -- including a second <title> -- with the `|`
+# stripped out of the site name. See the comment at the end of head.html.
 plugins:
   - jekyll-sitemap
-  - jekyll-seo-tag
 
 # No theme setting: the theme is vendored into this repo (_sass, _includes,
 # _layouts, assets), copied from

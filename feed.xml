@@ -36,7 +36,7 @@ sitemap: false
   </author>
   <rights>{{ site.owner.name | xml_escape }}</rights>
 {%- for item in news %}
-  {%- capture anchor %}{{ item.date | date: "%Y-%m-%d" }}-{{ item.title | slugify }}{% endcapture %}
+  {%- capture anchor %}{{ item.date | date: "%Y-%m-%d" }}-{% if item.slug %}{{ item.slug }}{% else %}{{ item.title | slugify }}{% endif %}{% endcapture %}
   <entry>
     <title>{{ item.title | xml_escape }}</title>
     {%- comment -%}

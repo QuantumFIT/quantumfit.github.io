@@ -1,0 +1,103 @@
+name: Pages
+
+# The site is built here rather than by GitHub Pages' own Jekyll, for one
+# reason: a push to `preview` publishes a draft of the whole site at /preview/
+# without touching what the public sees at the root.
+#
+# The trick is in the checkout below -- the job builds the ROOT from master
+# whatever ref started the run, and adds /preview/ from the preview branch if
+# that branch exists. So a preview push can only ever create or replace
+# /preview/; it cannot move a single page of the live site.
+#
+# Two settings outside this file make it work, and both are already in place:
+#   - Settings -> Pages -> Build and deployment -> Source: GitHub Actions
+#   - the `github-pages` environment allows deployments from `master` AND
+#     `preview` (custom branch policies). Without the second, a preview push
+#     fails at the deploy step with a protection-rule error.
+#
+# Delete the preview branch once a change lands on master; /preview/ then
+# disappears on the next deploy.
+
+on:
+  push:
+    branches: [master, preview]
+  # So the site can be rebuilt without an empty commit -- after a Pages
+  # setting changes, or to drop a /preview/ whose branch has been deleted.
+  workflow_dispatch:
+
+# Both branches publish the same Pages site, so two runs can want it at once.
+# Queue rather than cancel: every run deploys the whole site, and cancelling
+# the loser of a race would leave the winner's work half applied.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # Always the root from master, whatever triggered the run.
+          ref: master
+          # The preview branch has to be reachable from this clone.
+          fetch-depth: 0
+
+      - name: Make sure the preview branch is here, if there is one
+        run: git fetch --no-tags origin +refs/heads/preview:refs/remotes/origin/preview || true
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          # Matches the local development Ruby. The Gemfile pins the
+          # github-pages gem chain, which is Jekyll 3.10.
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build the site from master
+        run: bundle exec jekyll build --destination _site
+
+      - name: Build the preview branch into /preview/, if there is one
+        run: |
+          if ! git rev-parse --verify --quiet refs/remotes/origin/preview >/dev/null; then
+            echo "No preview branch; /preview/ will not exist on this deploy."
+            exit 0
+          fi
+
+          git worktree add --detach "$RUNNER_TEMP/preview-src" origin/preview
+
+          # site.url is what every asset URL, canonical link and nav item is
+          # built from, so it has to carry the subdirectory or the preview
+          # would link straight back out to the live site. baseurl covers the
+          # few places that use it instead. noindex keeps the draft out of
+          # search results -- head.html reads site.noindex as well as
+          # page.noindex.
+          {
+            echo 'url: "https://quantum.fit.vut.cz/preview"'
+            echo 'baseurl: "/preview"'
+            echo 'noindex: true'
+          } > "$RUNNER_TEMP/preview.yml"
+
+          bundle exec jekyll build \
+            --source "$RUNNER_TEMP/preview-src" \
+            --config "$RUNNER_TEMP/preview-src/_config.yml,$RUNNER_TEMP/preview.yml" \
+            --destination _site/preview
+
+          # Only the artifact root's CNAME means anything; a nested one is
+          # noise at best.
+          rm -f _site/preview/CNAME
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
