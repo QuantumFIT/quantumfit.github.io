@@ -127,49 +127,6 @@
     }
   }
 
-  // The faculty mark under the call to action. It is an affiliation, not a
-  // third button: it sits well below them and slightly held back, and the
-  // hover brings it to full strength rather than growing or moving it.
-  //
-  // inline-block matters. Left as a plain inline box the anchor stretches
-  // the full width of the hero and text-align: center has nothing to centre,
-  // so the logo ends up hard against the left edge.
-  .hero-affiliation {
-    display: inline-block;
-    margin-top: 2.6rem;
-    line-height: 0;
-    opacity: 0.88;
-    transition: opacity 0.25s ease;
-    border-bottom: none;
-
-    // 52px: at 42 the three lines of lettering lose legibility against the
-    // hero photograph, and past 62 the mark starts competing with the title.
-    img {
-      height: 52px;
-      width: auto;
-      display: block;
-    }
-
-    &:hover,
-    &:focus-visible {
-      opacity: 1;
-    }
-
-    &:focus-visible {
-      outline: 2px solid rgba(255, 255, 255, 0.85);
-      outline-offset: 6px;
-      border-radius: 2px;
-    }
-
-    @media (max-width: 600px) {
-      margin-top: 2rem;
-
-      img {
-        height: 40px;
-      }
-    }
-  }
-
   // Scroll indicator
   .scroll-indicator {
     position: absolute;
@@ -762,6 +719,44 @@
               color: white;
             }
           }
+        }
+      }
+    }
+
+    // The faculty mark, above the copyright line. inline-block matters: as a
+    // plain inline box the anchor would stretch the footer's full width and
+    // text-align: center would have nothing to centre, leaving the logo hard
+    // against the left edge.
+    .footer-affiliation {
+      display: inline-block;
+      line-height: 0;
+      margin-bottom: 1.4rem;
+      opacity: 0.8;
+      transition: opacity 0.25s ease;
+      border-bottom: none;
+
+      // 48px: at 40 the three lines of lettering crowd, and at 56 the mark
+      // overpowers the two small social icons above it.
+      img {
+        height: 48px;
+        width: auto;
+        display: block;
+      }
+
+      &:hover,
+      &:focus-visible {
+        opacity: 1;
+      }
+
+      &:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.85);
+        outline-offset: 6px;
+        border-radius: 2px;
+      }
+
+      @media (max-width: 600px) {
+        img {
+          height: 38px;
         }
       }
     }
