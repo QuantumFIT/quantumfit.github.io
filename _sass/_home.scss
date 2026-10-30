@@ -723,22 +723,35 @@
       }
     }
 
-    // The faculty mark, above the copyright line. inline-block matters: as a
-    // plain inline box the anchor would stretch the footer's full width and
-    // text-align: center would have nothing to centre, leaving the logo hard
-    // against the left edge.
+    // The social icons and the faculty mark share one centred line. The row
+    // owns the space below it, so both children drop their own bottom margin
+    // -- otherwise .list-inline's 1.5rem would sit inside the flex line and
+    // push the icons off centre against the taller logo.
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.4rem 2rem;
+      margin-bottom: 1.5rem;
+
+      .list-inline {
+        margin-bottom: 0;
+      }
+    }
+
     .footer-affiliation {
       display: inline-block;
       line-height: 0;
-      margin-bottom: 1.4rem;
+      margin-bottom: 0;
       opacity: 0.8;
       transition: opacity 0.25s ease;
       border-bottom: none;
 
-      // 48px: at 40 the three lines of lettering crowd, and at 56 the mark
-      // overpowers the two small social icons above it.
+      // 44px beside the icons: their row is 40px tall, and a mark much
+      // taller than that stops reading as their equal on the same line.
       img {
-        height: 48px;
+        height: 44px;
         width: auto;
         display: block;
       }
