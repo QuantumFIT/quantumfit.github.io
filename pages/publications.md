@@ -96,13 +96,12 @@ ACM.
   * 📄
     [preliminary version](https://github.com/ondrik/ondrik.github.io/raw/master/publications/oopsla26-rus-verification.pdf)
   * 📊
-    [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ)
+    [slides](https://github.com/ondrik/ondrik.github.io/raw/master/presentations/oopsla26-rus-verification.pdf)
   * 🛠️ 
     [AutoQ](https://fmlab-iis.github.io/AutoQ/)
   * 📦 
     [artifact](https://doi.org/10.5281/zenodo.21428108)
   * 🚧 
-    **INCOMPLETE REFERENCE**
 
 * W. Tsai, Y. Chen, and O. Lengal.
 [A Practical Specification Language for Automatic Quantum Program Verification](https://doi.org/10.1007/978-3-032-32537-2_15).
