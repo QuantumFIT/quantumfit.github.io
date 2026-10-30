@@ -82,7 +82,15 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..3
 
-include: [".htaccess"]
+# Jekyll skips anything whose name starts with a dot, so both of these have
+# to be named here or they never reach _site.
+#
+# .well-known/atproto-did proves to Bluesky that this site and the account
+# are the same people: it holds the DID of @quantumfit.bsky.social, and the
+# handle quantum.fit.vut.cz is only valid while it is served from the root of
+# this domain. It has no front matter, so Jekyll copies it through untouched;
+# adding any would make Liquid render it and break the handle.
+include: [".htaccess", ".well-known"]
 # `exclude` keeps files in the repo but out of the built site.
 #
 # The background PNGs are kept as the original, lossless sources but are not

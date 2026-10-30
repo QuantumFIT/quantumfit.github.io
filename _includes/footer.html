@@ -1,6 +1,7 @@
 <!--
   Local override of the remote theme's _includes/footer.html.
-  Only change from upstream: copyright start year 2013 -> 2026.
+  Changes from upstream: copyright start year 2013 -> 2026, and the FIT BUT
+  wordmark above the copyright line.
 -->
 <!--<span>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/hpstr/" rel="notfollow">HPSTR Theme</a>.</span>-->
 
@@ -8,6 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="footer-row">
                 <ul class="list-inline text-center">
                     <li>
                         <a href="{{ site.url }}/feed.xml">
@@ -68,6 +70,26 @@
                     </li>
                     {% endif %}
                 </ul>
+                {%- comment -%}
+                  Where the group sits. The faculty's own English wordmark,
+                  served from this repo rather than from the faculty's sprite;
+                  see the note inside images/logo-fit-but.svg for which variant
+                  it is and why it survives both a light and a dark footer.
+
+                  This include is shared by every layout, so the mark appears
+                  on every page, not only the home page. It shares a flex row
+                  with the social icons; see .footer-row in _sass/_home.scss.
+
+                  width/height are the file's own viewBox, so the browser
+                  reserves the right box before the SVG arrives. alt is empty
+                  because the link's own label already says the same thing.
+                {%- endcomment -%}
+                <a class="footer-affiliation" href="https://www.fit.vut.cz/"
+                   aria-label="Faculty of Information Technology, Brno University of Technology">
+                  <img src="{{ site.url }}/images/logo-fit-but.svg" alt=""
+                       width="303" height="80" loading="lazy" decoding="async">
+                </a>
+                </div>
                 <p class="copyright text-muted">Copyright &copy; {{ site.title }} 2026-{{ site.time | date: '%Y' }}, All Rights Reserved.</p>
             </div>
         </div>
