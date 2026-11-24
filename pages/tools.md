@@ -4,7 +4,7 @@ layout: page
 title: Tools
 description: "Tools developed by the |QuantumFIT⟩ research group."
 comments: false
-modified: 2026-10-02
+modified: 2026-11-24
 breadcrumbs: true
 ---
 
@@ -72,19 +72,36 @@ Introduced in
 </div>
 <div class="member-card">
 <div class="member-info">
-<h4><a href="https://quantum.fit.vut.cz/q-vis/">q-vis</a></h4>
+<h4><a href="https://quantum.fit.vut.cz/quvis/">quvis</a></h4>
 <div class="member-description" markdown="1">
-An in-browser visualizer for the MTBDD of a pure quantum state --- the same
-representation Medusa computes with. It applies a unitary circuit gate by gate
-and redraws the decision diagram, picking out the nodes each gate created, so
-what the structure costs is visible: a uniform superposition over 8 qubits is
-one node, a 5-qubit GHZ state is 11, and a 3-qubit QFT shares nothing and grows
-as large as the state vector.
+An in-browser visualizer for the decision diagram of a pure quantum state ---
+the MTBDD that Medusa computes with, and its edge-valued and Pauli-LIMDD
+relatives. It applies a unitary circuit gate by gate and redraws the diagram,
+picking out the nodes each gate created, so what the structure costs is visible:
+a uniform superposition over 8 qubits is one node, a 5-qubit GHZ state is 11,
+and a 3-qubit QFT shares nothing and grows as large as the state vector. A
+companion page does the same for sets of states, drawn as the tree automata
+AutoQ works with.
 
-Amplitudes are exact, in the ring Z[1/&radic;2, i] extended with free symbols,
-so nothing is rounded and two states are equal precisely when their diagrams are
-the same node. It runs as a single HTML file with no install and no server; the
-[source](https://github.com/QuantumFIT/q-vis) is on GitHub.
+Amplitudes are exact, in Z[1/&radic;2, i] and its finer cyclotomic extensions,
+with free symbols for symbolic input, so nothing is rounded and two states are
+equal precisely when their diagrams are the same node. It runs as a single HTML
+file with no install and no server; the
+[source](https://github.com/QuantumFIT/quvis) is on GitHub.
+</div>
+</div>
+</div>
+<div class="member-card">
+<div class="member-info">
+<h4><a href="https://quantum.fit.vut.cz/quedit/">quedit</a></h4>
+<div class="member-description" markdown="1">
+A WYSIWYG editor for quantum circuits in the browser. Gates are dragged onto
+wires, and the circuit comes out as [quantikz](https://ctan.org/pkg/quantikz)
+LaTeX, as OpenQASM 2.0 or 3.0, or as a PNG; OpenQASM can be read back in. A
+circuit can be handed to quvis to watch its decision diagram evolve, and back.
+
+Like quvis, it is a single HTML file that also works offline; the
+[source](https://github.com/QuantumFIT/quedit) is on GitHub.
 </div>
 </div>
 </div>
