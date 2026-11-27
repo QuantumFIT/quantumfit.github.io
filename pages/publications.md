@@ -101,7 +101,6 @@ ACM.
     [AutoQ](https://fmlab-iis.github.io/AutoQ/)
   * 📦 
     [artifact](https://doi.org/10.5281/zenodo.21428108)
-  * 🚧 
 
 * W. Tsai, Y. Chen, and O. Lengal.
 [A Practical Specification Language for Automatic Quantum Program Verification](https://doi.org/10.1007/978-3-032-32537-2_15).
